@@ -14,12 +14,11 @@ public class Tile : MonoBehaviour
 
     void OnMouseEnter()
     {
-        
+        highlight.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseExit()
     {
-        
+        highlight.SetActive(false);
     }
 }

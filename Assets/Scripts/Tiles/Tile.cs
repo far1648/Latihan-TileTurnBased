@@ -32,28 +32,30 @@ public abstract class Tile : MonoBehaviour
     {
         if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
 
-        if (OccupiedUnit != null)
+        var selected = UnitManager.Instance.SelectedHero;
+
+        if (OccupiedUnit is BaseHero hero)
         {
-            if (OccupiedUnit.Faction == Faction.Hero) UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
-            else
-            {
-                if (UnitManager.Instance.SelectedHero != null)
-                {
-                    var enemy = (BaseEnemy)OccupiedUnit;
-                    UnitManager.Instance.UnregisterUnit(enemy);
-                    Destroy(enemy.gameObject);
-                    OccupiedUnit = null;
-                    UnitManager.Instance.SetSelectedHero(null);
-                }
-            }
-        } 
-        else
+            if (TurnManager.Instance.CanAct(hero))
+                UnitManager.Instance.SetSelectedHero(hero);
+        }
+        else if (OccupiedUnit is BaseEnemy enemy) 
         {
-            if (UnitManager.Instance.SelectedHero!=null && Walkable)
-            {
-                SetUnit(UnitManager.Instance.SelectedHero);
-                UnitManager.Instance.SetSelectedHero(null);
-            }
+            if (selected == null) return;
+
+            UnitManager.Instance.UnregisterUnit(enemy);
+            Destroy(enemy.gameObject);
+            OccupiedUnit = null;
+
+            UnitManager.Instance.SetSelectedHero(null);
+            TurnManager.Instance.MarkActed(selected);
+        }
+        else if (selected != null && Walkable)
+        {
+            SetUnit(selected);
+
+            UnitManager.Instance.SetSelectedHero(null);
+            TurnManager.Instance.MarkActed(selected);
         }
     }
 

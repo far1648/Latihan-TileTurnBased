@@ -72,6 +72,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7082443315117150053}
   m_SourcePrefab: {fileID: 100100000, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+--- !u!212 &2678563974508314146 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  m_PrefabInstance: {fileID: 8061275472865772469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3592993841811505221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6774407290497565680, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  m_PrefabInstance: {fileID: 8061275472865772469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8395139988651076624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1972259986490961829, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
@@ -89,7 +99,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3652553fba0102449103c6d0e8fac4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MountainTile
-  baseColor: {r: 0, g: 0, b: 0, a: 0}
-  offsetColor: {r: 0, g: 0, b: 0, a: 0}
-  spriteRenderer: {fileID: 0}
-  highlight: {fileID: 0}
+  spriteRenderer: {fileID: 2678563974508314146}
+  highlight: {fileID: 3592993841811505221}

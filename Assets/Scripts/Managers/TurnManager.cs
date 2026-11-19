@@ -36,6 +36,8 @@ public class TurnManager : MonoBehaviour
         bool anyoneLeft = UnitManager.Instance
             .GetUnits(ActiveFaction)
             .Any(u => !actedUnits.Contains(u));
+
+        if (!anyoneLeft) EndTurn();
     }
 
     private void EndTurn()

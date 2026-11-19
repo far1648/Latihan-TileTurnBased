@@ -9,6 +9,8 @@ public class UnitManager : MonoBehaviour
     private List<ScriptableUnit> units;
 
     public BaseHero SelectedHero;
+    [SerializeField] int heroCount = 3;
+    [SerializeField] int enemyCount = 3;
     
     void Awake()
     {
@@ -19,12 +21,9 @@ public class UnitManager : MonoBehaviour
 
     public void SpawnHeroes()
     {
-        var heroCount = 1;
-
-        for (int i = 0; i < heroCount; i++)
+        foreach (var prefab in GetRandomUnit<BaseHero>(Faction.Hero, heroCount))
         {
-            var randomPrefab = GetRandomUnit<BaseHero>(Faction.Hero);
-            var spawnedHero = Instantiate(randomPrefab);
+            var spawnedHero = Instantiate(prefab);
             var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
 
             randomSpawnTile.SetUnit(spawnedHero);
@@ -35,12 +34,9 @@ public class UnitManager : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        var enemyCount = 1;
-
-        for (int i = 0; i < enemyCount; i++)
+        foreach (var prefab in GetRandomUnit<BaseEnemy>(Faction.Enemy, enemyCount))
         {
-            var randomPrefab = GetRandomUnit<BaseEnemy>(Faction.Enemy);
-            var spawnedEnemy = Instantiate(randomPrefab);
+            var spawnedEnemy = Instantiate(prefab);
             var randomSpawnTile = GridManager.Instance.GetEnemySpawnTile();
 
             randomSpawnTile.SetUnit(spawnedEnemy);
@@ -49,9 +45,14 @@ public class UnitManager : MonoBehaviour
         GameManager.Instance.ChangeState(GameState.HeroesTurn);
     }
 
-    private T GetRandomUnit<T>(Faction faction) where T : BaseUnit
+    private List<T> GetRandomUnit<T>(Faction faction, int count) where T : BaseUnit
     {
-        return (T)units.Where(u=>u.Faction == faction).OrderBy(o=>Random.value).First().UnitPrefab;
+        return units
+            .Where(u => u.Faction == faction)
+            .OrderBy(o => Random.value)
+            .Take(count)
+            .Select(u => (T)u.UnitPrefab)
+            .ToList();
     }
 
     public void SetSelectedHero(BaseHero hero)

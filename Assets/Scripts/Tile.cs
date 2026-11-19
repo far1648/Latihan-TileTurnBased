@@ -2,8 +2,17 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Color baseColor, offsetColor;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private GameObject highlight;
+
+    public void Init(bool isOffset)
+    {
+        spriteRenderer.color = isOffset ? offsetColor : baseColor;
+    }
+
+    void OnMouseEnter()
     {
         
     }

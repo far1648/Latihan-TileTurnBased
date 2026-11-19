@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.48427665
       objectReference: {fileID: 0}
+    - target: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5919586453578442433, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -101,3 +105,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MountainTile
   spriteRenderer: {fileID: 2678563974508314146}
   highlight: {fileID: 3592993841811505221}
+  isWalkable: 0
+  OccupiedUnit: {fileID: 0}

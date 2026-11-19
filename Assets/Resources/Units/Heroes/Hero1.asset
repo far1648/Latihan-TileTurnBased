@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Hero1
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
   Faction: 0
+  UnitPrefab: {fileID: 4836108526317587625, guid: 11a64b7ca716b99438061b78ff9d698a, type: 3}

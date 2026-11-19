@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5919586453578442433, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -57,7 +61,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1972259986490961829, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
-      insertIndex: 1
+      insertIndex: 2
       addedObject: {fileID: 7420804553586130684}
   m_SourcePrefab: {fileID: 100100000, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
 --- !u!1 &1035023516676280888 stripped
@@ -87,7 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7a90bba3888fd43b3d157d9f3e5f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrassTile
-  baseColor: {r: 0.34901962, g: 0.7490196, b: 0.3529412, a: 1}
-  offsetColor: {r: 0.31790665, g: 0.7169812, b: 0.32181922, a: 1}
   spriteRenderer: {fileID: 1922455420715461727}
   highlight: {fileID: 1035023516676280888}
+  isWalkable: 1
+  OccupiedUnit: {fileID: 0}
+  baseColor: {r: 0.34901962, g: 0.7490196, b: 0.3529412, a: 1}
+  offsetColor: {r: 0.31790665, g: 0.7169812, b: 0.32181922, a: 1}

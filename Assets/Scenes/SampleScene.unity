@@ -361,8 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891d402b44e8d7b479ce30774144b1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
-  width: 16
-  height: 9
+  width: 8
+  height: 8
   grassTile: {fileID: 7420804553586130684, guid: e923e5132a78f5a408bfc765a9d25fc1, type: 3}
   mountainTile: {fileID: 7082443315117150053, guid: 2e95a519c56dbfc40ab0d54ae506cb1e, type: 3}
   cam: {fileID: 519420031}
@@ -1363,6 +1363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitManager
   SelectedHero: {fileID: 0}
+  heroCount: 3
+  enemyCount: 3
 --- !u!1 &1738989179
 GameObject:
   m_ObjectHideFlags: 0

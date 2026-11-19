@@ -40,6 +40,7 @@ public abstract class Tile : MonoBehaviour
                 if (UnitManager.Instance.SelectedHero != null)
                 {
                     var enemy = (BaseEnemy)OccupiedUnit;
+                    UnitManager.Instance.UnregisterUnit(enemy);
                     Destroy(enemy.gameObject);
                     OccupiedUnit = null;
                     UnitManager.Instance.SetSelectedHero(null);

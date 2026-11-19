@@ -11,6 +11,8 @@ public class UnitManager : MonoBehaviour
     public BaseHero SelectedHero;
     [SerializeField] int heroCount = 3;
     [SerializeField] int enemyCount = 3;
+
+    private readonly List<BaseUnit> allUnits = new List<BaseUnit>();
     
     void Awake()
     {
@@ -24,6 +26,7 @@ public class UnitManager : MonoBehaviour
         foreach (var prefab in GetRandomUnit<BaseHero>(Faction.Hero, heroCount))
         {
             var spawnedHero = Instantiate(prefab);
+            RegisterUnit(spawnedHero);
             var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
 
             randomSpawnTile.SetUnit(spawnedHero);
@@ -37,6 +40,7 @@ public class UnitManager : MonoBehaviour
         foreach (var prefab in GetRandomUnit<BaseEnemy>(Faction.Enemy, enemyCount))
         {
             var spawnedEnemy = Instantiate(prefab);
+            RegisterUnit(spawnedEnemy);
             var randomSpawnTile = GridManager.Instance.GetEnemySpawnTile();
 
             randomSpawnTile.SetUnit(spawnedEnemy);
@@ -60,4 +64,9 @@ public class UnitManager : MonoBehaviour
         SelectedHero = hero;
         MenuManager.Instance.ShowSelectedHero(hero);
     }
+
+    public void RegisterUnit(BaseUnit unit) => allUnits.Add(unit);
+    public void UnregisterUnit(BaseUnit unit) => allUnits.Remove(unit);
+    
+    public IEnumerable<BaseUnit> GetUnits(Faction faction) => allUnits.Where(u => u.Faction == faction);
 }

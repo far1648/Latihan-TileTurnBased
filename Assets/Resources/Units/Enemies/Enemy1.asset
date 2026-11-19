@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1bb580d6448ee14a8c7ab94b17258ee, type: 3}
   m_Name: Enemy1
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
-  Faction: 0
+  Faction: 1
+  UnitPrefab: {fileID: 0}

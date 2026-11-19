@@ -21,6 +21,7 @@ public class TurnManager : MonoBehaviour
         actedUnits.Clear();
 
         UnitManager.Instance.SetSelectedHero(null);
+        UnitManager.Instance.SetSelectedEnemy(null);
     }
 
     public bool CanAct(BaseUnit unit)

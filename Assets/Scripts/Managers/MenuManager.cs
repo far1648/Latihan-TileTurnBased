@@ -4,7 +4,7 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    [SerializeField] private GameObject selectedHeroObject, tileObject, tileUnitObject;
+    [SerializeField] private GameObject selectedUnitObject, tileObject, tileUnitObject;
 
     void Awake()
     {
@@ -30,15 +30,16 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void ShowSelectedHero(BaseHero hero)
+    public void ShowSelectedUnit(BaseUnit unit)
     {
-        if (hero == null) 
+        if (unit == null) 
         {
-            selectedHeroObject.SetActive(false);
+            selectedUnitObject.SetActive(false);
             return;
         }
         
-        selectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = hero.UnitName;
-        selectedHeroObject.SetActive(true);
+        selectedUnitObject.GetComponentInChildren<TextMeshProUGUI>().text = unit.UnitName;
+        selectedUnitObject.SetActive(true);
     }
+
 }

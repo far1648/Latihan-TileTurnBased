@@ -9,6 +9,7 @@ public class UnitManager : MonoBehaviour
     private List<ScriptableUnit> units;
 
     public BaseHero SelectedHero;
+    public BaseEnemy SelectedEnemy;
     [SerializeField] int heroCount = 3;
     [SerializeField] int enemyCount = 3;
 
@@ -62,10 +63,17 @@ public class UnitManager : MonoBehaviour
     public void SetSelectedHero(BaseHero hero)
     {
         SelectedHero = hero;
-        MenuManager.Instance.ShowSelectedHero(hero);
+        MenuManager.Instance.ShowSelectedUnit(hero);
+    }
+
+    public void SetSelectedEnemy(BaseEnemy enemy)
+    {
+        SelectedEnemy = enemy;
+        MenuManager.Instance.ShowSelectedUnit(enemy);
     }
 
     public void RegisterUnit(BaseUnit unit) => allUnits.Add(unit);
+   
     public void UnregisterUnit(BaseUnit unit) => allUnits.Remove(unit);
     
     public IEnumerable<BaseUnit> GetUnits(Faction faction) => allUnits.Where(u => u.Faction == faction);

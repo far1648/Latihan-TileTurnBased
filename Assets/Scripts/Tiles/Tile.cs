@@ -4,7 +4,6 @@ public abstract class Tile : MonoBehaviour
 {
     public string TileName;
     [SerializeField] protected SpriteRenderer spriteRenderer;
-
     [SerializeField] private GameObject highlight;
     [SerializeField] private bool isWalkable;
 
@@ -30,8 +29,19 @@ public abstract class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
+        switch (GameManager.Instance.GameState)
+        {
+            case GameState.HeroesTurn:
+                HandleHeroTurnClick();
+                break;
+            case GameState.EnemiesTurn:
+                HandleEnemyTurnClick();
+                break;
+        }
+    }
 
+    private void HandleHeroTurnClick()
+    {
         var selected = UnitManager.Instance.SelectedHero;
 
         if (OccupiedUnit is BaseHero hero)
@@ -55,6 +65,35 @@ public abstract class Tile : MonoBehaviour
             SetUnit(selected);
 
             UnitManager.Instance.SetSelectedHero(null);
+            TurnManager.Instance.MarkActed(selected);
+        }
+    }
+
+    private void HandleEnemyTurnClick()
+    {
+        var selected = UnitManager.Instance.SelectedEnemy;
+
+        if (OccupiedUnit is BaseEnemy enemy)
+        {
+            if (TurnManager.Instance.CanAct(enemy))
+                UnitManager.Instance.SetSelectedEnemy(enemy);
+        }
+        else if (OccupiedUnit is BaseHero hero) 
+        {
+            if (selected == null) return;
+
+            UnitManager.Instance.UnregisterUnit(hero);
+            Destroy(hero.gameObject);
+            OccupiedUnit = null;
+
+            UnitManager.Instance.SetSelectedEnemy(null);
+            TurnManager.Instance.MarkActed(selected);
+        }
+        else if (selected != null && Walkable)
+        {
+            SetUnit(selected);
+
+            UnitManager.Instance.SetSelectedEnemy(null);
             TurnManager.Instance.MarkActed(selected);
         }
     }

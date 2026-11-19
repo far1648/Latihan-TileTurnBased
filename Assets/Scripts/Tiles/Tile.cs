@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public abstract class Tile : MonoBehaviour
 {
-    [SerializeField] private Color baseColor, offsetColor;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] protected SpriteRenderer spriteRenderer;
 
     [SerializeField] private GameObject highlight;
 
-    public void Init(bool isOffset)
+    public virtual void Init(int x, int y)
     {
-        spriteRenderer.color = isOffset ? offsetColor : baseColor;
+        
     }
 
     void OnMouseEnter()

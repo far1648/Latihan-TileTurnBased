@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class GrassTile : Tile
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Color baseColor, offsetColor;
 
-    // Update is called once per frame
-    void Update()
+    public override void Init(int x, int y)
     {
-        
+        var isOffset = (x + y) % 2 == 1; 
+        spriteRenderer.color = isOffset ? offsetColor : baseColor;
     }
 }

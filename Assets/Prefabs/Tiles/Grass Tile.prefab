@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7a90bba3888fd43b3d157d9f3e5f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrassTile
+  TileName: Grasslands
   spriteRenderer: {fileID: 1922455420715461727}
   highlight: {fileID: 1035023516676280888}
   isWalkable: 1

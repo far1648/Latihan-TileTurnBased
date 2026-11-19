@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3652553fba0102449103c6d0e8fac4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MountainTile
+  TileName: Mountains
   spriteRenderer: {fileID: 2678563974508314146}
   highlight: {fileID: 3592993841811505221}
   isWalkable: 0

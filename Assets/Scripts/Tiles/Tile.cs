@@ -2,12 +2,13 @@ using UnityEngine;
 
 public abstract class Tile : MonoBehaviour
 {
+    public string TileName;
     [SerializeField] protected SpriteRenderer spriteRenderer;
 
     [SerializeField] private GameObject highlight;
     [SerializeField] private bool isWalkable;
 
-    [SerializeField] public BaseUnit OccupiedUnit;
+    public BaseUnit OccupiedUnit;
     public bool Walkable => isWalkable && OccupiedUnit == null;
 
     public virtual void Init(int x, int y)
@@ -17,12 +18,42 @@ public abstract class Tile : MonoBehaviour
 
     void OnMouseEnter()
     {
-        highlight.SetActive(true);
+        if (highlight!=null) highlight.SetActive(true);
+        MenuManager.Instance.ShowTileInfo(this);
     }
 
     void OnMouseExit()
     {
-        highlight.SetActive(false);
+        if (highlight!=null) highlight.SetActive(false);
+        MenuManager.Instance.ShowTileInfo(null);
+    }
+
+    void OnMouseDown()
+    {
+        if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
+
+        if (OccupiedUnit != null)
+        {
+            if (OccupiedUnit.Faction == Faction.Hero) UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
+            else
+            {
+                if (UnitManager.Instance.SelectedHero != null)
+                {
+                    var enemy = (BaseEnemy)OccupiedUnit;
+                    Destroy(enemy.gameObject);
+                    OccupiedUnit = null;
+                    UnitManager.Instance.SetSelectedHero(null);
+                }
+            }
+        } 
+        else
+        {
+            if (UnitManager.Instance.SelectedHero!=null && Walkable)
+            {
+                SetUnit(UnitManager.Instance.SelectedHero);
+                UnitManager.Instance.SetSelectedHero(null);
+            }
+        }
     }
 
     public void SetUnit(BaseUnit unit)

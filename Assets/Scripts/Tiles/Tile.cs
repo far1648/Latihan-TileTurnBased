@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Tile : MonoBehaviour
@@ -105,5 +107,14 @@ public abstract class Tile : MonoBehaviour
         unit.transform.position = transform.position;
         OccupiedUnit = unit;
         unit.OccupiedTile = this;
+    }
+
+    public bool IsInRange(BaseUnit unit)
+    {
+        var from  = unit.OccupiedTile.transform.position;
+        var to = transform.position;
+
+        int distance = Mathf.RoundToInt(Mathf.Abs(from.x - to.x) + Mathf.Abs(from.y - to.y));
+        return distance <= unit.MaxStep;
     }
 }

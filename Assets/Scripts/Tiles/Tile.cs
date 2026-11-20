@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Tile : MonoBehaviour
@@ -69,7 +67,7 @@ public abstract class Tile : MonoBehaviour
             UnitManager.Instance.SetSelectedHero(null);
             TurnManager.Instance.MarkActed(selected);
         }
-        else if (selected != null && Walkable)
+        else if (selected != null)
         {
             if (!IsInMoveRange(selected))
             {
@@ -77,7 +75,7 @@ public abstract class Tile : MonoBehaviour
                 return;
             }
 
-            if (!isWalkable) return;
+            if (!Walkable) return;
 
             SetUnit(selected);
 
@@ -112,7 +110,7 @@ public abstract class Tile : MonoBehaviour
             UnitManager.Instance.SetSelectedEnemy(null);
             TurnManager.Instance.MarkActed(selected);
         }
-        else if (selected != null && Walkable)
+        else if (selected != null)
         {
             if (!IsInMoveRange(selected))
             {
@@ -120,7 +118,7 @@ public abstract class Tile : MonoBehaviour
                 return;
             }
 
-            if (!isWalkable) return;
+            if (!Walkable) return;
 
             SetUnit(selected);
 
@@ -145,5 +143,10 @@ public abstract class Tile : MonoBehaviour
 
         int distance = Mathf.RoundToInt(Mathf.Abs(from.x - to.x) + Mathf.Abs(from.y - to.y));
         return distance <= unit.MaxStep;
+    }
+
+    public void SetMoveHighlight(bool active)
+    {
+        if (moveHighlight != null) moveHighlight.SetActive(active);
     }
 }

@@ -88,7 +88,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5914921387354994869, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -101,9 +102,9 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
   m_PrefabInstance: {fileID: 8061275472865772469}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3592993841811505221 stripped
+--- !u!1 &4353535990847395848 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774407290497565680, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6031932609459493821, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
   m_PrefabInstance: {fileID: 8061275472865772469}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8395139988651076624 stripped
@@ -125,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MountainTile
   TileName: Mountains
   spriteRenderer: {fileID: 2678563974508314146}
-  highlight: {fileID: 3592993841811505221}
+  hoverHighlight: {fileID: 8395139988651076624}
+  moveHighlight: {fileID: 4353535990847395848}
   isWalkable: 0
   OccupiedUnit: {fileID: 0}

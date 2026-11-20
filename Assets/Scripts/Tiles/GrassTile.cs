@@ -8,5 +8,6 @@ public class GrassTile : Tile
     {
         var isOffset = (x + y) % 2 == 1; 
         spriteRenderer.color = isOffset ? offsetColor : baseColor;
+        SetMoveHighlight(true);
     }
 }

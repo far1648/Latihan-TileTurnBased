@@ -20,9 +20,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.4039216
       objectReference: {fileID: 0}
+    - target: {fileID: 698831650703928663, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1972259986490961829, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_Name
       value: Grass Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328109106353565500, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5919586453578442433, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,8 +72,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6031932609459493821, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_Name
+      value: MoveHighlight
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1972259986490961829, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7932056879296002153}
   m_SourcePrefab: {fileID: 100100000, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+--- !u!1 &282347240203962997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6031932609459493821, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  m_PrefabInstance: {fileID: 5791246414588072392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1035023516676280888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6774407290497565680, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  m_PrefabInstance: {fileID: 5791246414588072392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5404394235342650989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1972259986490961829, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  m_PrefabInstance: {fileID: 5791246414588072392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7932056879296002153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404394235342650989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a90bba3888fd43b3d157d9f3e5f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrassTile
+  TileName: Grasslands
+  spriteRenderer: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  hoverHighlight: {fileID: 1035023516676280888}
+  moveHighlight: {fileID: 282347240203962997}
+  isWalkable: 1
+  OccupiedUnit: {fileID: 0}
+  baseColor: {r: 0.34901962, g: 0.7490196, b: 0.3529412, a: 1}
+  offsetColor: {r: 0.31790665, g: 0.7169812, b: 0.32181922, a: 1}

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5919586453578442433}
   - component: {fileID: 5400744951489379735}
-  - component: {fileID: 5914921387354994869}
   - component: {fileID: 3670117952463493461}
   m_Layer: 0
   m_Name: Base Tile
@@ -86,7 +85,7 @@ SpriteRenderer:
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.34509805, g: 0.7490196, b: 0.3529412, a: 1}
+  m_Color: {r: 0.34901962, g: 0.7490196, b: 0.3529412, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,26 +95,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &5914921387354994869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972259986490961829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef7a90bba3888fd43b3d157d9f3e5f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GrassTile
-  TileName: Grasslands
-  spriteRenderer: {fileID: 5400744951489379735}
-  hoverHighlight: {fileID: 0}
-  moveHighlight: {fileID: 0}
-  isWalkable: 1
-  OccupiedUnit: {fileID: 0}
-  baseColor: {r: 0.34901962, g: 0.7490196, b: 0.3529412, a: 1}
-  offsetColor: {r: 0.31790665, g: 0.7169812, b: 0.32181922, a: 1}
 --- !u!61 &3670117952463493461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -244,7 +223,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.0051277876, g: 0, b: 1, a: 0.4509804}
+  m_Color: {r: 0.061, g: 0, b: 1, a: 0.4509804}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -336,7 +315,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.30980393}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

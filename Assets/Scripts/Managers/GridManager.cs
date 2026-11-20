@@ -58,4 +58,9 @@ public class GridManager : MonoBehaviour
         }
         return null;
     }
+
+    public IEnumerable<Tile> GetAllTiles()
+    {
+        return tiles.Values;
+    }
 }

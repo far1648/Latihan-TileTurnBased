@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1138199378478676587, guid: c620f97ac95c248409e2df0d3fe0083d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -108,3 +108,4 @@ MonoBehaviour:
   UnitName: Pisau
   OccupiedTile: {fileID: 0}
   Faction: 0
+  MaxStep: 3

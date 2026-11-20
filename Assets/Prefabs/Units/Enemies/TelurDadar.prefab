@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3352710163505623684, guid: f3da655104c82314cb069d5ccda79f24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -108,3 +108,4 @@ MonoBehaviour:
   UnitName: Telur Dadar
   OccupiedTile: {fileID: 0}
   Faction: 1
+  MaxStep: 3

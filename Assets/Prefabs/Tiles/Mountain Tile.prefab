@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 698831650703928663, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_Color.a
+      value: 0.41960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 698831650703928663, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_Color.b
+      value: 0.35247803
+      objectReference: {fileID: 0}
+    - target: {fileID: 698831650703928663, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_Color.g
+      value: 0.84276724
+      objectReference: {fileID: 0}
+    - target: {fileID: 698831650703928663, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8376036
+      objectReference: {fileID: 0}
     - target: {fileID: 1972259986490961829, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_Name
       value: Mountain Tile
@@ -66,6 +82,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5919586453578442433, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031932609459493821, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1987276458393394008, guid: 0ae2e193b464ef54f9db06c3daf95500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -108,3 +108,4 @@ MonoBehaviour:
   UnitName: Garpu
   OccupiedTile: {fileID: 0}
   Faction: 0
+  MaxStep: 3

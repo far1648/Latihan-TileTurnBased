@@ -15,4 +15,20 @@ public class BaseUnit : MonoBehaviour
     {
         CurrentHealth = MaxHealth;
     }
+
+    public void TakeDamage(int amount)
+    {
+        CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
+
+        if (CurrentHealth == 0) Die();
+    }
+
+    protected virtual void Die()
+    {
+        UnitManager.Instance.UnregisterUnit(this);
+
+        if (OccupiedTile != null) OccupiedTile.OccupiedUnit = null;
+
+        Destroy(gameObject);
+    }
 }

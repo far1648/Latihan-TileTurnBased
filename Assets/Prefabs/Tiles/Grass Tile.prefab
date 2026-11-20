@@ -32,6 +32,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34901962
+      objectReference: {fileID: 0}
     - target: {fileID: 5919586453578442433, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -94,6 +106,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6774407290497565680, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
   m_PrefabInstance: {fileID: 5791246414588072392}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1922455420715461727 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  m_PrefabInstance: {fileID: 5791246414588072392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5404394235342650989 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1972259986490961829, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
@@ -112,10 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrassTile
   TileName: Grasslands
-  spriteRenderer: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  spriteRenderer: {fileID: 1922455420715461727}
   hoverHighlight: {fileID: 1035023516676280888}
   moveHighlight: {fileID: 282347240203962997}
   isWalkable: 1
   OccupiedUnit: {fileID: 0}
   baseColor: {r: 0.34901962, g: 0.7490196, b: 0.3529412, a: 1}
-  offsetColor: {r: 0.31790665, g: 0.7169812, b: 0.32181922, a: 1}
+  offsetColor: {r: 0.31159756, g: 0.72327036, b: 0.31563362, a: 1}

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class BaseEnemy : BaseUnit
 {
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Faction = Faction.Enemy;
     }
 }

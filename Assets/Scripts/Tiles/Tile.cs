@@ -6,7 +6,8 @@ public abstract class Tile : MonoBehaviour
 {
     public string TileName;
     [SerializeField] protected SpriteRenderer spriteRenderer;
-    [SerializeField] private GameObject highlight;
+    [SerializeField] private GameObject hoverHighlight;
+    [SerializeField] private GameObject moveHighlight;
     [SerializeField] private bool isWalkable;
 
     public BaseUnit OccupiedUnit;
@@ -19,13 +20,13 @@ public abstract class Tile : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (highlight!=null) highlight.SetActive(true);
+        if (hoverHighlight!=null) hoverHighlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);
     }
 
     void OnMouseExit()
     {
-        if (highlight!=null) highlight.SetActive(false);
+        if (hoverHighlight!=null) hoverHighlight.SetActive(false);
         MenuManager.Instance.ShowTileInfo(null);
     }
 
@@ -68,7 +69,7 @@ public abstract class Tile : MonoBehaviour
             UnitManager.Instance.SetSelectedHero(null);
             TurnManager.Instance.MarkActed(selected);
         }
-        else if (selected != null && Walkable && IsInMoveRange(selected))
+        else if (selected != null && Walkable)
         {
             if (!IsInMoveRange(selected))
             {
@@ -111,7 +112,7 @@ public abstract class Tile : MonoBehaviour
             UnitManager.Instance.SetSelectedEnemy(null);
             TurnManager.Instance.MarkActed(selected);
         }
-        else if (selected != null && Walkable && IsInMoveRange(selected))
+        else if (selected != null && Walkable)
         {
             if (!IsInMoveRange(selected))
             {

@@ -60,9 +60,7 @@ public abstract class Tile : MonoBehaviour
                 return;
             }
 
-            UnitManager.Instance.UnregisterUnit(enemy);
-            Destroy(enemy.gameObject);
-            OccupiedUnit = null;
+            enemy.TakeDamage(selected.AttackPower);
 
             UnitManager.Instance.SetSelectedHero(null);
             TurnManager.Instance.MarkActed(selected);
@@ -103,9 +101,7 @@ public abstract class Tile : MonoBehaviour
                 return;
             }
 
-            UnitManager.Instance.UnregisterUnit(hero);
-            Destroy(hero.gameObject);
-            OccupiedUnit = null;
+            hero.TakeDamage(selected.AttackPower);
 
             UnitManager.Instance.SetSelectedEnemy(null);
             TurnManager.Instance.MarkActed(selected);

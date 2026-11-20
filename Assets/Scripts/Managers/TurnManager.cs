@@ -33,11 +33,24 @@ public class TurnManager : MonoBehaviour
     {
         actedUnits.Add(unit);
 
+        if (CheckGameOver()) return;
+
         bool anyoneLeft = UnitManager.Instance
             .GetUnits(ActiveFaction)
             .Any(u => !actedUnits.Contains(u));
 
         if (!anyoneLeft) EndTurn();
+    }
+
+    private bool CheckGameOver()
+    {
+        bool heroesAlive = UnitManager.Instance.GetUnits(Faction.Hero).Any();
+        bool enemyAlive = UnitManager.Instance.GetUnits(Faction.Enemy).Any();
+
+        if (heroesAlive && enemyAlive) return false;
+
+        GameManager.Instance.EndGame(heroesAlive ? Faction.Hero : Faction.Enemy);
+        return true;
     }
 
     private void EndTurn()

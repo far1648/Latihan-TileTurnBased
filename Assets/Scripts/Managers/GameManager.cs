@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameState GameState;
+    public Faction Winner {get; private set;}
 
     void Awake()
     {
@@ -14,6 +15,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ChangeState(GameState.GenerateGrid);
+    }
+
+    public void EndGame(Faction winner)
+    {
+        Winner = winner;
+        ChangeState(GameState.GameOver);
     }
 
     public void ChangeState(GameState newState)
@@ -37,7 +44,7 @@ public class GameManager : MonoBehaviour
                 TurnManager.Instance.StartTurn(Faction.Enemy);
                 break;
             case GameState.GameOver:
-                
+                MenuManager.Instance.ShowGameOver(Winner);  
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(GameState), newState, null);

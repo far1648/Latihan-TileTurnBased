@@ -4,7 +4,7 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    [SerializeField] private GameObject selectedUnitObject, tileObject, tileUnitObject;
+    [SerializeField] private GameObject selectedUnitObject, tileObject, tileUnitObject, gameOverObject;
 
     void Awake()
     {
@@ -42,4 +42,10 @@ public class MenuManager : MonoBehaviour
         selectedUnitObject.SetActive(true);
     }
 
+    public void ShowGameOver(Faction winner)
+    {
+        gameOverObject.GetComponentInChildren<TextMeshProUGUI>().text = 
+            winner == Faction.Hero ? "Hero Menang" : "Enemy Menang";
+        gameOverObject.SetActive(true);
+    }
 }

@@ -55,6 +55,12 @@ public abstract class Tile : MonoBehaviour
         {
             if (selected == null) return;
 
+            if (!IsInMoveRange(selected))
+            {
+                UnitManager.Instance.SetSelectedHero(null);
+                return;
+            }
+
             UnitManager.Instance.UnregisterUnit(enemy);
             Destroy(enemy.gameObject);
             OccupiedUnit = null;
@@ -62,8 +68,16 @@ public abstract class Tile : MonoBehaviour
             UnitManager.Instance.SetSelectedHero(null);
             TurnManager.Instance.MarkActed(selected);
         }
-        else if (selected != null && Walkable)
+        else if (selected != null && Walkable && IsInMoveRange(selected))
         {
+            if (!IsInMoveRange(selected))
+            {
+                UnitManager.Instance.SetSelectedHero(null);
+                return;
+            }
+
+            if (!isWalkable) return;
+
             SetUnit(selected);
 
             UnitManager.Instance.SetSelectedHero(null);
@@ -84,6 +98,12 @@ public abstract class Tile : MonoBehaviour
         {
             if (selected == null) return;
 
+            if (!IsInMoveRange(selected))
+            {
+                UnitManager.Instance.SetSelectedEnemy(null);
+                return;
+            }
+
             UnitManager.Instance.UnregisterUnit(hero);
             Destroy(hero.gameObject);
             OccupiedUnit = null;
@@ -91,8 +111,16 @@ public abstract class Tile : MonoBehaviour
             UnitManager.Instance.SetSelectedEnemy(null);
             TurnManager.Instance.MarkActed(selected);
         }
-        else if (selected != null && Walkable)
+        else if (selected != null && Walkable && IsInMoveRange(selected))
         {
+            if (!IsInMoveRange(selected))
+            {
+                UnitManager.Instance.SetSelectedEnemy(null);
+                return;
+            }
+
+            if (!isWalkable) return;
+
             SetUnit(selected);
 
             UnitManager.Instance.SetSelectedEnemy(null);
@@ -109,7 +137,7 @@ public abstract class Tile : MonoBehaviour
         unit.OccupiedTile = this;
     }
 
-    public bool IsInRange(BaseUnit unit)
+    public bool IsInMoveRange(BaseUnit unit)
     {
         var from  = unit.OccupiedTile.transform.position;
         var to = transform.position;

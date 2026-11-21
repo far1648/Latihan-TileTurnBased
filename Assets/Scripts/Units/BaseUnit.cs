@@ -18,6 +18,8 @@ public class BaseUnit : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        Debug.Log($"{name}: HP {CurrentHealth}/{MaxHealth}, damage {amount}");
+
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
 
         if (CurrentHealth == 0) Die();

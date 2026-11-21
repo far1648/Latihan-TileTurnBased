@@ -108,4 +108,9 @@ MonoBehaviour:
   UnitName: Sendok
   OccupiedTile: {fileID: 0}
   Faction: 0
-  MaxStep: 3
+  MaxStep: 5
+  CurrentStep: 0
+  AttackRange: 1
+  MaxHealth: 0
+  AttackPower: 0
+  MoveSpeed: 6

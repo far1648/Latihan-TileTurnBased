@@ -64,4 +64,14 @@ public class TurnManager : MonoBehaviour
 
         GameManager.Instance.ChangeState(nextState);
     }
+
+    public void EndTurnEarly()
+    {
+        if (IsBusy) return;
+
+        var state = GameManager.Instance.GameState;
+        if (state != GameState.HeroesTurn && state != GameState.EnemiesTurn) return;
+
+        EndTurn();
+    }
 }

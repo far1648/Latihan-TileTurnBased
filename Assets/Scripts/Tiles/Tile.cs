@@ -153,6 +153,8 @@ public abstract class Tile : MonoBehaviour
         OccupiedUnit = unit;
         unit.OccupiedTile = this;
 
+        MenuManager.Instance.RefreshTileInfo();
+
         unit.MoveAlong(path, onComplete);
     }
 

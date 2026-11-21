@@ -24,6 +24,8 @@ public class BaseUnit : MonoBehaviour
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
 
         if (CurrentHealth == 0) Die();
+
+        MenuManager.Instance.RefreshTileInfo();
     }
 
     protected virtual void Die()

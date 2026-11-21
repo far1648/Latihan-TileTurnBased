@@ -7,6 +7,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject selectedUnitObject, tileObject, tileUnitObject, gameOverObject;
     [SerializeField] private TextMeshProUGUI tileUnitNameText, tileUnitHpText, tileUnitAttText;
 
+    private Tile hoveredTile;
+
     void Awake()
     {
         Instance = this;
@@ -14,6 +16,8 @@ public class MenuManager : MonoBehaviour
 
     public void ShowTileInfo(Tile tile)
     {
+        hoveredTile = tile;
+
         if (tile == null)
         {
             tileObject.SetActive(false);
@@ -53,5 +57,10 @@ public class MenuManager : MonoBehaviour
         gameOverObject.GetComponentInChildren<TextMeshProUGUI>().text = 
             winner == Faction.Hero ? "Hero Menang" : "Enemy Menang";
         gameOverObject.SetActive(true);
+    }
+
+    public void RefreshTileInfo()
+    {
+        ShowTileInfo(hoveredTile);
     }
 }

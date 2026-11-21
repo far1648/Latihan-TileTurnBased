@@ -60,12 +60,19 @@ public class UnitManager : MonoBehaviour
             .ToList();
     }
 
-    private void UpdateMoveHighlights(BaseUnit unit)
+    private void UpdateHighlights(BaseUnit unit)
     {
         foreach (var tile in GridManager.Instance.GetAllTiles())
         {
-            bool show = unit != null && tile.Walkable && tile.IsInMoveRange(unit);
-            tile.SetMoveHighlight(show);
+            bool inRange = unit != null && tile.IsInMoveRange(unit);
+
+            bool canMove = inRange && tile.Walkable;
+            bool canAttack = inRange 
+                && tile.OccupiedUnit != null
+                && tile.OccupiedUnit.Faction != unit.Faction;
+
+            tile.SetMoveHighlight(canMove);
+            tile.SetAttackHighlight(canAttack);
         }
     }
 
@@ -73,14 +80,14 @@ public class UnitManager : MonoBehaviour
     {
         SelectedHero = hero;
         MenuManager.Instance.ShowSelectedUnit(hero);
-        UpdateMoveHighlights(hero);
+        UpdateHighlights(hero);
     }
 
     public void SetSelectedEnemy(BaseEnemy enemy)
     {
         SelectedEnemy = enemy;
         MenuManager.Instance.ShowSelectedUnit(enemy);
-        UpdateMoveHighlights(enemy);
+        UpdateHighlights(enemy);
     }
 
     public void RegisterUnit(BaseUnit unit) => allUnits.Add(unit);

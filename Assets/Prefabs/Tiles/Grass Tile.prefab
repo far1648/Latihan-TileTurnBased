@@ -114,6 +114,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6774407290497565680, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
   m_PrefabInstance: {fileID: 5791246414588072392}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1174108644878442907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4617850403625054291, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+  m_PrefabInstance: {fileID: 5791246414588072392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1922455420715461727 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
@@ -140,6 +145,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1922455420715461727}
   hoverHighlight: {fileID: 1035023516676280888}
   moveHighlight: {fileID: 282347240203962997}
+  attackHighlight: {fileID: 1174108644878442907}
   isWalkable: 1
   OccupiedUnit: {fileID: 0}
   baseColor: {r: 0.34901962, g: 0.7490196, b: 0.3529412, a: 1}

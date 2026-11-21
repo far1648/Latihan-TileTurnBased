@@ -7,6 +7,7 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject hoverHighlight;
     [SerializeField] private GameObject moveHighlight;
+    [SerializeField] private GameObject attackHighlight;
     [SerializeField] private bool isWalkable;
 
     public BaseUnit OccupiedUnit;
@@ -144,6 +145,12 @@ public abstract class Tile : MonoBehaviour
     {
         if (moveHighlight != null) moveHighlight.SetActive(active);
     }
+
+    public void SetAttackHighlight(bool active)
+    {
+        if (attackHighlight != null) attackHighlight.SetActive(active);
+    }
+
 
     public void MoveUnit(BaseUnit unit, System.Action onComplete = null)
     {

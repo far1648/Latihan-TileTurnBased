@@ -8,6 +8,8 @@ public class BaseUnit : MonoBehaviour
     public Tile OccupiedTile;
     public Faction Faction;
     public int MaxStep = 3;
+    public int CurrentStep;
+    public int AttackRange = 1;
 
     public int MaxHealth;
     public int CurrentHealth {get; set;}
@@ -17,6 +19,7 @@ public class BaseUnit : MonoBehaviour
     protected virtual void Awake()
     {
         CurrentHealth = MaxHealth;
+        CurrentStep = MaxStep;
     }
 
     public void TakeDamage(int amount)

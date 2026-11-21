@@ -18,6 +18,11 @@ public class TurnManager : MonoBehaviour
         ActiveFaction = faction;
         actedUnits.Clear();
 
+        foreach (var unit in UnitManager.Instance.GetUnits(faction))
+        {
+            unit.CurrentStep = unit.MaxStep;
+        }
+
         UnitManager.Instance.SetSelectedHero(null);
         UnitManager.Instance.SetSelectedEnemy(null);
     }

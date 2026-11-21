@@ -64,10 +64,11 @@ public class UnitManager : MonoBehaviour
     {
         foreach (var tile in GridManager.Instance.GetAllTiles())
         {
-            bool inRange = unit != null && tile.IsInMoveRange(unit);
+            bool inMoveRange = unit != null && tile.IsInMoveRange(unit);
+            bool inAttackRange = unit != null && tile.IsInAttackRange(unit);
 
-            bool canMove = inRange && tile.Walkable;
-            bool canAttack = inRange 
+            bool canMove = inMoveRange && tile.Walkable;
+            bool canAttack = inAttackRange 
                 && tile.OccupiedUnit != null
                 && tile.OccupiedUnit.Faction != unit.Faction;
 
@@ -95,4 +96,24 @@ public class UnitManager : MonoBehaviour
     public void UnregisterUnit(BaseUnit unit) => allUnits.Remove(unit);
     
     public IEnumerable<BaseUnit> GetUnits(Faction faction) => allUnits.Where(u => u.Faction == faction);
+
+    public bool CanStillAct(BaseUnit unit)
+    {
+        foreach (var tile in GridManager.Instance.GetAllTiles())
+        {
+            if (tile.Walkable && tile.IsInMoveRange(unit)) return true;
+
+            if (tile.IsInAttackRange(unit)
+                && tile.OccupiedUnit != null
+                && tile.OccupiedUnit.Faction != unit.Faction) return true;
+        }
+
+        return false;
+    }
+
+    public void SelectUnit(BaseUnit unit)
+    {
+        if (unit is BaseHero hero) SetSelectedHero(hero);
+        else if (unit is BaseEnemy enemy) SetSelectedEnemy(enemy);
+    }
 }

@@ -58,7 +58,7 @@ public abstract class Tile : MonoBehaviour
         {
             if (selected == null) return;
 
-            if (!IsInMoveRange(selected))
+            if (!IsInAttackRange(selected))
             {
                 UnitManager.Instance.SetSelectedHero(null);
                 return;
@@ -97,7 +97,7 @@ public abstract class Tile : MonoBehaviour
         {
             if (selected == null) return;
 
-            if (!IsInMoveRange(selected))
+            if (!IsInAttackRange(selected))
             {
                 UnitManager.Instance.SetSelectedEnemy(null);
                 return;
@@ -132,14 +132,16 @@ public abstract class Tile : MonoBehaviour
         unit.OccupiedTile = this;
     }
 
-    public bool IsInMoveRange(BaseUnit unit)
+    public int DistanceFrom(BaseUnit unit)
     {
-        var from  = unit.OccupiedTile.transform.position;
+        var from = unit.OccupiedTile.transform.position;
         var to = transform.position;
-
-        int distance = Mathf.RoundToInt(Mathf.Abs(from.x - to.x) + Mathf.Abs(from.y - to.y));
-        return distance <= unit.MaxStep;
+        return Mathf.RoundToInt(Mathf.Abs(from.x - to.x) + Mathf.Abs(from.y - to.y));
     }
+
+    public bool IsInMoveRange(BaseUnit unit) => DistanceFrom(unit) <= unit.CurrentStep;
+
+    public bool IsInAttackRange(BaseUnit unit) => DistanceFrom(unit) <= unit.AttackRange;
 
     public void SetMoveHighlight(bool active)
     {
@@ -155,6 +157,8 @@ public abstract class Tile : MonoBehaviour
     public void MoveUnit(BaseUnit unit, System.Action onComplete = null)
     {
         var path = BuildPath(unit.transform.position, transform.position);
+
+        unit.CurrentStep = Mathf.Max(0, unit.CurrentStep - DistanceFrom(unit));
 
         if (unit.OccupiedTile != null) unit.OccupiedTile.OccupiedUnit = null;
         OccupiedUnit = unit;
@@ -196,7 +200,9 @@ public abstract class Tile : MonoBehaviour
         MoveUnit(unit, () =>
         {
             TurnManager.Instance.IsBusy = false;
-            TurnManager.Instance.MarkActed(unit);
+
+            if (UnitManager.Instance.CanStillAct(unit)) UnitManager.Instance.SelectUnit(unit);
+            else TurnManager.Instance.MarkActed(unit);
         });
     }
 }

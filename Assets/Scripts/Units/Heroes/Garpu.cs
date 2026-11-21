@@ -6,6 +6,7 @@ public class Garpu : BaseHero
     {
         MaxHealth = 60;
         AttackPower = 20;
+        AttackRange = 2;
         base.Awake();
     }
 }

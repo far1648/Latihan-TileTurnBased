@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseUnit : MonoBehaviour
@@ -10,6 +12,7 @@ public class BaseUnit : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth {get; set;}
     public int AttackPower;
+    public float MoveSpeed = 6f;
 
     protected virtual void Awake()
     {
@@ -18,8 +21,6 @@ public class BaseUnit : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        Debug.Log($"{name}: HP {CurrentHealth}/{MaxHealth}, damage {amount}");
-
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
 
         if (CurrentHealth == 0) Die();
@@ -32,5 +33,26 @@ public class BaseUnit : MonoBehaviour
         if (OccupiedTile != null) OccupiedTile.OccupiedUnit = null;
 
         Destroy(gameObject);
+    }
+
+    public void MoveAlong(List<Vector3> path, System.Action onComplete = null)
+    {
+        StartCoroutine(MoveRoutine(path, onComplete));
+    }
+
+    private IEnumerator MoveRoutine(List<Vector3> path, System.Action onComplete)
+    {
+        foreach (var point in path)
+        {
+            while (transform.position != point)
+            {
+                transform.position = Vector3.MoveTowards(
+                    transform.position, point, MoveSpeed * Time.deltaTime
+                );
+                yield return null;
+            }
+        }
+
+        onComplete?.Invoke();
     }
 }

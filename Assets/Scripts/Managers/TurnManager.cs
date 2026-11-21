@@ -5,11 +5,9 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     public static TurnManager Instance;
-    
     public Faction ActiveFaction {get; private set;}
-
     private readonly HashSet<BaseUnit> actedUnits = new HashSet<BaseUnit>();
-
+    public bool IsBusy;
     void Awake()
     {
         Instance = this;

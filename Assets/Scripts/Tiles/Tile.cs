@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Tile : MonoBehaviour
@@ -30,6 +31,8 @@ public abstract class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (TurnManager.Instance.IsBusy) return;
+
         switch (GameManager.Instance.GameState)
         {
             case GameState.HeroesTurn:
@@ -75,10 +78,8 @@ public abstract class Tile : MonoBehaviour
 
             if (!Walkable) return;
 
-            SetUnit(selected);
-
             UnitManager.Instance.SetSelectedHero(null);
-            TurnManager.Instance.MarkActed(selected);
+            MoveAndFinish(selected);
         }
     }
 
@@ -116,10 +117,8 @@ public abstract class Tile : MonoBehaviour
 
             if (!Walkable) return;
 
-            SetUnit(selected);
-
             UnitManager.Instance.SetSelectedEnemy(null);
-            TurnManager.Instance.MarkActed(selected);
+            MoveAndFinish(selected);
         }
     }
 
@@ -144,5 +143,51 @@ public abstract class Tile : MonoBehaviour
     public void SetMoveHighlight(bool active)
     {
         if (moveHighlight != null) moveHighlight.SetActive(active);
+    }
+
+    public void MoveUnit(BaseUnit unit, System.Action onComplete = null)
+    {
+        var path = BuildPath(unit.transform.position, transform.position);
+
+        if (unit.OccupiedTile != null) unit.OccupiedTile.OccupiedUnit = null;
+        OccupiedUnit = unit;
+        unit.OccupiedTile = this;
+
+        unit.MoveAlong(path, onComplete);
+    }
+
+    private List<Vector3> BuildPath(Vector3 from, Vector3 to)
+    {
+        var path = new List<Vector3>();
+
+        int x = Mathf.RoundToInt(from.x);
+        int y = Mathf.RoundToInt(from.y);
+        int targetX = Mathf.RoundToInt(to.x);
+        int targetY = Mathf.RoundToInt(to.y);
+
+        while (x!=targetX)
+        {
+            x += x < targetX? 1 : -1;
+            path.Add(new Vector3(x, y, to.z));
+        }
+
+        while (y!=targetY)
+        {
+            y += y < targetY? 1 : -1;
+            path.Add(new Vector3(x, y, to.z));
+        }
+
+        return path;
+    }
+
+    private void MoveAndFinish(BaseUnit unit)
+    {
+        TurnManager.Instance.IsBusy = true;
+
+        MoveUnit(unit, () =>
+        {
+            TurnManager.Instance.IsBusy = false;
+            TurnManager.Instance.MarkActed(unit);
+        });
     }
 }

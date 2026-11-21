@@ -5,6 +5,7 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
     [SerializeField] private GameObject selectedUnitObject, tileObject, tileUnitObject, gameOverObject;
+    [SerializeField] private TextMeshProUGUI tileUnitNameText, tileUnitHpText, tileUnitAttText;
 
     void Awake()
     {
@@ -25,7 +26,12 @@ public class MenuManager : MonoBehaviour
 
         if (tile.OccupiedUnit)
         {
-            tileUnitObject.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.UnitName;
+            var unit = tile.OccupiedUnit;
+
+            tileUnitNameText.text = unit.UnitName;
+            tileUnitHpText.text = $"HP {unit.CurrentHealth}/{unit.MaxHealth}";
+            tileUnitAttText.text = $"ATT {unit.AttackPower}";
+
             tileUnitObject.SetActive(true);
         }
     }

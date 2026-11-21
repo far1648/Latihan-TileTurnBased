@@ -10,6 +10,9 @@ public class UnitManager : MonoBehaviour
 
     public BaseHero SelectedHero;
     public BaseEnemy SelectedEnemy;
+
+    public Dictionary<Tile, Tile> Reachable {get; private set;} = new Dictionary<Tile, Tile>();
+
     [SerializeField] int heroCount = 3;
     [SerializeField] int enemyCount = 3;
 
@@ -62,13 +65,15 @@ public class UnitManager : MonoBehaviour
 
     private void UpdateHighlights(BaseUnit unit)
     {
+        Reachable = unit!= null
+            ? GridManager.Instance.FindReachable(unit.OccupiedTile, unit.CurrentStep)
+            : new Dictionary<Tile, Tile>();
+            
         foreach (var tile in GridManager.Instance.GetAllTiles())
         {
-            bool inMoveRange = unit != null && tile.IsInMoveRange(unit);
-            bool inAttackRange = unit != null && tile.IsInAttackRange(unit);
-
-            bool canMove = inMoveRange && tile.Walkable;
-            bool canAttack = inAttackRange 
+            bool canMove = Reachable.ContainsKey(tile) && tile.Walkable;
+            bool canAttack = unit != null
+                && tile.IsInAttackRange(unit)
                 && tile.OccupiedUnit != null
                 && tile.OccupiedUnit.Faction != unit.Faction;
 
@@ -99,10 +104,11 @@ public class UnitManager : MonoBehaviour
 
     public bool CanStillAct(BaseUnit unit)
     {
+        var reachable = GridManager.Instance.FindReachable(unit.OccupiedTile, unit.CurrentStep);
+        if (reachable.Count > 1) return true;
+
         foreach (var tile in GridManager.Instance.GetAllTiles())
         {
-            if (tile.Walkable && tile.IsInMoveRange(unit)) return true;
-
             if (tile.IsInAttackRange(unit)
                 && tile.OccupiedUnit != null
                 && tile.OccupiedUnit.Faction != unit.Faction) return true;

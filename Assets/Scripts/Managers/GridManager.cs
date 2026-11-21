@@ -13,6 +13,9 @@ public class GridManager : MonoBehaviour
 
     private Dictionary<Vector2, Tile> tiles;
 
+    private static readonly Vector2[] Directions = 
+        { Vector2.up, Vector2.down, Vector2.left, Vector2.right } ;
+
     void Awake()
     {
         Instance = this;
@@ -62,5 +65,52 @@ public class GridManager : MonoBehaviour
     public IEnumerable<Tile> GetAllTiles()
     {
         return tiles.Values;
+    }
+
+    private IEnumerable<Tile> GetNeighbours(Tile tile)
+    {
+        Vector2 pos = tile.transform.position;
+        
+        foreach (var dir in Directions)
+        {
+            var neighbour = GetTileAtPosition(pos + dir);
+            if (neighbour != null) yield return neighbour;
+        }
+    }
+
+    public Dictionary<Tile, Tile> FindReachable(Tile start, int maxSteps)
+    {
+        var cameFrom = new Dictionary<Tile, Tile> { [start] = null };
+        var distance = new Dictionary<Tile, int> { [start] = 0 };
+        var queue = new Queue<Tile>();
+        queue.Enqueue(start);
+
+        while (queue.Count > 0)
+        {
+            var current = queue.Dequeue();
+            if (distance[current] >= maxSteps) continue;
+
+            foreach (var next in GetNeighbours(current))
+            {
+                if (cameFrom.ContainsKey(next) || !next.Walkable) continue;
+
+                cameFrom[next] = current;
+                distance[next] = distance[current] + 1;
+                queue.Enqueue(next);
+            }
+        }
+
+        return cameFrom;
+    }
+
+    public List<Vector3> BuildPath(Dictionary<Tile, Tile> cameFrom, Tile target)
+    {
+        var path = new List<Vector3>();
+
+        for (var tile = target; cameFrom[tile] != null; tile = cameFrom[tile])
+            path.Add(tile.transform.position);
+        
+        path.Reverse();
+        return path;
     }
 }

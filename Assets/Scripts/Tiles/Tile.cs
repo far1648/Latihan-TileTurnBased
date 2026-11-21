@@ -71,7 +71,7 @@ public abstract class Tile : MonoBehaviour
         }
         else if (selected != null)
         {
-            if (!IsInMoveRange(selected))
+            if (!UnitManager.Instance.Reachable.ContainsKey(this))
             {
                 UnitManager.Instance.SetSelectedHero(null);
                 return;
@@ -79,8 +79,10 @@ public abstract class Tile : MonoBehaviour
 
             if (!Walkable) return;
 
+            var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, this);
+
             UnitManager.Instance.SetSelectedHero(null);
-            MoveAndFinish(selected);
+            MoveAndFinish(selected, path);
         }
     }
 
@@ -110,7 +112,7 @@ public abstract class Tile : MonoBehaviour
         }
         else if (selected != null)
         {
-            if (!IsInMoveRange(selected))
+            if (!UnitManager.Instance.Reachable.ContainsKey(this))
             {
                 UnitManager.Instance.SetSelectedEnemy(null);
                 return;
@@ -118,8 +120,10 @@ public abstract class Tile : MonoBehaviour
 
             if (!Walkable) return;
 
+            var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, this);
+
             UnitManager.Instance.SetSelectedEnemy(null);
-            MoveAndFinish(selected);
+            MoveAndFinish(selected, path);
         }
     }
 
@@ -139,8 +143,6 @@ public abstract class Tile : MonoBehaviour
         return Mathf.RoundToInt(Mathf.Abs(from.x - to.x) + Mathf.Abs(from.y - to.y));
     }
 
-    public bool IsInMoveRange(BaseUnit unit) => DistanceFrom(unit) <= unit.CurrentStep;
-
     public bool IsInAttackRange(BaseUnit unit) => DistanceFrom(unit) <= unit.AttackRange;
 
     public void SetMoveHighlight(bool active)
@@ -153,12 +155,9 @@ public abstract class Tile : MonoBehaviour
         if (attackHighlight != null) attackHighlight.SetActive(active);
     }
 
-
-    public void MoveUnit(BaseUnit unit, System.Action onComplete = null)
+    public void MoveUnit(BaseUnit unit, List<Vector3> path, System.Action onComplete = null)
     {
-        var path = BuildPath(unit.transform.position, transform.position);
-
-        unit.CurrentStep = Mathf.Max(0, unit.CurrentStep - DistanceFrom(unit));
+        unit.CurrentStep = Mathf.Max(0, unit.CurrentStep - path.Count);
 
         if (unit.OccupiedTile != null) unit.OccupiedTile.OccupiedUnit = null;
         OccupiedUnit = unit;
@@ -169,39 +168,16 @@ public abstract class Tile : MonoBehaviour
         unit.MoveAlong(path, onComplete);
     }
 
-    private List<Vector3> BuildPath(Vector3 from, Vector3 to)
-    {
-        var path = new List<Vector3>();
-
-        int x = Mathf.RoundToInt(from.x);
-        int y = Mathf.RoundToInt(from.y);
-        int targetX = Mathf.RoundToInt(to.x);
-        int targetY = Mathf.RoundToInt(to.y);
-
-        while (x!=targetX)
-        {
-            x += x < targetX? 1 : -1;
-            path.Add(new Vector3(x, y, to.z));
-        }
-
-        while (y!=targetY)
-        {
-            y += y < targetY? 1 : -1;
-            path.Add(new Vector3(x, y, to.z));
-        }
-
-        return path;
-    }
-
-    private void MoveAndFinish(BaseUnit unit)
+    private void MoveAndFinish(BaseUnit unit, List<Vector3> path)
     {
         TurnManager.Instance.IsBusy = true;
 
-        MoveUnit(unit, () =>
+        MoveUnit(unit, path, () =>
         {
             TurnManager.Instance.IsBusy = false;
 
-            if (UnitManager.Instance.CanStillAct(unit)) UnitManager.Instance.SelectUnit(unit);
+            if (UnitManager.Instance.CanStillAct(unit)) 
+                UnitManager.Instance.SelectUnit(unit);
             else TurnManager.Instance.MarkActed(unit);
         });
     }

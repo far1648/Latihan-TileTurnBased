@@ -9,6 +9,7 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject moveHighlight;
     [SerializeField] private GameObject attackHighlight;
     [SerializeField] private bool isWalkable;
+    public bool IsTerrainWalkable => isWalkable;
     [SerializeField] private Color threatColor = new Color(1f, 0.55f, 0f, 0.35f);
     [SerializeField] private Color targetColor = new Color(1f, 0f, 0f, 0.5f);
 

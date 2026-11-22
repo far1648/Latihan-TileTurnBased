@@ -86,7 +86,8 @@ public class UnitManager : MonoBehaviour
 
             var mode = AttackHighlightMode.None;
             if (canAttack) mode = AttackHighlightMode.Target;
-            else if (!canMove && !isAlly && threat.Contains(tile)) mode = AttackHighlightMode.Threat;
+            else if (!canMove && !isAlly && tile.IsTerrainWalkable && threat.Contains(tile)) 
+                mode = AttackHighlightMode.Threat;
 
             tile.SetMoveHighlight(canMove);
             tile.SetAttackHighlight(mode);

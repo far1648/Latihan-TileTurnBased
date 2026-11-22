@@ -37,6 +37,10 @@ public class MenuManager : MonoBehaviour
             tileUnitAttText.text = $"ATT {unit.AttackPower}";
 
             tileUnitObject.SetActive(true);
+        } 
+        else
+        {
+            tileUnitObject.SetActive(false);
         }
     }
 

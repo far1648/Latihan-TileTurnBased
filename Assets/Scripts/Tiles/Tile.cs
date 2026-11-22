@@ -9,6 +9,8 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject moveHighlight;
     [SerializeField] private GameObject attackHighlight;
     [SerializeField] private bool isWalkable;
+    [SerializeField] private Color threatColor = new Color(1f, 0.55f, 0f, 0.35f);
+    [SerializeField] private Color targetColor = new Color(1f, 0f, 0f, 0.5f);
 
     public BaseUnit OccupiedUnit;
     public bool Walkable => isWalkable && OccupiedUnit == null;
@@ -143,6 +145,13 @@ public abstract class Tile : MonoBehaviour
         return Mathf.RoundToInt(Mathf.Abs(from.x - to.x) + Mathf.Abs(from.y - to.y));
     }
 
+    public int DistanceTo(Tile other)
+    {
+        var a = transform.position;
+        var b = other.transform.position;
+        return Mathf.RoundToInt(Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y));
+    }
+
     public bool IsInAttackRange(BaseUnit unit) => DistanceFrom(unit) <= unit.AttackRange;
 
     public void SetMoveHighlight(bool active)
@@ -150,9 +159,16 @@ public abstract class Tile : MonoBehaviour
         if (moveHighlight != null) moveHighlight.SetActive(active);
     }
 
-    public void SetAttackHighlight(bool active)
+    public void SetAttackHighlight(AttackHighlightMode mode)
     {
-        if (attackHighlight != null) attackHighlight.SetActive(active);
+        if (attackHighlight == null) return;
+
+        attackHighlight.SetActive(mode != AttackHighlightMode.None);
+        if (mode == AttackHighlightMode.None) return;
+
+        var sr = attackHighlight.GetComponent<SpriteRenderer>();
+        if (sr != null) 
+            sr.color = mode == AttackHighlightMode.Target ? targetColor : threatColor;
     }
 
     public void MoveUnit(BaseUnit unit, List<Vector3> path, System.Action onComplete = null)
@@ -181,4 +197,12 @@ public abstract class Tile : MonoBehaviour
             else TurnManager.Instance.MarkActed(unit);
         });
     }
+
 }
+
+public enum AttackHighlightMode
+    {
+        None,
+        Threat,
+        Target
+    }

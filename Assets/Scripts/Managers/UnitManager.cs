@@ -68,18 +68,45 @@ public class UnitManager : MonoBehaviour
         Reachable = unit!= null
             ? GridManager.Instance.FindReachable(unit.OccupiedTile, unit.CurrentStep)
             : new Dictionary<Tile, Tile>();
-            
+        
+        var threat = unit != null ? GetThreatTiles(unit) : new HashSet<Tile>();
+
         foreach (var tile in GridManager.Instance.GetAllTiles())
         {
             bool canMove = Reachable.ContainsKey(tile) && tile.Walkable;
+
             bool canAttack = unit != null
                 && tile.IsInAttackRange(unit)
                 && tile.OccupiedUnit != null
                 && tile.OccupiedUnit.Faction != unit.Faction;
 
+            bool isAlly = unit != null
+                && tile.OccupiedUnit != null
+                && tile.OccupiedUnit.Faction == unit.Faction;
+
+            var mode = AttackHighlightMode.None;
+            if (canAttack) mode = AttackHighlightMode.Target;
+            else if (!canMove && !isAlly && threat.Contains(tile)) mode = AttackHighlightMode.Threat;
+
             tile.SetMoveHighlight(canMove);
-            tile.SetAttackHighlight(canAttack);
+            tile.SetAttackHighlight(mode);
         }
+    }
+
+    private HashSet<Tile> GetThreatTiles(BaseUnit unit)
+    {
+        var threat = new HashSet<Tile>();
+        var allTiles = GridManager.Instance.GetAllTiles().ToList();
+
+        foreach (var origin in Reachable.Keys)
+        {
+            foreach (var tile in allTiles)
+            {
+                if (origin.DistanceTo(tile) <= unit.AttackRange) threat.Add(tile);
+            }
+        }
+
+        return threat;
     }
 
     public void SetSelectedHero(BaseHero hero)

@@ -82,11 +82,11 @@ public abstract class Tile : MonoBehaviour
                 var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, position);
                 
                 UnitManager.Instance.SetSelectedHero(null);
-                position.MoveAndFinish(selected, path);
+                UnitActions.Move(selected, this, path, () => UnitActions.ContinueOrFinish(selected));
                 return;
             }
 
-            enemy.TakeDamage(selected.AttackPower);
+            UnitActions.Attack(selected, enemy);
 
             UnitManager.Instance.SetSelectedHero(null);
             TurnManager.Instance.MarkActed(selected);
@@ -110,7 +110,7 @@ public abstract class Tile : MonoBehaviour
             var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, this);
 
             UnitManager.Instance.SetSelectedHero(null);
-            MoveAndFinish(selected, path);
+            UnitActions.Move(selected, this, path, () => UnitActions.ContinueOrFinish(selected));
         }
     }
 
@@ -146,11 +146,11 @@ public abstract class Tile : MonoBehaviour
                 var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, position);
                 
                 UnitManager.Instance.SetSelectedEnemy(null);
-                position.MoveAndFinish(selected, path);
+                UnitActions.Move(selected, this, path, () => UnitActions.ContinueOrFinish(selected));
                 return;
             }
 
-            hero.TakeDamage(selected.AttackPower);
+            UnitActions.Attack(selected, hero);
 
             UnitManager.Instance.SetSelectedEnemy(null);
             TurnManager.Instance.MarkActed(selected);
@@ -174,7 +174,7 @@ public abstract class Tile : MonoBehaviour
             var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, this);
 
             UnitManager.Instance.SetSelectedEnemy(null);
-            MoveAndFinish(selected, path);
+            UnitActions.Move(selected, this, path, () => UnitActions.ContinueOrFinish(selected));
         }
     }
 
@@ -252,19 +252,7 @@ public abstract class Tile : MonoBehaviour
         unit.MoveAlong(path, onComplete);
     }
 
-    private void MoveAndFinish(BaseUnit unit, List<Vector3> path)
-    {
-        TurnManager.Instance.IsBusy = true;
-
-        MoveUnit(unit, path, () =>
-        {
-            TurnManager.Instance.IsBusy = false;
-
-            if (UnitManager.Instance.CanStillAct(unit)) 
-                UnitManager.Instance.SelectUnit(unit);
-            else TurnManager.Instance.MarkActed(unit);
-        });
-    }
+    
 
 }
 

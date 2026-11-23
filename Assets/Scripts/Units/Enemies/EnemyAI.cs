@@ -56,19 +56,7 @@ public class EnemyAI : MonoBehaviour
         UnitManager.Instance.SelectUnit(enemy);
         yield return new WaitForSeconds(unitDelay);
 
-        BaseUnit target = null;
-        Tile position = null;
-
-        foreach (var hero in UnitManager.Instance.GetUnits(Faction.Hero)
-                    .OrderBy(h => h.OccupiedTile.DistanceTo(enemy.OccupiedTile)))
-        {
-            position = UnitManager.Instance.FindAttackPosition(enemy, hero.OccupiedTile);
-            if (position != null)
-            {
-                target = hero;
-                break;
-            }
-        }
+        var target = PickTarget(enemy, out var position);
 
         if (target == null)
         {
@@ -95,6 +83,38 @@ public class EnemyAI : MonoBehaviour
         if (TurnManager.Instance.CanAct(enemy))
             TurnManager.Instance.MarkActed(enemy);
 
+    }
+
+    private BaseUnit PickTarget(BaseUnit enemy, out Tile position)
+    {
+        BaseUnit best = null;
+        position = null;
+
+        foreach (var hero in UnitManager.Instance.GetUnits(Faction.Hero))
+        {
+            var attackTile = UnitManager.Instance.FindAttackPosition(enemy, hero.OccupiedTile);
+            if (attackTile == null) continue;
+            
+            if (best == null || IsBetterTarget(enemy, hero, best))
+            {
+                best = hero;
+                position = attackTile;
+            }
+        }
+
+        return best;
+    }
+
+    private bool IsBetterTarget(BaseUnit attacker, BaseUnit a, BaseUnit b)
+    {
+        bool aKill = a.CurrentHealth <= attacker.AttackPower;
+        bool bKill = b.CurrentHealth <= attacker.AttackPower;
+        if (aKill != bKill) return aKill;
+
+        if (a.CurrentHealth != b.CurrentHealth) return a.CurrentHealth < b.CurrentHealth;
+
+        var from = attacker.OccupiedTile;
+        return a.OccupiedTile.DistanceTo(from) < b.OccupiedTile.DistanceTo(from);
     }
 
     private IEnumerator Approach(BaseUnit enemy)

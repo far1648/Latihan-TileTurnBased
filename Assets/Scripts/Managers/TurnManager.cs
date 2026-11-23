@@ -8,6 +8,8 @@ public class TurnManager : MonoBehaviour
     public Faction ActiveFaction {get; private set;}
     private readonly HashSet<BaseUnit> actedUnits = new HashSet<BaseUnit>();
     public bool IsBusy;
+    public bool AITurnRunning;
+    public bool InputBlocked => IsBusy || AITurnRunning;
     void Awake()
     {
         Instance = this;
@@ -67,7 +69,7 @@ public class TurnManager : MonoBehaviour
 
     public void EndTurnEarly()
     {
-        if (IsBusy) return;
+        if (InputBlocked) return;
 
         var state = GameManager.Instance.GameState;
         if (state != GameState.HeroesTurn && state != GameState.EnemiesTurn) return;

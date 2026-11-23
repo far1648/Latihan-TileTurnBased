@@ -103,6 +103,28 @@ public class GridManager : MonoBehaviour
         return cameFrom;
     }
 
+    public Dictionary<Tile, int> FindDistanceMap(Tile source)
+    {
+        var distance = new Dictionary<Tile, int>() {[source] = 0};
+        var queue = new Queue<Tile>();
+        queue.Enqueue(source);
+
+        while (queue.Count > 0)
+        {
+            var current = queue.Dequeue();
+
+            foreach (var next in GetNeighbours(current))
+            {
+                if (distance.ContainsKey(next) || !next.IsTerrainWalkable) continue;
+
+                distance[next] = distance[current] + 1;
+                queue.Enqueue(next);
+            }
+        } 
+
+        return distance;
+    }
+
     public List<Vector3> BuildPath(Dictionary<Tile, Tile> cameFrom, Tile target)
     {
         var path = new List<Vector3>();

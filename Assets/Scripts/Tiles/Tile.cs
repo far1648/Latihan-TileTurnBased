@@ -38,7 +38,7 @@ public abstract class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (TurnManager.Instance.IsBusy) return;
+        if (TurnManager.Instance.InputBlocked) return;
 
         switch (GameManager.Instance.GameState)
         {

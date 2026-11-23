@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.EnemiesTurn:
                 TurnManager.Instance.StartTurn(Faction.Enemy);
+                if (EnemyAI.Instance != null && EnemyAI.Instance.UseAI) {
+                    EnemyAI.Instance.BeginTurn();
+                }
                 break;
             case GameState.GameOver:
                 MenuManager.Instance.ShowGameOver(Winner);  

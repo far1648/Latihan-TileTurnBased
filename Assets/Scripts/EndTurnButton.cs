@@ -20,7 +20,7 @@ public class EndTurnButton : MonoBehaviour, IDeselectHandler
         var state = GameManager.Instance.GameState;
         bool isTurn = state == GameState.HeroesTurn || state == GameState.EnemiesTurn;
 
-        if (!isTurn || TurnManager.Instance.IsBusy) return;
+        if (!isTurn || TurnManager.Instance.InputBlocked) return;
 
         if (!armed)
         {

@@ -30,6 +30,9 @@ public class UnitManager : MonoBehaviour
     {
         foreach (var prefab in GetRandomUnit<BaseHero>(Faction.Hero, heroCount))
         {
+            var spawnTile = GridManager.Instance.GetHeroSpawnTile();
+            if (spawnTile == null) break;
+
             var spawnedHero = Instantiate(prefab);
             RegisterUnit(spawnedHero);
             var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
@@ -42,8 +45,12 @@ public class UnitManager : MonoBehaviour
 
     public void SpawnEnemies()
     {
+        
         foreach (var prefab in GetRandomUnit<BaseEnemy>(Faction.Enemy, enemyCount))
         {
+            var spawnTile = GridManager.Instance.GetHeroSpawnTile();
+            if (spawnTile == null) break;
+            
             var spawnedEnemy = Instantiate(prefab);
             RegisterUnit(spawnedEnemy);
             var randomSpawnTile = GridManager.Instance.GetEnemySpawnTile();

@@ -20,6 +20,8 @@ public class TurnManager : MonoBehaviour
         ActiveFaction = faction;
         actedUnits.Clear();
 
+        if (faction == Faction.Hero) AITurnRunning = false;
+        
         foreach (var unit in UnitManager.Instance.GetUnits(faction))
         {
             unit.CurrentStep = unit.MaxStep;

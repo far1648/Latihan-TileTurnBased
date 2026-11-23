@@ -175,4 +175,35 @@ public class UnitManager : MonoBehaviour
         if (unit is BaseHero hero) SetSelectedHero(hero);
         else if (unit is BaseEnemy enemy) SetSelectedEnemy(enemy);
     }
+
+    private int StepsTo(Tile tile)
+    {
+        int steps = 0;
+        for (var t = tile; Reachable[t] != null; t = Reachable[t]) steps++;
+        return steps;
+    }
+
+    public Tile FindAttackPosition(BaseUnit unit, Tile target)
+    {
+        Tile best = null;
+        int bestSteps = int.MaxValue;
+        int bestDistance = -1;
+
+        foreach (var tile in Reachable.Keys)
+        {
+            int distance = tile.DistanceTo(target);
+            if (distance >= unit.AttackRange) continue;
+
+            int steps = StepsTo(tile);
+
+            if (steps < bestSteps || (steps < bestSteps && distance < bestDistance))
+            {
+                best = tile;
+                bestSteps = steps;
+                bestDistance = distance;
+            }
+        }
+
+        return best;
+    }
 }

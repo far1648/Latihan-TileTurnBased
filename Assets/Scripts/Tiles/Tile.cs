@@ -66,7 +66,23 @@ public abstract class Tile : MonoBehaviour
 
             if (!IsInAttackRange(selected))
             {
+                var position = UnitManager.Instance.FindAttackPosition(selected, this);
+
+                if (position == null) {
+                    UnitManager.Instance.SetSelectedHero(null);
+                    return;
+                }
+
+                if (UnitManager.Instance.PendingMoveTile != position)
+                {
+                    UnitManager.Instance.PreviewMove(position);
+                    return;
+                }
+
+                var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, position);
+                
                 UnitManager.Instance.SetSelectedHero(null);
+                position.MoveAndFinish(selected, path);
                 return;
             }
 
@@ -113,7 +129,24 @@ public abstract class Tile : MonoBehaviour
 
             if (!IsInAttackRange(selected))
             {
+                var position = UnitManager.Instance.FindAttackPosition(selected, this);
+
+                if (position == null)
+                {
+                    UnitManager.Instance.SetSelectedEnemy(null);
+                    return;
+                }
+
+                if (UnitManager.Instance.PendingMoveTile != position)
+                {
+                    UnitManager.Instance.PreviewMove(position);
+                    return;
+                }
+
+                var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, position);
+                
                 UnitManager.Instance.SetSelectedEnemy(null);
+                position.MoveAndFinish(selected, path);
                 return;
             }
 

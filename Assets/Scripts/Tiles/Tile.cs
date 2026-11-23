@@ -82,14 +82,12 @@ public abstract class Tile : MonoBehaviour
                 var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, position);
                 
                 UnitManager.Instance.SetSelectedHero(null);
-                UnitActions.Move(selected, this, path, () => UnitActions.ContinueOrFinish(selected));
+                UnitActions.MoveAndAttack(selected, position, path, enemy);
                 return;
             }
 
+            UnitManager.Instance.SetSelectedHero(null); 
             UnitActions.Attack(selected, enemy);
-
-            UnitManager.Instance.SetSelectedHero(null);
-            TurnManager.Instance.MarkActed(selected);
         }
         else if (selected != null)
         {
@@ -146,14 +144,12 @@ public abstract class Tile : MonoBehaviour
                 var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, position);
                 
                 UnitManager.Instance.SetSelectedEnemy(null);
-                UnitActions.Move(selected, this, path, () => UnitActions.ContinueOrFinish(selected));
+                UnitActions.MoveAndAttack(selected, position, path, hero);
                 return;
             }
 
-            UnitActions.Attack(selected, hero);
-
             UnitManager.Instance.SetSelectedEnemy(null);
-            TurnManager.Instance.MarkActed(selected);
+            UnitActions.Attack(selected, hero);
         }
         else if (selected != null)
         {

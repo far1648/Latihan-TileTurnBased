@@ -8,6 +8,7 @@ public static class UnitActions
         target.TakeDamage(attacker.AttackPower);
         TurnManager.Instance.MarkActed(attacker);
     }
+
     public static void Move(BaseUnit unit, Tile destination, List<Vector3> path, System.Action onArrive = null)
     {
         TurnManager.Instance.IsBusy = true;
@@ -25,5 +26,22 @@ public static class UnitActions
             UnitManager.Instance.SelectUnit(unit);
         else 
             TurnManager.Instance.MarkActed(unit);
+    }
+
+    public static void MoveAndAttack(BaseUnit unit, Tile destination, List<Vector3> path, BaseUnit target) 
+    {
+        Move(unit, destination, path, () =>
+        {
+            if (target != null
+                && target.OccupiedTile != null
+                && target.OccupiedTile.IsInAttackRange(unit))
+            {
+                Attack(unit, target);
+            }
+            else
+            {
+                ContinueOrFinish(unit);
+            }
+        });
     }
 }

@@ -192,11 +192,11 @@ public class UnitManager : MonoBehaviour
         foreach (var tile in Reachable.Keys)
         {
             int distance = tile.DistanceTo(target);
-            if (distance >= unit.AttackRange) continue;
+            if (distance > unit.AttackRange) continue;
 
             int steps = StepsTo(tile);
 
-            if (steps < bestSteps || (steps < bestSteps && distance < bestDistance))
+            if (steps < bestSteps || (steps == bestSteps && distance > bestDistance))
             {
                 best = tile;
                 bestSteps = steps;

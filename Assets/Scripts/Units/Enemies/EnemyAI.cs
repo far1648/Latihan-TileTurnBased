@@ -9,8 +9,8 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private bool useAI = true;
 
-    [SerializeField] private float turnStartDelay = 0.6f;
-    [SerializeField] private float unitDelay = 0.5f;
+    [SerializeField] private float turnStartDelay = 0.2f;
+    [SerializeField] private float unitDelay = 0.2f;
 
     public bool UseAI => useAI;
 
@@ -47,7 +47,8 @@ public class EnemyAI : MonoBehaviour
             yield return ActWith(enemy);
         }
 
-        TurnManager.Instance.AITurnRunning = false;
+        if (GameManager.Instance.GameState == GameState.HeroesTurn)
+            TurnManager.Instance.AITurnRunning = false;
         running = null;
     }
 

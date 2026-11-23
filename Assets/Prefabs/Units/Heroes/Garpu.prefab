@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 136643880502231725}
   - component: {fileID: 7955628379772651953}
   - component: {fileID: 9166414707377030333}
+  - component: {fileID: -6330954865792798157}
   m_Layer: 0
   m_Name: Garpu
   m_TagString: Untagged
@@ -114,3 +115,18 @@ MonoBehaviour:
   MaxHealth: 0
   AttackPower: 0
   MoveSpeed: 6
+--- !u!114 &-6330954865792798157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6973013155187479467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8cdf70ad1f3f414ebe2367c942ea04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroAI
+  useAI: 1
+  turnStartDelay: 0.6
+  unitDelay: 0.5

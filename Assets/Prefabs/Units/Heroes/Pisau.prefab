@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8825748494884702791}
   - component: {fileID: 8257422496584205550}
   - component: {fileID: -4258252399093419112}
+  - component: {fileID: -2416002142234871429}
   m_Layer: 0
   m_Name: Pisau
   m_TagString: Untagged
@@ -114,3 +115,18 @@ MonoBehaviour:
   MaxHealth: 0
   AttackPower: 0
   MoveSpeed: 6
+--- !u!114 &-2416002142234871429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456215118045022200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8cdf70ad1f3f414ebe2367c942ea04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroAI
+  useAI: 1
+  turnStartDelay: 0.6
+  unitDelay: 0.5

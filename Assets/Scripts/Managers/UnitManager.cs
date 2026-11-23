@@ -12,6 +12,7 @@ public class UnitManager : MonoBehaviour
     public BaseEnemy SelectedEnemy;
 
     public Dictionary<Tile, Tile> Reachable {get; private set;} = new Dictionary<Tile, Tile>();
+    public Tile PendingMoveTile {get; private set;}
 
     [SerializeField] int heroCount = 3;
     [SerializeField] int enemyCount = 3;
@@ -65,6 +66,8 @@ public class UnitManager : MonoBehaviour
 
     private void UpdateHighlights(BaseUnit unit)
     {
+        PendingMoveTile = null;
+
         Reachable = unit!= null
             ? GridManager.Instance.FindReachable(unit.OccupiedTile, unit.CurrentStep)
             : new Dictionary<Tile, Tile>();
@@ -89,8 +92,30 @@ public class UnitManager : MonoBehaviour
             else if (!canMove && !isAlly && tile.IsTerrainWalkable && threat.Contains(tile)) 
                 mode = AttackHighlightMode.Threat;
 
-            tile.SetMoveHighlight(canMove);
+            tile.SetMoveHighlight(canMove ? MoveHighlightMode.Range : MoveHighlightMode.None);
             tile.SetAttackHighlight(mode);
+        }
+    }
+
+    public void PreviewMove(Tile destination)
+    {
+        if (!Reachable.ContainsKey(destination)) return;
+
+        PendingMoveTile = destination;
+
+        var pathTiles = new HashSet<Tile>();
+        for (var tile = destination; Reachable[tile] != null; tile = Reachable[tile])
+            pathTiles.Add(tile);
+
+        foreach (var tile in GridManager.Instance.GetAllTiles())
+        {
+            var mode = MoveHighlightMode.None;
+
+            if (tile == destination) mode = MoveHighlightMode.Destination;
+            else if (pathTiles.Contains(tile)) mode = MoveHighlightMode.Path;
+            else if (Reachable.ContainsKey(tile) && tile.Walkable) mode = MoveHighlightMode.Range;
+
+            tile.SetMoveHighlight(mode);
         }
     }
 

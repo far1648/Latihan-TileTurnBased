@@ -12,6 +12,9 @@ public abstract class Tile : MonoBehaviour
     public bool IsTerrainWalkable => isWalkable;
     [SerializeField] private Color threatColor = new Color(1f, 0.55f, 0f, 0.35f);
     [SerializeField] private Color targetColor = new Color(1f, 0f, 0f, 0.5f);
+    [SerializeField] private Color rangeColor = new Color(0.005f, 0f, 1f, 0.45f);
+    [SerializeField] private Color pathColor = new Color(0.35f, 0.8f, 1f, 0.6f);
+    [SerializeField] private Color destinationColor = new Color(0.2f, 1f, 0.4f, 0.75f);
 
     public BaseUnit OccupiedUnit;
     public bool Walkable => isWalkable && OccupiedUnit == null;
@@ -82,6 +85,12 @@ public abstract class Tile : MonoBehaviour
 
             if (!Walkable) return;
 
+            if (UnitManager.Instance.PendingMoveTile != this)
+            {
+                UnitManager.Instance.PreviewMove(this);
+                return;
+            }
+
             var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, this);
 
             UnitManager.Instance.SetSelectedHero(null);
@@ -123,6 +132,12 @@ public abstract class Tile : MonoBehaviour
 
             if (!Walkable) return;
 
+            if (UnitManager.Instance.PendingMoveTile != this)
+            {
+                UnitManager.Instance.PreviewMove(this);
+                return;
+            }
+
             var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, this);
 
             UnitManager.Instance.SetSelectedEnemy(null);
@@ -155,9 +170,28 @@ public abstract class Tile : MonoBehaviour
 
     public bool IsInAttackRange(BaseUnit unit) => DistanceFrom(unit) <= unit.AttackRange;
 
-    public void SetMoveHighlight(bool active)
+    public void SetMoveHighlight(MoveHighlightMode mode)
     {
-        if (moveHighlight != null) moveHighlight.SetActive(active);
+        if (moveHighlight == null) return;
+        
+        moveHighlight.SetActive(mode != MoveHighlightMode.None);
+        if (mode == MoveHighlightMode.None) return;
+
+        var sr = moveHighlight.GetComponent<SpriteRenderer>();
+        if (sr == null) return;
+
+        switch (mode)
+        {
+            case MoveHighlightMode.Range: 
+                sr.color = rangeColor;
+                break;
+            case MoveHighlightMode.Path:
+                sr.color = pathColor;
+                break;
+            case MoveHighlightMode.Destination:
+                sr.color = destinationColor;
+                break;
+        }
     }
 
     public void SetAttackHighlight(AttackHighlightMode mode)
@@ -202,8 +236,16 @@ public abstract class Tile : MonoBehaviour
 }
 
 public enum AttackHighlightMode
-    {
-        None,
-        Threat,
-        Target
-    }
+{
+    None,
+    Threat,
+    Target
+}
+
+public enum MoveHighlightMode
+{
+    None,
+    Range,
+    Path,
+    Destination
+}

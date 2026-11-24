@@ -7,6 +7,7 @@ public class GridManager : MonoBehaviour
     public static GridManager Instance;
     
     [SerializeField] private MapData map;
+    public MapData Map => map;
     private int width, height;
 
     private readonly List<Tile> heroSpawnTiles = new List<Tile>();
@@ -70,22 +71,6 @@ public class GridManager : MonoBehaviour
         cam.transform.position = new Vector3((float)width/2 -0.5f, (float)height/2 - 0.5f, -10);
 
         GameManager.Instance.ChangeState(GameState.SpawnHeroes);
-    }
-
-    public Tile GetHeroSpawnTile()
-    {
-        return tiles
-            .Where(t=>t.Key.x < width/2 && t.Value.Walkable)
-            .OrderBy(t=>Random.value)
-            .Select(t => t.Value)
-            .FirstOrDefault();
-    }
-    public Tile GetEnemySpawnTile()
-    {
-        return tiles
-            .Where(t=>t.Key.x > width/2 && t.Value.Walkable)
-            .OrderBy(t=>Random.value).Select(t => t.Value)
-            .FirstOrDefault();
     }
 
     public Tile GetTileAtPosition(Vector2 pos)

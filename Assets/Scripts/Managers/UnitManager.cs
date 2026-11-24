@@ -6,39 +6,22 @@ public class UnitManager : MonoBehaviour
 {
     public static UnitManager Instance;
 
-    private List<ScriptableUnit> units;
-
     public BaseHero SelectedHero;
     public BaseEnemy SelectedEnemy;
 
     public Dictionary<Tile, Tile> Reachable {get; private set;} = new Dictionary<Tile, Tile>();
     public Tile PendingMoveTile {get; private set;}
 
-    [SerializeField] int heroCount = 3;
-    [SerializeField] int enemyCount = 3;
-
     private readonly List<BaseUnit> allUnits = new List<BaseUnit>();
     
     void Awake()
     {
         Instance = this;
-
-        units = Resources.LoadAll<ScriptableUnit>("Units").ToList();
     }
 
     public void SpawnHeroes()
     {
-        foreach (var prefab in GetRandomUnit<BaseHero>(Faction.Hero, heroCount))
-        {
-            var spawnTile = GridManager.Instance.GetHeroSpawnTile();
-            if (spawnTile == null) break;
-
-            var spawnedHero = Instantiate(prefab);
-            RegisterUnit(spawnedHero);
-            var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
-
-            randomSpawnTile.SetUnit(spawnedHero);
-        }
+        SpawnFromMap(GridManager.Instance.Map.Heroes, GridManager.Instance.HeroSpawnTiles, Faction.Hero);
 
         GameManager.Instance.ChangeState(GameState.SpawnEnemies);
     }
@@ -46,29 +29,25 @@ public class UnitManager : MonoBehaviour
     public void SpawnEnemies()
     {
         
-        foreach (var prefab in GetRandomUnit<BaseEnemy>(Faction.Enemy, enemyCount))
-        {
-            var spawnTile = GridManager.Instance.GetHeroSpawnTile();
-            if (spawnTile == null) break;
-            
-            var spawnedEnemy = Instantiate(prefab);
-            RegisterUnit(spawnedEnemy);
-            var randomSpawnTile = GridManager.Instance.GetEnemySpawnTile();
-
-            randomSpawnTile.SetUnit(spawnedEnemy);
-        }
+        SpawnFromMap(GridManager.Instance.Map.Enemies, GridManager.Instance.EnemySpawnTiles, Faction.Enemy);
 
         GameManager.Instance.ChangeState(GameState.HeroesTurn);
     }
 
-    private List<T> GetRandomUnit<T>(Faction faction, int count) where T : BaseUnit
+    private void SpawnFromMap(List<ScriptableUnit> entries, IReadOnlyList<Tile> spawnTiles, Faction faction)
     {
-        return units
-            .Where(u => u.Faction == faction)
-            .OrderBy(o => Random.value)
-            .Take(count)
-            .Select(u => (T)u.UnitPrefab)
-            .ToList();
+        for (int i = 0; i < entries.Count && i < spawnTiles.Count; i++)
+        {
+            var entry = entries[i];
+
+            if (entry == null || entry.UnitPrefab == null) continue;
+
+            if (entry.Faction != faction) continue; 
+
+            var unit = Instantiate(entry.UnitPrefab);
+            RegisterUnit(unit);
+            spawnTiles[i].SetUnit(unit);
+        }
     }
 
     private void UpdateHighlights(BaseUnit unit)

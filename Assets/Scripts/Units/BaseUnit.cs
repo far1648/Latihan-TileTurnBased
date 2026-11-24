@@ -7,7 +7,7 @@ public class BaseUnit : MonoBehaviour
     public string UnitName;
     public Tile OccupiedTile;
     public Faction Faction;
-    public int MaxStep = 5;
+    public int MaxStep = 3;
     public int CurrentStep;
     public int AttackRange = 1;
 

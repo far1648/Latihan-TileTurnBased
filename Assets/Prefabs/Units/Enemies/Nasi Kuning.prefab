@@ -109,7 +109,7 @@ MonoBehaviour:
   UnitName: Nasi Kuning
   OccupiedTile: {fileID: 0}
   Faction: 1
-  MaxStep: 5
+  MaxStep: 3
   CurrentStep: 0
   AttackRange: 1
   MaxHealth: 0
@@ -128,5 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   useAI: 1
-  turnStartDelay: 0.6
-  unitDelay: 0.5
+  turnStartDelay: 0.2
+  unitDelay: 0.2

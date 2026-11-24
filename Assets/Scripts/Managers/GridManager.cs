@@ -5,7 +5,15 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     public static GridManager Instance;
-    [SerializeField] private int width, height;
+    
+    [SerializeField] private MapData map;
+    private int width, height;
+
+    private readonly List<Tile> heroSpawnTiles = new List<Tile>();
+    private readonly List<Tile> enemySpawnTiles = new List<Tile>();
+
+    public IReadOnlyList<Tile> HeroSpawnTiles => heroSpawnTiles;
+    public IReadOnlyList<Tile> EnemySpawnTiles => enemySpawnTiles;
 
     [SerializeField] private Tile grassTile, mountainTile;
 
@@ -23,20 +31,40 @@ public class GridManager : MonoBehaviour
 
     public void GenerateGrid()
     {
+        var parsed = map != null ? MapParser.Parse(map) : null;
+
+        if (parsed == null) return;
+
+        width = parsed.Width;
+        height = parsed.Height;
+
         tiles = new Dictionary<Vector2, Tile>();
+        heroSpawnTiles.Clear();
+        enemySpawnTiles.Clear();
+
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                var randomTile = Random.Range(0, 6) == 3 ? mountainTile : grassTile;
+                var prefab = parsed.Mountain[x, y] ? mountainTile : grassTile;
 
-                var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
+                var spawnedTile = Instantiate(prefab, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
 
                 spawnedTile.Init(x, y);
 
                 tiles[new Vector2(x, y)] = spawnedTile;
             }
+        }
+
+        foreach (var p in parsed.HeroSpawns)
+        {
+            heroSpawnTiles.Add(tiles[new Vector2(p.x, p.y)]);
+        }
+
+        foreach (var p in parsed.EnemySpawns)
+        {
+            enemySpawnTiles.Add(tiles[new Vector2(p.x, p.y)]);
         }
 
         cam.transform.position = new Vector3((float)width/2 -0.5f, (float)height/2 - 0.5f, -10);

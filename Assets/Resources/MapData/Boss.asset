@@ -13,25 +13,26 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: Assembly-CSharp::MapData
   MapName: Tutorial
-  layout: 'EEEEEEEEEEEE
+  NextScene: DialogAkhir
+  layout: 'EEEEEEEEEEEEEE
 
-    EEEEEFEEEEEE
+    EEEEEEFEEEEEEE
 
-    EEEEEEEEEEEE
+    EEEEEEEEEEEEEE
 
-    EEEMEMEMEEEE
+    EEEEMEMEMEEEEE
 
-    EEEMEEEEMEEE
+    EEEEMEEEEMEEEE
 
-    EEEMEEEEMEEE
+    EEEEMEEEEMEEEE
 
-    EEEMEEEEMEEE
+    EEEEMEEEEMEEEE
 
-    EEEEEEEEEEEE
+    EEEEEEEEEEEEEE
 
-    EEEEEEEEEEEE
+    EEEEEEEEEEEEEE
 
-    EEEEHEHEHEEE'
+    EEEEEHEHEHEEEE'
   Heroes:
   - {fileID: 11400000, guid: 6bd5674282524954d946c8dc58f01c30, type: 2}
   - {fileID: 11400000, guid: 4ed0f2332e329f544a8ef355ba82e95d, type: 2}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial
   m_EditorClassIdentifier: Assembly-CSharp::MapData
   MapName: Tutorial
+  NextScene: DialogTengah
   layout: 'EEMEEMEE
 
     MEFEFEFM

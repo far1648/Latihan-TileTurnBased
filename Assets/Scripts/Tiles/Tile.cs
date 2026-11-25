@@ -46,7 +46,6 @@ public abstract class Tile : MonoBehaviour
                 HandleHeroTurnClick();
                 break;
             case GameState.EnemiesTurn:
-                HandleEnemyTurnClick();
                 break;
         }
     }

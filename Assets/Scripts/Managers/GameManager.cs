@@ -45,10 +45,17 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.HeroesTurn:
                 TurnManager.Instance.StartTurn(Faction.Hero);
+                
+                if (UndoManager.Instance != null)
+                {
+                    UndoManager.Instance.Capture();
+                }
+
                 if (HeroAI.Instance != null && HeroAI.Instance.UseAI)
                 {
                     HeroAI.Instance.BeginTurn();
                 }
+
                 break;
             case GameState.EnemiesTurn:
                 TurnManager.Instance.StartTurn(Faction.Enemy);

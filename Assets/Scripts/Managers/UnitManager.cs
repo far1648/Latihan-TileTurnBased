@@ -135,7 +135,14 @@ public class UnitManager : MonoBehaviour
         UpdateHighlights(enemy);
     }
 
-    public void RegisterUnit(BaseUnit unit) => allUnits.Add(unit);
+    public void RegisterUnit(BaseUnit unit)
+    {
+        allUnits.Add(unit);
+        everSpawned.Add(unit);
+    }
+
+    private readonly List<BaseUnit> everSpawned = new List<BaseUnit>();
+    public IReadOnlyList<BaseUnit> EverSpawned => everSpawned;
    
     public void UnregisterUnit(BaseUnit unit) => allUnits.Remove(unit);
     
@@ -191,5 +198,22 @@ public class UnitManager : MonoBehaviour
         }
 
         return best;
+    }
+
+    public void SetAlive(BaseUnit unit, bool alive)
+    {
+        unit.gameObject.SetActive(alive);
+
+        if (alive)
+        {
+            if (!allUnits.Contains(unit)) allUnits.Add(unit);
+
+            allUnits.Sort((a, b) => everSpawned.IndexOf(a).CompareTo(everSpawned.IndexOf(b)));
+        }
+
+        else
+        {
+            allUnits.Remove(unit);
+        }
     }
 }

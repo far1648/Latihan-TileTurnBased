@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapData : ScriptableObject
 {
     public string MapName = "Tutorial";
+    public string NextScene = "";
     [Tooltip("E = Rumput   M = Gunung   F = Food/Enemy   H = Hero")]
     [TextArea(6, 20)]
     public string layout = 

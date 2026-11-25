@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState GameState;
     public Faction Winner {get; private set;}
+
+    [SerializeField] private float nextSceneDelay = 2.5f;
 
     void Awake()
     {
@@ -20,8 +23,23 @@ public class GameManager : MonoBehaviour
 
     public void EndGame(Faction winner)
     {
+        if (GameState == GameState.GameOver) return;
+
         Winner = winner;
         ChangeState(GameState.GameOver);
+
+        if (winner != Faction.Hero) return;
+
+        var map = GridManager.Instance.Map;
+        if (map == null || string.IsNullOrEmpty(map.NextScene)) return;
+
+        StartCoroutine(LoadNextSceneAfterDelay(map.NextScene));
+    }
+
+    private IEnumerator LoadNextSceneAfterDelay(string sceneName)
+    {
+        yield return new WaitForSeconds(nextSceneDelay);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Restart()

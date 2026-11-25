@@ -37,7 +37,7 @@ public class BaseUnit : MonoBehaviour
 
         if (OccupiedTile != null) OccupiedTile.OccupiedUnit = null;
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void MoveAlong(List<Vector3> path, System.Action onComplete = null)

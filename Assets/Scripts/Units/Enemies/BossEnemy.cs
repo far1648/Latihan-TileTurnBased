@@ -9,7 +9,35 @@ public class BossEnemy : BaseEnemy
     [SerializeField] private int maxTiles = 2;
     [SerializeField] private int breakRadius = 2;
 
+    [Range(0f, 1f)] [SerializeField] private float rewindHpLossRatio = 0.25f;
+    [SerializeField] private int maxRewinds = 3;
+
     public int BreakCooldownLeft {get; set;}
+    public int RewindsLeft {get; private set;}
+
+    protected override void Awake()
+    {
+        base.Awake();
+        RewindsLeft = maxRewinds;
+    }
+
+    public bool TryRewind()
+    {
+        if (RewindsLeft <= 0 || CurrentHealth <= 0) return false;
+
+        var undo = UndoManager.Instance;
+        if (undo == null || !undo.CanRewind) return false;
+
+        if (!undo.TryGetHealthAtLastCapture(this, out int healthAtRoundStart)) return false;
+
+        int lost = healthAtRoundStart - CurrentHealth;
+        if (lost < MaxHealth * rewindHpLossRatio) return false;
+
+        if (!undo.Rewind()) return false;
+
+        RewindsLeft--;
+        return true;
+    }
 
     public int TryBreakTiles()
     {
@@ -21,7 +49,7 @@ public class BossEnemy : BaseEnemy
 
         if (Random.value > breakChance) return 0;
 
-        var heroes = UnitManager.Instance.GetUnits(Faction.Hero);
+        var heroes = UnitManager.Instance.GetUnits(Faction.Hero).ToList();
         var candidates = GridManager.Instance
             .GetTilesNear(heroes, breakRadius)
             .OrderBy(_ => Random.value)

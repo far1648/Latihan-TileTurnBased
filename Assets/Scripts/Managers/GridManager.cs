@@ -145,6 +145,31 @@ public class GridManager : MonoBehaviour
         return distance;
     }
 
+    public Dictionary<Tile, int> FindDistanceMapAvoidingUnits(Tile source, BaseUnit mover)
+    {
+        var distance = new Dictionary<Tile, int>() {[source] = 0};
+        var queue = new Queue<Tile>();
+        queue.Enqueue(source);
+
+        while (queue.Count > 0)
+        {
+            var current = queue.Dequeue();
+
+            foreach (var next in GetNeighbours(current))
+            {
+                if (distance.ContainsKey(next) || !next.IsTerrainWalkable) continue;
+
+                bool blocked = next.OccupiedUnit != null && next.OccupiedUnit != mover;
+                if (blocked) continue;
+
+                distance[next] = distance[current] + 1;
+                queue.Enqueue(next); 
+            }
+        }
+
+        return distance;
+    }
+
     public List<Tile> GetTilesNear(IEnumerable<BaseUnit> centers, int radius)
     {
         var result = new List<Tile>();

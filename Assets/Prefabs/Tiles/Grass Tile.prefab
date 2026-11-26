@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.34901962
       objectReference: {fileID: 0}
+    - target: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_SortingOrder
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 5919586453578442433, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -151,6 +155,12 @@ MonoBehaviour:
   moveHighlight: {fileID: 282347240203962997}
   attackHighlight: {fileID: 1174108644878442907}
   isWalkable: 1
+  threatColor: {r: 1, g: 0.55, b: 0, a: 0.35}
+  targetColor: {r: 1, g: 0, b: 0, a: 0.5}
+  rangeColor: {r: 0.005, g: 0, b: 1, a: 0.45}
+  pathColor: {r: 0.35, g: 0.8, b: 1, a: 0.6}
+  destinationColor: {r: 0.2, g: 1, b: 0.4, a: 0.75}
+  brokenColor: {r: 0.12, g: 0.08, b: 0.08, a: 1}
   OccupiedUnit: {fileID: 0}
   baseColor: {r: 0.34901962, g: 0.7490196, b: 0.3529412, a: 1}
   offsetColor: {r: 0.31159756, g: 0.72327036, b: 0.31563362, a: 1}

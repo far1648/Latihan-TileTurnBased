@@ -24,9 +24,21 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8376036
       objectReference: {fileID: 0}
+    - target: {fileID: 698831650703928663, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1972259986490961829, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_Name
       value: Mountain Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328109106353565500, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336032845192852632, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_Color.b
@@ -42,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5400744951489379735, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 5919586453578442433, guid: 8ee9da954776cb542bf095b9d853ed77, type: 3}
       propertyPath: m_LocalPosition.x
@@ -140,4 +152,10 @@ MonoBehaviour:
   moveHighlight: {fileID: 4353535990847395848}
   attackHighlight: {fileID: 3443706894299755494}
   isWalkable: 0
+  threatColor: {r: 1, g: 0.55, b: 0, a: 0.35}
+  targetColor: {r: 1, g: 0, b: 0, a: 0.5}
+  rangeColor: {r: 0.005, g: 0, b: 1, a: 0.45}
+  pathColor: {r: 0.35, g: 0.8, b: 1, a: 0.6}
+  destinationColor: {r: 0.2, g: 1, b: 0.4, a: 0.75}
+  brokenColor: {r: 0.12, g: 0.08, b: 0.08, a: 1}
   OccupiedUnit: {fileID: 0}

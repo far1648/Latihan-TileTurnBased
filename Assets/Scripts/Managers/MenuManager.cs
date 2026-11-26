@@ -59,7 +59,7 @@ public class MenuManager : MonoBehaviour
     public void ShowGameOver(Faction winner)
     {
         gameOverObject.GetComponentInChildren<TextMeshProUGUI>().text = 
-            winner == Faction.Hero ? "Hero Menang" : "Enemy Menang";
+            winner == Faction.Hero ? "Tunggu 3 detik" : "Enemy Menang";
         gameOverObject.SetActive(true);
     }
 

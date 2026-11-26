@@ -15,10 +15,10 @@ MonoBehaviour:
   NextScene: TutorialGameplay
   PlayOncePerSession: 1
   Lines:
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: "The annual Tumpeng Festival has always been a highly anticipated occasion by the denizens of Priyang Village\u201D"
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: This event is a chance for everyone in the village to partake in assembling their own platters of tumpeng using already prepared rice, side dishes, and garnishes.
   - Speaker: Eri
@@ -27,177 +27,177 @@ MonoBehaviour:
   - Speaker: Eri
     portrait: {fileID: 0}
     Text: "\u201CLet\u2019s see what everyone\u2019s up to!\u201D"
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: At dawn, everyone has their hands full preparing for the festival.
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CHave you eaten anything?\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201COf course not, Wig.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "Don\u2019t call me that!\u201D\n"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: " \u201CYou didn\u2019t seem to mind as a kid.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CWhatever, Riri.\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CAnyhow, after the festival is usually when I eat.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CYou do know that, best case scenario, the festival usually ends at noon?\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CAfter the building competition finishes.\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CThat\u2019s the thing. We never really turned our creation in for the competition.\""
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CWe just made one and brought it home immediately.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CTo each their own, I guess.\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CYou actually care about the competition?\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CEhh, it was my family.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CI just got roped in.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CI just wanted to be at home eating.\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CThat sucks.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CGood morning everyone!\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201COh, it\u2019s the chief.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CIt seems like we\u2019re behind schedule.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CPlease remain patient as I check on the cook.\u201D"
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: Maryati enter the tent
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: (30 minutes has passed)
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CHuh, it has been half an hour since the tent was supposed to be open.\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CWonder what\u2019s the wait.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CIt\u2019s probably just the-\u201D"
   - Speaker: 
     portrait: {fileID: 0}
     Text: '*SCREAMS*'
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: '"Ma''am?!"'
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CJuna, are you there?\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CMa\u2019am, are you alright?\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CYou two! It\u2019s not safe here!\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CYou must leave!\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CApologies, Ma\u2019am. We\u2019ll leave.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CActually, wait!\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CMy apologies\u2026\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CI shouldn\u2019t have made the village worried.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CDeep breaths, Ma\u2019am. What\u2019s going on?\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CI saw something\u2026\u201D"
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: Someone suddenly enter the scene
   - Speaker: Naja
-    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
+    portrait: {fileID: -2753138198643579184, guid: d72b351b7450cb541be22e06a633c467, type: 3}
     Text: "\u201CMa! Are you okay?\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CYes son, I didn\u2019t mean to worry everyone.\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CWhat was it\u2026 Nanda?\u201D"
   - Speaker: Naja
-    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
+    portrait: {fileID: -2753138198643579184, guid: d72b351b7450cb541be22e06a633c467, type: 3}
     Text: '"Naja."'
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CShoot.\u201D"
   - Speaker: Naja
-    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
+    portrait: {fileID: -2753138198643579184, guid: d72b351b7450cb541be22e06a633c467, type: 3}
     Text: "\u201CGood to see you guys.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CLikewise!\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CAnyways, Ma\u2019am, what did you see?\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CThe yellow rice\u2026 it was very well alive.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CBehind you!\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CI\u2026 honestly didn\u2019t believe you.\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CBut\u2026 How is it alive?\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CI don\u2019t have a clue.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CBut I think I know what can deal with them.\u201D"
   - Speaker: Eri
-    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
+    portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CYou want us to eat that thing?\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CNo!\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CWell, not necessarily.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CIt\u2019s a no brainer.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CLet\u2019s give it a shot.\u201D"

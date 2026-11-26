@@ -1,49 +1,43 @@
 fileFormatVersion: 2
-guid: 68b48bbccf15b1646a286a5c6eb08895
+guid: 9c0e9585bc467674ca26e842ed8cdaeb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3200623096233417067
-    second: PalateFatigue_0
+      213: 1404028623067837608
+    second: Logo_0
   - first:
-      213: -7519807344960316306
-    second: PalateFatigue_1
+      213: 6795467416601567747
+    second: Logo_1
   - first:
-      213: 3157448222816544577
-    second: PalateFatigue_2
+      213: 6875538535012287733
+    second: Logo_2
   - first:
-      213: -1306010599245770473
-    second: PalateFatigue_3
+      213: 2381070441135384947
+    second: Logo_3
   - first:
-      213: 3111069267669078377
-    second: PalateFatigue_4
+      213: -3774021269495190454
+    second: Logo_4
   - first:
-      213: -6731254159844485369
-    second: PalateFatigue_5
+      213: 6893372319333685202
+    second: Logo_5
   - first:
-      213: 8652992976438837532
-    second: PalateFatigue_6
+      213: 5409054819110567409
+    second: Logo_6
   - first:
-      213: -641407700326592263
-    second: PalateFatigue_7
+      213: -5151548511015374267
+    second: Logo_7
   - first:
-      213: 5513300483444489864
-    second: PalateFatigue_8
+      213: 8618792996653847996
+    second: Logo_8
   - first:
-      213: 7875287388683739087
-    second: PalateFatigue_9
+      213: -8503305437844106070
+    second: Logo_9
   - first:
-      213: -3827332886367232667
-    second: PalateFatigue_10
+      213: 9156548432191564253
+    second: Logo_10
   - first:
-      213: -5545411814266982884
-    second: PalateFatigue_11
-  - first:
-      213: -5923282798350558302
-    second: PalateFatigue_12
-  - first:
-      213: 2697476794470447699
-    second: PalateFatigue_13
+      213: -1306304639851798359
+    second: Logo_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -86,7 +80,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -167,57 +161,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PalateFatigue_0
+      name: Logo_0
       rect:
         serializedVersion: 2
-        x: 137
-        y: 226
-        width: 183
-        height: 216
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6957e69fb5ea6c20800000000000000
-      internalID: 3200623096233417067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PalateFatigue_1
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 225
-        width: 113
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e6c5448bf0744a790800000000000000
-      internalID: -7519807344960316306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PalateFatigue_2
-      rect:
-        serializedVersion: 2
-        x: 311
+        x: 140
         y: 227
-        width: 88
-        height: 131
+        width: 189
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1472ba50e6281db20800000000000000
-      internalID: 3157448222816544577
+      spriteID: 8a47074089c1c7310800000000000000
+      internalID: 1404028623067837608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PalateFatigue_3
+      name: Logo_1
       rect:
         serializedVersion: 2
-        x: 372
+        x: 206
         y: 225
-        width: 113
-        height: 104
+        width: 203
+        height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7119f0f874e10ede0800000000000000
-      internalID: -1306010599245770473
+      spriteID: 30227498c995e4e50800000000000000
+      internalID: 6795467416601567747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PalateFatigue_4
+      name: Logo_2
       rect:
         serializedVersion: 2
-        x: 484
+        x: 377
         y: 225
-        width: 87
-        height: 120
+        width: 118
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 961dc0b040dbc2b20800000000000000
-      internalID: 3111069267669078377
+      spriteID: 5f4cae29ed1da6f50800000000000000
+      internalID: 6875538535012287733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PalateFatigue_5
+      name: Logo_3
       rect:
         serializedVersion: 2
-        x: 543
+        x: 491
         y: 225
-        width: 108
-        height: 104
+        width: 91
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +242,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 707599d5108c592a0800000000000000
-      internalID: -6731254159844485369
+      spriteID: 379ae0563f24b0120800000000000000
+      internalID: 2381070441135384947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PalateFatigue_6
+      name: Logo_4
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 225
+        width: 112
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c68f8a6abff9bc0800000000000000
+      internalID: -3774021269495190454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_5
       rect:
         serializedVersion: 2
         x: 0
         y: 45
-        width: 624
-        height: 171
+        width: 635
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,20 +286,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c11469c344b951870800000000000000
-      internalID: 8652992976438837532
+      spriteID: 2d7156e0a9d2aaf50800000000000000
+      internalID: 6893372319333685202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PalateFatigue_7
+      name: Logo_6
       rect:
         serializedVersion: 2
-        x: 629
-        y: 191
-        width: 42
-        height: 33
+        x: 638
+        y: 192
+        width: 44
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,20 +308,108 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f055d948134917f0800000000000000
-      internalID: -641407700326592263
+      spriteID: 1fd33b713b2d01b40800000000000000
+      internalID: 5409054819110567409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PalateFatigue_8
+      name: Logo_7
       rect:
         serializedVersion: 2
-        x: 396
+        x: 402
+        y: 43
+        width: 118
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5427cbd5ce50288b0800000000000000
+      internalID: -5151548511015374267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_8
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 43
+        width: 151
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb55d2ee09a1c9770800000000000000
+      internalID: 8618792996653847996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_9
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 0
+        width: 152
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa497a8b1c03ef980800000000000000
+      internalID: -8503305437844106070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_10
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 43
+        width: 130
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd9207d1948921f70800000000000000
+      internalID: 9156548432191564253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_11
+      rect:
+        serializedVersion: 2
+        x: 868
         y: 43
         width: 113
-        height: 104
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,118 +418,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88eb2b7349d238c40800000000000000
-      internalID: 5513300483444489864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PalateFatigue_9
-      rect:
-        serializedVersion: 2
-        x: 508
-        y: 43
-        width: 87
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fcf9b9aa724aa4d60800000000000000
-      internalID: 7875287388683739087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PalateFatigue_10
-      rect:
-        serializedVersion: 2
-        x: 561
-        y: 45
-        width: 91
-        height: 138
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56d19e6940592eac0800000000000000
-      internalID: -3827332886367232667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PalateFatigue_11
-      rect:
-        serializedVersion: 2
-        x: 610
-        y: 0
-        width: 146
-        height: 164
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1eac55f55dba03b0800000000000000
-      internalID: -5545411814266982884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PalateFatigue_12
-      rect:
-        serializedVersion: 2
-        x: 745
-        y: 43
-        width: 126
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ab12248da54ccda0800000000000000
-      internalID: -5923282798350558302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PalateFatigue_13
-      rect:
-        serializedVersion: 2
-        x: 860
-        y: 43
-        width: 107
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 35a354c4adc5f6520800000000000000
-      internalID: 2697476794470447699
+      spriteID: 9a06035e9d21fdde0800000000000000
+      internalID: -1306304639851798359
       vertices: []
       indices: 
       edges: []
@@ -488,20 +438,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PalateFatigue_0: 3200623096233417067
-      PalateFatigue_1: -7519807344960316306
-      PalateFatigue_10: -3827332886367232667
-      PalateFatigue_11: -5545411814266982884
-      PalateFatigue_12: -5923282798350558302
-      PalateFatigue_13: 2697476794470447699
-      PalateFatigue_2: 3157448222816544577
-      PalateFatigue_3: -1306010599245770473
-      PalateFatigue_4: 3111069267669078377
-      PalateFatigue_5: -6731254159844485369
-      PalateFatigue_6: 8652992976438837532
-      PalateFatigue_7: -641407700326592263
-      PalateFatigue_8: 5513300483444489864
-      PalateFatigue_9: 7875287388683739087
+      Logo_0: 1404028623067837608
+      Logo_1: 6795467416601567747
+      Logo_10: 9156548432191564253
+      Logo_11: -1306304639851798359
+      Logo_2: 6875538535012287733
+      Logo_3: 2381070441135384947
+      Logo_4: -3774021269495190454
+      Logo_5: 6893372319333685202
+      Logo_6: 5409054819110567409
+      Logo_7: -5151548511015374267
+      Logo_8: 8618792996653847996
+      Logo_9: -8503305437844106070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -16,5 +16,5 @@ MonoBehaviour:
   PlayOncePerSession: 1
   Lines:
   - Speaker: Mariyati
-    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    portrait: {fileID: 629400567948610330, guid: 7a46ddee279c0184094059a4d23d3e00, type: 3}
     Text: "\u201CHuh\u2026 different utensils seem to have different effects on the enemies.\u201D"

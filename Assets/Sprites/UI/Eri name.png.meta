@@ -1,28 +1,19 @@
 fileFormatVersion: 2
-guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c
+guid: ae88dfb201a4cd848960948b8c7e0984
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6754743738255168870
-    second: wiguna 1_0
+      213: 4890711592975845620
+    second: Eri name_0
   - first:
-      213: -4735579955011617635
-    second: wiguna 1_1
+      213: 4154470869096957467
+    second: Eri name_1
   - first:
-      213: -238375301526148058
-    second: wiguna 1_2
+      213: 5850217732719003791
+    second: Eri name_2
   - first:
-      213: 7339380123137082216
-    second: wiguna 1_3
-  - first:
-      213: -5174047499816359007
-    second: wiguna 1_4
-  - first:
-      213: -5724872609494987891
-    second: wiguna 1_5
-  - first:
-      213: 7024302818900928658
-    second: wiguna 1_6
+      213: -4255067764130871654
+    second: Eri name_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -146,13 +137,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wiguna 1_0
+      name: Eri name_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 90
-        width: 1120
-        height: 2245
+        x: 225
+        y: 357
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9aa184bb545242a0800000000000000
-      internalID: -6754743738255168870
+      spriteID: 4f8c53e184c4fd340800000000000000
+      internalID: 4890711592975845620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wiguna 1_1
+      name: Eri name_1
       rect:
         serializedVersion: 2
-        x: 1303
-        y: 1942
-        width: 192
-        height: 132
+        x: 328
+        y: 408
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9c72100f17d74eb0800000000000000
-      internalID: -4735579955011617635
+      spriteID: b168b3e7e35a7a930800000000000000
+      internalID: 4154470869096957467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wiguna 1_2
+      name: Eri name_2
       rect:
         serializedVersion: 2
-        x: 895
-        y: 1729
-        width: 296
-        height: 153
+        x: 287
+        y: 357
+        width: 37
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62cae4d1dee11bcf0800000000000000
-      internalID: -238375301526148058
+      spriteID: f8848693806203150800000000000000
+      internalID: 5850217732719003791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wiguna 1_3
+      name: Eri name_3
       rect:
         serializedVersion: 2
-        x: 983
-        y: 1065
-        width: 308
-        height: 223
+        x: 323
+        y: 357
+        width: 24
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,74 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86306271657bad560800000000000000
-      internalID: 7339380123137082216
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wiguna 1_4
-      rect:
-        serializedVersion: 2
-        x: 1292
-        y: 1140
-        width: 74
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1aba27256371238b0800000000000000
-      internalID: -5174047499816359007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wiguna 1_5
-      rect:
-        serializedVersion: 2
-        x: 1115
-        y: 680
-        width: 187
-        height: 301
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d8b00be71ba2d80b0800000000000000
-      internalID: -5724872609494987891
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wiguna 1_6
-      rect:
-        serializedVersion: 2
-        x: 1345
-        y: 175
-        width: 210
-        height: 226
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2986d5b82365b7160800000000000000
-      internalID: 7024302818900928658
+      spriteID: a9683cfa966f2f4c0800000000000000
+      internalID: -4255067764130871654
       vertices: []
       indices: 
       edges: []
@@ -313,13 +238,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wiguna 1_0: -6754743738255168870
-      wiguna 1_1: -4735579955011617635
-      wiguna 1_2: -238375301526148058
-      wiguna 1_3: 7339380123137082216
-      wiguna 1_4: -5174047499816359007
-      wiguna 1_5: -5724872609494987891
-      wiguna 1_6: 7024302818900928658
+      Eri name_0: 4890711592975845620
+      Eri name_1: 4154470869096957467
+      Eri name_2: 5850217732719003791
+      Eri name_3: -4255067764130871654
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

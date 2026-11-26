@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1306e461193fecb4ba9ee2426b28b7c6
+guid: f9ed787c89d873a4892493c5190bd99e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 688305182712969960
-    second: naja_0
+      213: 4038183454373002819
+    second: Eri_Portrait_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: naja_0
+      name: Eri_Portrait_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 1600
+        width: 1162
+        height: 1728
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8eabaa8bae95d8900800000000000000
-      internalID: 688305182712969960
+      spriteID: 34e33cfd4728a0830800000000000000
+      internalID: 4038183454373002819
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      naja_0: 688305182712969960
+      Eri_Portrait_0: 4038183454373002819
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

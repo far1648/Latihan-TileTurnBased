@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 91345c67b747ae14193553d1f6839c01
+guid: 5f9fbfac680835f4e9a5ca2aaafe1aee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6282890033066849799
-    second: eri 1_0
-  - first:
-      213: 7888826142943226906
-    second: eri 1_1
-  - first:
-      213: -311963612565062809
-    second: eri 1_2
-  - first:
-      213: -7283854456692678001
-    second: eri 1_3
-  - first:
-      213: -5239885939884677488
-    second: eri 1_4
-  - first:
-      213: -7197991530999132007
-    second: eri 1_5
+      213: 1042092848039171179
+    second: textbox placeholder_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -143,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eri 1_0
+      name: textbox placeholder_0
       rect:
         serializedVersion: 2
-        x: 89
-        y: 54
-        width: 964
-        height: 1910
+        x: 0
+        y: 0
+        width: 2224
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,118 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 706bac7623f413750800000000000000
-      internalID: 6282890033066849799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eri 1_1
-      rect:
-        serializedVersion: 2
-        x: 970
-        y: 1835
-        width: 244
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1c22f8849dba7d60800000000000000
-      internalID: 7888826142943226906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eri 1_2
-      rect:
-        serializedVersion: 2
-        x: 1059
-        y: 1641
-        width: 206
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 76b363a4fbeababf0800000000000000
-      internalID: -311963612565062809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eri 1_3
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 1296
-        width: 200
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f82ef2196fc8aea90800000000000000
-      internalID: -7283854456692678001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eri 1_4
-      rect:
-        serializedVersion: 2
-        x: 1101
-        y: 1240
-        width: 214
-        height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0962c91ff7f2847b0800000000000000
-      internalID: -5239885939884677488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eri 1_5
-      rect:
-        serializedVersion: 2
-        x: 1183
-        y: 1049
-        width: 134
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 990d682d6d89b1c90800000000000000
-      internalID: -7197991530999132007
+      spriteID: b64995e8ce1467e00800000000000000
+      internalID: 1042092848039171179
       vertices: []
       indices: 
       edges: []
@@ -278,7 +153,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -288,12 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eri 1_0: 6282890033066849799
-      eri 1_1: 7888826142943226906
-      eri 1_2: -311963612565062809
-      eri 1_3: -7283854456692678001
-      eri 1_4: -5239885939884677488
-      eri 1_5: -7197991530999132007
+      textbox placeholder_0: 1042092848039171179
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

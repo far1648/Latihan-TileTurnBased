@@ -16,26 +16,26 @@ MonoBehaviour:
   PlayOncePerSession: 1
   Lines:
   - Speaker: Naja
-    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
+    portrait: {fileID: -2753138198643579184, guid: d72b351b7450cb541be22e06a633c467, type: 3}
     Text: "\u201CHe\u2019s unconscious.\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CQuick, we need him to be restrained!\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+    portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}
     Text: "\u201CWe don\u2019t know what he\u2019ll pull next.\u201D"
   - Speaker: Naja
-    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
+    portrait: {fileID: -2753138198643579184, guid: d72b351b7450cb541be22e06a633c467, type: 3}
     Text: "\u201CYou two, stay here and keep an eye on him.\u201D"
   - Speaker: Naja
-    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
+    portrait: {fileID: -2753138198643579184, guid: d72b351b7450cb541be22e06a633c467, type: 3}
     Text: "\u201CI\u2019ll gather help.\u201D"
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: "The village is free from Junandar\u2019s hand."
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: But not from the possibility of another food attack.
-  - Speaker: . . .
+  - Speaker: 
     portrait: {fileID: 0}
     Text: A thorough investigation of the scene found no traces of what caused the food to mutate and gain life.

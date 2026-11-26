@@ -129,7 +129,7 @@ MonoBehaviour:
   summonEvery: 3
   summonCount: 1
   summonRadius: 2
-  maxShield: 200
+  maxShield: 100
   shieldDamageWithoutBuff: 0.5
   noBuffHitDialog: {fileID: 11400000, guid: 510c0a0d2a272784fafb64210eb94636, type: 2}
   shieldBrokenDialog: {fileID: 11400000, guid: 9dbbfa530c633894ab6525bb6142b38a, type: 2}

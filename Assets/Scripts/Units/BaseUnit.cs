@@ -28,7 +28,7 @@ public class BaseUnit : MonoBehaviour
     public int AttackPower;
     public float MoveSpeed = 6f;
 
-    private int buffDuration = 2;
+    private int buffDuration = 3;
     private int buffDamageMultiplier = 2;
 
     public int BuffTurnsLeft {get; set;}

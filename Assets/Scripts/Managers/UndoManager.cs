@@ -14,6 +14,7 @@ public class UndoManager : MonoBehaviour
         public Tile Tile;
         public int Health;
         public int Step;
+        public int BuffTurns;
     }
 
     private class Snapshot
@@ -22,6 +23,8 @@ public class UndoManager : MonoBehaviour
         public HashSet<Tile> BrokenTiles = new HashSet<Tile>();
         public int BossCooldown;
         public int BossSummonTurns;
+        public int BossShield;
+        public bool SkipEnemyTurn;
     }
 
     private readonly List<Snapshot> history = new List<Snapshot>();
@@ -58,7 +61,8 @@ public class UndoManager : MonoBehaviour
                Alive = unit.CurrentHealth > 0,
                Tile = unit.OccupiedTile,
                Health = unit.CurrentHealth,
-               Step = unit.CurrentStep
+               Step = unit.CurrentStep,
+               BuffTurns = unit.BuffTurnsLeft
             });
         }
 
@@ -70,6 +74,8 @@ public class UndoManager : MonoBehaviour
         var boss = FindBoss();
         snapshot.BossCooldown = boss != null ? boss.BreakCooldownLeft : 0;
         snapshot.BossSummonTurns = boss != null ? boss.SummonTurnLeft : 0;
+        snapshot.BossShield = boss != null ? boss.Shield : 0;
+        snapshot.SkipEnemyTurn = TurnManager.Instance.SkipNextEnemyTurn;
 
         history.Add(snapshot);
     }
@@ -159,6 +165,7 @@ public class UndoManager : MonoBehaviour
             UnitManager.Instance.SetAlive(unit, s.Alive);
             unit.CurrentHealth = s.Health;
             unit.CurrentStep = s.Step;
+            unit.BuffTurnsLeft = s.BuffTurns;
             
             if (!s.Alive) continue;
 
@@ -172,7 +179,10 @@ public class UndoManager : MonoBehaviour
         {
             boss.BreakCooldownLeft = snapshot.BossCooldown;
             boss.SummonTurnLeft = snapshot.BossSummonTurns;
+            boss.Shield = snapshot.BossShield;
         }
+
+        TurnManager.Instance.SkipNextEnemyTurn = snapshot.SkipEnemyTurn;    
 
         if (asUndo)
         {

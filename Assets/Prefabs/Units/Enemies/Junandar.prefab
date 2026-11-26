@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64880b222213604da7f83db7dd45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossEnemy
+  Weapon: 0
   UnitName: Junandar
   OccupiedTile: {fileID: 0}
   Faction: 0
@@ -114,7 +115,7 @@ MonoBehaviour:
   MaxHealth: 200
   AttackPower: 25
   MoveSpeed: 6
-  breakChance: 0.7
+  breakChance: 0
   breakCooldown: 2
   minTiles: 1
   maxTiles: 2

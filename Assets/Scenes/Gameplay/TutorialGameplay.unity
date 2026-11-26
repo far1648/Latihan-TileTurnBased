@@ -1502,7 +1502,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 30
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1921337063021962082, guid: 899284f0ceebe2b419e0154a7482c97f, type: 3}
+  m_Sprite: {fileID: -401508480234622179, guid: 2c5bcad465a738d4faee688d4a51d898, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1522,8 +1522,8 @@ Transform:
   m_GameObject: {fileID: 689197891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.52, y: 2.62, z: 0}
-  m_LocalScale: {x: 1.050224, y: 1.050224, z: 1.050224}
+  m_LocalPosition: {x: 3.52, y: 2.53, z: 0}
+  m_LocalScale: {x: 0.38669822, y: 0.38669822, z: 0.38669822}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2069,7 +2069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8cdf70ad1f3f414ebe2367c942ea04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeroAI
-  useAI: 1
+  useAI: 0
   turnStartDelay: 0.2
   unitDelay: 0.2
 --- !u!1 &1126987051
@@ -2705,6 +2705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogManager
   dialog: {fileID: 11400000, guid: 5c1a3994646f6c348889f7a05e61fc7b, type: 2}
+  weaponTriangleDialog: {fileID: 11400000, guid: fe46d7add4858d64e9ce35b3b4fdd460, type: 2}
   overlayMode: 1
   panelRoot: {fileID: 1941658958}
   speakerText: {fileID: 85231725}

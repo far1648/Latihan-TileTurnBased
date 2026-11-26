@@ -16,8 +16,8 @@ MonoBehaviour:
   PlayOncePerSession: 1
   Lines:
   - Speaker: Naja
-    portrait: {fileID: 1234378565482261293, guid: 7cc7540603575b84289f8147d6c00f9e, type: 3}
+    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
     Text: "\u201CJuna, what is the meaning of this?!\u201D"
   - Speaker: Naja
-    portrait: {fileID: 1234378565482261293, guid: 7cc7540603575b84289f8147d6c00f9e, type: 3}
+    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
     Text: "\u201CYour chaos is unwelcome, especially during this time of year!\u201D"

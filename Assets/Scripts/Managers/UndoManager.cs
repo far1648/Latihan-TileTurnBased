@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UndoManager : MonoBehaviour
@@ -15,7 +16,14 @@ public class UndoManager : MonoBehaviour
         public int Step;
     }
 
-    private readonly List<List<UnitState>> history = new List<List<UnitState>>();
+    private class Snapshot
+    {
+        public List<UnitState> Units = new List<UnitState>();
+        public HashSet<Tile> BrokenTiles = new HashSet<Tile>();
+        public int BossCooldown;
+    }
+
+    private readonly List<Snapshot> history = new List<Snapshot>();
 
     public int UndosLeft {get; private set;}
     public bool HasPrevious => history.Count >= 2;
@@ -34,11 +42,11 @@ public class UndoManager : MonoBehaviour
     
     public void Capture()
     {
-        var snapshot = new List<UnitState>();
+        var snapshot = new Snapshot();
 
         foreach (var unit in UnitManager.Instance.EverSpawned)
         {
-            snapshot.Add(new UnitState
+            snapshot.Units.Add(new UnitState
             {
                Unit = unit,
                Alive = unit.CurrentHealth > 0,
@@ -64,28 +72,36 @@ public class UndoManager : MonoBehaviour
         return true;
     }
 
-    private void Restore(List<UnitState> states)
+    private BossEnemy FindBoss()
     {
-        foreach (var s in states) {
+        return UnitManager.Instance.EverSpawned.OfType<BossEnemy>().FirstOrDefault();
+    }
+
+    private void Restore(Snapshot snapshot)
+    {
+        foreach (var s in snapshot.Units) {
             var tile = s.Unit.OccupiedTile;
 
             if (tile != null && tile.OccupiedUnit == s.Unit) tile.OccupiedUnit = null;
         }
 
-        foreach (var s in states)
+        foreach (var s in snapshot.Units)
         {
             var unit = s.Unit;
 
             UnitManager.Instance.SetAlive(unit, s.Alive);
             unit.CurrentHealth = s.Health;
             unit.CurrentStep = s.Step;
-
+            
             if (!s.Alive) continue;
 
             s.Tile.OccupiedUnit = unit;
             unit.OccupiedTile = s.Tile;
             unit.transform.position = s.Tile.transform.position;
         }
+
+        var boss = FindBoss();
+        if (boss != null) boss.BreakCooldownLeft = snapshot.BossCooldown;
 
         GameManager.Instance.GameState = GameState.HeroesTurn;
         TurnManager.Instance.StartTurn(Faction.Hero);

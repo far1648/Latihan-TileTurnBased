@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7202704013031200786}
   - component: {fileID: 1556698178386012352}
-  - component: {fileID: 2211308087311196435}
+  - component: {fileID: 3061390980604871226}
   m_Layer: 0
   m_Name: Junandar
   m_TagString: Untagged
@@ -93,7 +93,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &2211308087311196435
+--- !u!114 &3061390980604871226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,15 +102,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4883650158535952019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae9d4b5eb2909034fb2a844c2ada0319, type: 3}
+  m_Script: {fileID: 11500000, guid: c64880b222213604da7f83db7dd45eb3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::BossEnemy
   UnitName: Junandar
   OccupiedTile: {fileID: 0}
-  Faction: 1
-  MaxStep: 3
+  Faction: 0
+  MaxStep: 2
   CurrentStep: 0
   AttackRange: 1
   MaxHealth: 200
   AttackPower: 25
-  MoveSpeed: 2
+  MoveSpeed: 6
+  breakChance: 0.7
+  breakCooldown: 1
+  minTiles: 1
+  maxTiles: 2
+  breakRadius: 4

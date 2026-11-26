@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TelurDadar : BaseEnemy
+public class SayurUrap : BaseEnemy
 {
     protected override void Awake()
     {

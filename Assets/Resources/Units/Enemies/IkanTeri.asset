@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1bb580d6448ee14a8c7ab94b17258ee, type: 3}
-  m_Name: TempeOrek
+  m_Name: IkanTeri
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
   Faction: 1
   UnitPrefab: {fileID: 1379459350598834502, guid: ed5dfcb1163ad7c4e85e921e148c982d, type: 3}

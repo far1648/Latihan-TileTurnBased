@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TempeOrek : BaseEnemy
+public class IkanTeri : BaseEnemy
 {
     protected override void Awake()
     {

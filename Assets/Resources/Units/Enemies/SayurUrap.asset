@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1bb580d6448ee14a8c7ab94b17258ee, type: 3}
-  m_Name: TelorDadar
+  m_Name: SayurUrap
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
   Faction: 1
   UnitPrefab: {fileID: 7593859670917084115, guid: 1b2b6c85fb683644a97e81372a432f6a, type: 3}

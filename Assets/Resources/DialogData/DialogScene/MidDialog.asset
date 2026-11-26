@@ -70,11 +70,11 @@ MonoBehaviour:
     portrait: {fileID: -2753138198643579184, guid: d72b351b7450cb541be22e06a633c467, type: 3}
     Text: "\u201CWhat exactly are you plotting?\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    portrait: {fileID: 4684634255308240008, guid: 79daac20612f4d846836176318ef6f1a, type: 3}
     Text: "\u201CI could ask the same to you.\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    portrait: {fileID: 4684634255308240008, guid: 79daac20612f4d846836176318ef6f1a, type: 3}
     Text: "\u201CThis village will be mine.\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    portrait: {fileID: 4684634255308240008, guid: 79daac20612f4d846836176318ef6f1a, type: 3}
     Text: "\u201CAnd no one will void my plan.\u201D"

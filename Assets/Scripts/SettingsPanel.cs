@@ -1,16 +1,31 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsPanel : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private GameObject panel;
+    [SerializeField] private Slider volumeSlider;
+
     void Start()
     {
-        
+        panel.SetActive(false);
+
+        volumeSlider.minValue = 0f;
+        volumeSlider.maxValue = 1f;
+
+        // Isi slider dari volume tersimpan tanpa memicu event
+        volumeSlider.SetValueWithoutNotify(AudioManager.Instance.Volume);
+        volumeSlider.onValueChanged.AddListener(v => AudioManager.Instance.Volume = v);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Open()
     {
-        
+        panel.SetActive(true);
+    }
+
+    public void Close()
+    {
+        panel.SetActive(false);
+        AudioManager.Instance.Save();
     }
 }

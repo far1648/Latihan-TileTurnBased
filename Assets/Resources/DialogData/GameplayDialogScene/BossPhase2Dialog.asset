@@ -22,13 +22,13 @@ MonoBehaviour:
     portrait: {fileID: -2753138198643579184, guid: d72b351b7450cb541be22e06a633c467, type: 3}
     Text: "\u201CAs if nothing happened?\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    portrait: {fileID: 4684634255308240008, guid: 79daac20612f4d846836176318ef6f1a, type: 3}
     Text: "\u201CDid you really think that that was all I had?\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    portrait: {fileID: 4684634255308240008, guid: 79daac20612f4d846836176318ef6f1a, type: 3}
     Text: "\u201CI\u2019ve mapped and considered every possibility.\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    portrait: {fileID: 4684634255308240008, guid: 79daac20612f4d846836176318ef6f1a, type: 3}
     Text: "\u201CThis is a long time coming.\u201D"
   - Speaker: Wiguna
     portrait: {fileID: -8828040028221845382, guid: ab15dc8f60d02ef43808e0f7b1421fba, type: 3}

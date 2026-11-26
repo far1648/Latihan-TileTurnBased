@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Junandar
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
   Faction: 1
-  UnitPrefab: {fileID: 3061390980604871226, guid: c5ff66c95f18d8f4485f96eab0873624, type: 3}
+  UnitPrefab: {fileID: 6744491309348940204, guid: b26472c189e4e364f8511d4133250cad, type: 3}

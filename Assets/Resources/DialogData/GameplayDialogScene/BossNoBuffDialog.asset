@@ -19,5 +19,5 @@ MonoBehaviour:
     portrait: {fileID: 4038183454373002819, guid: f9ed787c89d873a4892493c5190bd99e, type: 3}
     Text: "\u201CThat\u2026 did nothing!\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    portrait: {fileID: 4684634255308240008, guid: 79daac20612f4d846836176318ef6f1a, type: 3}
     Text: "\u201CMy defeat is beyond your comprehension.\u201D"

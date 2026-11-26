@@ -98,8 +98,18 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    private bool CanPassThrough(Tile tile, BaseUnit mover)
+    {
+        if (!tile.IsTerrainWalkable) return false;
+        if (tile.OccupiedUnit == null) return true;
+
+        return mover != null && tile.OccupiedUnit.Faction == mover.Faction;
+    }
+
     public Dictionary<Tile, Tile> FindReachable(Tile start, int maxSteps)
     {
+        var mover = start.OccupiedUnit;
+
         var cameFrom = new Dictionary<Tile, Tile> { [start] = null };
         var distance = new Dictionary<Tile, int> { [start] = 0 };
         var queue = new Queue<Tile>();
@@ -112,7 +122,7 @@ public class GridManager : MonoBehaviour
 
             foreach (var next in GetNeighbours(current))
             {
-                if (cameFrom.ContainsKey(next) || !next.Walkable) continue;
+                if (cameFrom.ContainsKey(next) || !CanPassThrough(next, mover)) continue;
 
                 cameFrom[next] = current;
                 distance[next] = distance[current] + 1;

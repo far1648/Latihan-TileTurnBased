@@ -135,6 +135,8 @@ public class UnitManager : MonoBehaviour
 
         foreach (var origin in Reachable.Keys)
         {
+            if (origin != unit.OccupiedTile && !origin.Walkable) continue;
+
             foreach (var tile in allTiles)
             {
                 if (origin.DistanceTo(tile) <= unit.AttackRange) threat.Add(tile);
@@ -174,7 +176,7 @@ public class UnitManager : MonoBehaviour
     public bool CanStillAct(BaseUnit unit)
     {
         var reachable = GridManager.Instance.FindReachable(unit.OccupiedTile, unit.CurrentStep);
-        if (reachable.Count > 1) return true;
+        if (reachable.Keys.Any(t => t != unit.OccupiedTile && t.Walkable)) return true;
 
         foreach (var tile in GridManager.Instance.GetAllTiles())
         {
@@ -207,6 +209,8 @@ public class UnitManager : MonoBehaviour
 
         foreach (var tile in Reachable.Keys)
         {
+            if (tile != unit.OccupiedTile && !tile.Walkable) continue;
+
             int distance = tile.DistanceTo(target);
             if (distance > unit.AttackRange) continue;
 

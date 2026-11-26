@@ -157,6 +157,7 @@ public class EnemyAI : MonoBehaviour
 
         foreach(var tile in UnitManager.Instance.Reachable.Keys)
         {
+            if (tile != enemy.OccupiedTile && !tile.Walkable) continue;
             if (!bestMap.TryGetValue(tile, out int d)) continue;
 
             if (d < destinationDistance)

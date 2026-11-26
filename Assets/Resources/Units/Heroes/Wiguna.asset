@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1bb580d6448ee14a8c7ab94b17258ee, type: 3}
-  m_Name: Pisau
+  m_Name: Wiguna
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
   Faction: 0
-  UnitPrefab: {fileID: -4258252399093419112, guid: cbc15c625913357448b898e73644275e, type: 3}
+  UnitPrefab: {fileID: 3437921233288000338, guid: 62c42b3929bb08a47aee2d62f1218d14, type: 3}

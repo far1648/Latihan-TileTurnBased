@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Garpu : BaseHero
+public class Eri : BaseHero
 {
     protected override void Awake()
     {

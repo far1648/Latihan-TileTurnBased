@@ -149,6 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogManager
   dialog: {fileID: 11400000, guid: dbf671e621ea21a40a5678d274daf379, type: 2}
+  weaponTriangleDialog: {fileID: 0}
+  overlayMode: 0
+  panelRoot: {fileID: 0}
   speakerText: {fileID: 2092729014}
   bodyText: {fileID: 366508928}
   portraitImage: {fileID: 1068310219}

@@ -75,8 +75,8 @@ MonoBehaviour:
   - Speaker: Wiguna
     portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
     Text: "\u201CI just wanted to be at home eating.\u201D"
-  - Speaker: Wiguna
-    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
+  - Speaker: Eri
+    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
     Text: "\u201CThat sucks.\u201D"
   - Speaker: Mariyati
     portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}

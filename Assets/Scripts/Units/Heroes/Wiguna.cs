@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pisau : BaseHero
+public class Wiguna : BaseHero
 {
     protected override void Awake()
     {

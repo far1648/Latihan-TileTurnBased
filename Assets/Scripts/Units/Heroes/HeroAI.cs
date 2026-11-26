@@ -19,6 +19,7 @@ public class HeroAI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        useAI = false;
     }
 
     public void BeginTurn()

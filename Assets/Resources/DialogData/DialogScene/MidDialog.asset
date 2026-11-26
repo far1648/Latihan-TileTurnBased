@@ -16,65 +16,65 @@ MonoBehaviour:
   PlayOncePerSession: 1
   Lines:
   - Speaker: Mariyati
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
     Text: "\u201CPhew, that worked!\u201D"
   - Speaker: Naja
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
     Text: "\u201CThere\u2019s more of them!\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
     Text: "\u201CThis won\u2019t be easy.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
     Text: "\u201CI know this is a big favor to ask.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
     Text: "\u201CBut I need you to hold them up to the best of your abilities.\u201D"
   - Speaker: Eri
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 21300000, guid: 91345c67b747ae14193553d1f6839c01, type: 3}
     Text: "\u201CWe\u2019ll do it. Anything for our chief.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
     Text: "\u201CThank you.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
     Text: "\u201CI owe the village an explanation.\u201D"
   - Speaker: Mariyati
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
     Text: "\u201CI wish you luck.\u201D"
   - Speaker: 
     portrait: {fileID: 0}
     Text: Mariyati leave the scene
   - Speaker: Wiguna
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
     Text: "\u201COkay, we just need to keep doing what the chief told us!\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
     Text: "\u201CWhat are you all doing?\u201D"
   - Speaker: Wiguna
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 21300000, guid: b6a0b8b1f8ccbf24391dc0bad40ecf0c, type: 3}
     Text: "\u201CHuh?\u201D"
   - Speaker: 
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 0}
     Text: Junandar enter the scene
   - Speaker: Naja
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
     Text: "\u201CYou\u2019re\u2026 the cook.\u201D"
   - Speaker: Naja
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
     Text: "\u201CYou made these creatures!\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
     Text: "\u201CHow bold of you. But true.\u201D"
   - Speaker: Naja
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: 688305182712969960, guid: 1306e461193fecb4ba9ee2426b28b7c6, type: 3}
     Text: "\u201CWhat exactly are you plotting?\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
     Text: "\u201CI could ask the same to you.\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
     Text: "\u201CThis village will be mine.\u201D"
   - Speaker: Junandar
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
     Text: "\u201CAnd no one will void my plan.\u201D"

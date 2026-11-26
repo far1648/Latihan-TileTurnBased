@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1bb580d6448ee14a8c7ab94b17258ee, type: 3}
-  m_Name: Garpu
+  m_Name: Eri
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
   Faction: 0
-  UnitPrefab: {fileID: 9166414707377030333, guid: e7bfbf4a4b6b6a24990fc902bc59124a, type: 3}
+  UnitPrefab: {fileID: 3324660168294688713, guid: a5a0f8819d94ecb4985b9393b4a020c7, type: 3}

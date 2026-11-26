@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c620f97ac95c248409e2df0d3fe0083d
+guid: 71797413d9d884441806a59fd52d5827
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1138199378478676587
-    second: Pisau_0
+      213: -2303322141785729955
+    second: Eri 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pisau_0
+      name: Eri 1_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 17
-        width: 189
-        height: 202
+        x: 85
+        y: 56
+        width: 811
+        height: 793
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6abac5ed42bbcf00800000000000000
-      internalID: 1138199378478676587
+      spriteID: d54d19f27b4f800e0800000000000000
+      internalID: -2303322141785729955
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pisau_0: 1138199378478676587
+      Eri 1_0: -2303322141785729955
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

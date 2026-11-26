@@ -5,8 +5,14 @@ public static class UnitActions
 {
     public static void Attack(BaseUnit attacker, BaseUnit target)
     {
+        int matchup = attacker.MatchupAgainst(target);
+        
         target.TakeDamage(attacker.DamageAgainst(target), attacker);
         TurnManager.Instance.MarkActed(attacker);
+
+        if (attacker.Faction == Faction.Hero && matchup!=0 
+            && DialogManager.Instance != null) 
+            DialogManager.Instance.PlayWeaponTriangleHint();
     }
 
     public static void Move(BaseUnit unit, Tile destination, List<Vector3> path, System.Action onArrive = null)

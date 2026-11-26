@@ -11,6 +11,7 @@ public class DialogManager : MonoBehaviour
     public static DialogManager Instance;
 
     [SerializeField] private DialogData dialog;
+    [SerializeField] private DialogData weaponTriangleDialog;
     [SerializeField] private bool overlayMode;
     [SerializeField] private GameObject panelRoot;
     [SerializeField] private TextMeshProUGUI speakerText, bodyText;
@@ -73,6 +74,11 @@ public class DialogManager : MonoBehaviour
         Begin(data);
     }
 
+    public void PlayWeaponTriangleHint()
+    {
+        Play(weaponTriangleDialog);
+    }
+
     private void Begin(DialogData data)
     {
         current = data;
@@ -102,12 +108,12 @@ public class DialogManager : MonoBehaviour
 
         index++;
         
-        if (index >= dialog.Lines.Count)
+        if (index >= current.Lines.Count)
         {
             Finish();
             return;
         }
-        ShowLine(dialog.Lines[index]);
+        ShowLine(current.Lines[index]);
     }
 
     private bool WasAdvancePressed()

@@ -2303,6 +2303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogManager
   dialog: {fileID: 11400000, guid: 5f493081755fc5d4c96862c4f5b7c7d8, type: 2}
+  weaponTriangleDialog: {fileID: 11400000, guid: fe46d7add4858d64e9ce35b3b4fdd460, type: 2}
   overlayMode: 1
   panelRoot: {fileID: 316259041}
   speakerText: {fileID: 1699553024}

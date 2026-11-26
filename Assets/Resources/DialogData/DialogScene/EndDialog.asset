@@ -30,12 +30,12 @@ MonoBehaviour:
   - Speaker: Naja
     portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
     Text: "\u201CI\u2019ll gather help.\u201D"
-  - Speaker: 
+  - Speaker: . . .
     portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
-    Text: "\u201CThe village is free from Junandar\u2019s hand.\u201D"
-  - Speaker: 
+    Text: "The village is free from Junandar\u2019s hand."
+  - Speaker: . . .
     portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
-    Text: "\u201CBut not from the possibility of another food attack.\u201D"
-  - Speaker: 
+    Text: But not from the possibility of another food attack.
+  - Speaker: . . .
     portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
-    Text: "\u201CA thorough investigation of the scene found no traces of what caused the food to mutate and gain life.\u201D"
+    Text: A thorough investigation of the scene found no traces of what caused the food to mutate and gain life.

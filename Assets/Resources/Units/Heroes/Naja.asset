@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1bb580d6448ee14a8c7ab94b17258ee, type: 3}
-  m_Name: Sendok
+  m_Name: Naja
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
   Faction: 0
-  UnitPrefab: {fileID: 4836108526317587625, guid: 11a64b7ca716b99438061b78ff9d698a, type: 3}
+  UnitPrefab: {fileID: 4273797820412297245, guid: 83c31b641201c1a49ba91571a1ca9667, type: 3}

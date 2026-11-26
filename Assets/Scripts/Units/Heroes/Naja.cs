@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Sendok : BaseHero
+public class Naja : BaseHero
 {
     protected override void Awake()
     {

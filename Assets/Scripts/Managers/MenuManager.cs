@@ -33,8 +33,14 @@ public class MenuManager : MonoBehaviour
             var unit = tile.OccupiedUnit;
 
             tileUnitNameText.text = unit.UnitName;
-            tileUnitHpText.text = $"HP {unit.CurrentHealth}/{unit.MaxHealth}";
-            tileUnitAttText.text = $"ATT {unit.AttackPower}";
+
+            string hp = $"HP {unit.CurrentHealth}/{unit.MaxHealth}";
+            if (unit is BossEnemy boss) hp += $"\nSHIELD {boss.Shield}/{boss.MaxShield}";
+            tileUnitHpText.text = hp;
+
+            string att = $"ATT {unit.AttackPower}";
+            if (unit.HasAttackBuff) att += $"\nBUFF ({unit.BuffTurnsLeft})";
+            tileUnitAttText.text = att;
 
             tileUnitObject.SetActive(true);
         } 

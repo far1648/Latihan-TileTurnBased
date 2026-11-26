@@ -87,6 +87,7 @@ public class TurnManager : MonoBehaviour
         {
             hero.TickBuff();
         }
+        MenuManager.Instance.RefreshTileInfo();
     }
 
     public void EndTurnEarly()

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    public DialogManager Instance;
+    public static DialogManager Instance;
 
     [SerializeField] private DialogData dialog;
     [SerializeField] private bool overlayMode;

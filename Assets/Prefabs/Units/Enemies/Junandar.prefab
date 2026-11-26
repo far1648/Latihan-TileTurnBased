@@ -124,7 +124,13 @@ MonoBehaviour:
   minionPrefabs:
   - {fileID: 8214382227629332192, guid: f30c0ab326e2935478e3e60b322a00bb, type: 3}
   - {fileID: 7593859670917084115, guid: 1b2b6c85fb683644a97e81372a432f6a, type: 3}
-  - {fileID: 1379459350598834502, guid: ed5dfcb1163ad7c4e85e921e148c982d, type: 3}
+  - {fileID: 7915240558370520236, guid: 4df36ddbf3e074e4b8ad9257b8bf6f41, type: 3}
   summonEvery: 3
   summonCount: 1
   summonRadius: 2
+  maxShield: 200
+  shieldDamageWithoutBuff: 0.5
+  noBuffHitDialog: {fileID: 11400000, guid: 510c0a0d2a272784fafb64210eb94636, type: 2}
+  shieldBrokenDialog: {fileID: 11400000, guid: 9dbbfa530c633894ab6525bb6142b38a, type: 2}
+  warningTint: {r: 1, g: 0.6, b: 0.6, a: 1}
+  lethalTint: {r: 1, g: 0.2, b: 0.2, a: 1}

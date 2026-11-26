@@ -31,10 +31,13 @@ public class EnemyAI : MonoBehaviour
     {
         TurnManager.Instance.AITurnRunning = true;
 
+        while (TurnManager.Instance.DialogOpen) yield return null;
+
         yield return new WaitForSeconds(turnStartDelay);
 
         while (GameManager.Instance.GameState == GameState.EnemiesTurn)
         {
+            while (TurnManager.Instance.DialogOpen) yield return null;
             var enemy = UnitManager.Instance
                 .GetUnits(Faction.Enemy)
                 .FirstOrDefault(u => u.CurrentHealth > 0 && TurnManager.Instance.CanAct(u));

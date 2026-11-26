@@ -21,6 +21,9 @@ public class BossEnemy : BaseEnemy
     [SerializeField] private int maxShield = 200;
     [Range(0f, 1f)] [SerializeField] private float shieldDamageWithoutBuff = 0.5f;
 
+    [SerializeField] private DialogData noBuffHitDialog;
+    [SerializeField] private DialogData shieldBrokenDialog;
+
     public int MaxShield => maxShield;
     public int Shield {get; set;}
 
@@ -92,6 +95,13 @@ public class BossEnemy : BaseEnemy
         return damage;
     }
 
+    private void PlayDialog(DialogData data)
+    {
+        if (data == null || DialogManager.Instance == null) return;
+
+        DialogManager.Instance.Play(data);
+    }
+
     public override void TakeDamage(int amount, BaseUnit attacker = null)
     {
         if (Shield <= 0)
@@ -108,7 +118,15 @@ public class BossEnemy : BaseEnemy
 
         Shield = Mathf.Max(0, Shield - effective);
 
-        if (Shield == 0 && oneShotStage == 0) OneShotStage = 1;
+        if (Shield == 0) 
+        {
+            if (oneShotStage == 0) OneShotStage = 1;
+            PlayDialog(shieldBrokenDialog);
+        }
+        else if (!buffed)
+        {
+            PlayDialog(noBuffHitDialog);
+        }
 
         MenuManager.Instance.RefreshTileInfo();
     }

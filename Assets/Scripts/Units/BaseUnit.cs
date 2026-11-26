@@ -29,6 +29,8 @@ public class BaseUnit : MonoBehaviour
     {
         CurrentHealth = MaxHealth;
         CurrentStep = MaxStep;
+
+        if (GetComponent<UnitBars>() == null) gameObject.AddComponent<UnitBars>();
     }
 
     public void GrantAttackBuff()

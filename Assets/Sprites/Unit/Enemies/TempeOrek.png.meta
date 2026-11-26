@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f3da655104c82314cb069d5ccda79f24
+guid: 703a5609a1cfa854895f3e5d3377a6b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3352710163505623684
-    second: TelurDadar_0
+      213: -6313602344207782925
+    second: TempeOrek_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,17 +98,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TelurDadar_0
+      name: TempeOrek_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 23
-        width: 224
-        height: 186
+        x: 17
+        y: 31
+        width: 215
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7dc765aed7c871d0800000000000000
-      internalID: -3352710163505623684
+      spriteID: 3fbeb6c6e149168a0800000000000000
+      internalID: -6313602344207782925
       vertices: []
       indices: 
       edges: []
@@ -137,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TelurDadar_0: -3352710163505623684
+      TempeOrek_0: -6313602344207782925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

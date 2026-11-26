@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c620f97ac95c248409e2df0d3fe0083d
+guid: 0ae2e193b464ef54f9db06c3daf95500
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1138199378478676587
-    second: Pisau_0
+      213: 1987276458393394008
+    second: Garpu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,17 +98,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pisau_0
+      name: Garpu_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 17
-        width: 189
-        height: 202
+        x: 158
+        y: 18
+        width: 48
+        height: 326
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6abac5ed42bbcf00800000000000000
-      internalID: 1138199378478676587
+      spriteID: 85bd80de869349b10800000000000000
+      internalID: 1987276458393394008
       vertices: []
       indices: 
       edges: []
@@ -137,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pisau_0: 1138199378478676587
+      Garpu_0: 1987276458393394008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f3da655104c82314cb069d5ccda79f24
+guid: 29189a9d6a275f842b5100e8361eb1fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3352710163505623684
-    second: TelurDadar_0
+      213: -1104624658039050899
+    second: Sayur 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TelurDadar_0
+      name: Sayur 2_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 23
-        width: 224
-        height: 186
+        x: 58
+        y: 56
+        width: 902
+        height: 771
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7dc765aed7c871d0800000000000000
-      internalID: -3352710163505623684
+      spriteID: d6de17fd9b59ba0f0800000000000000
+      internalID: -1104624658039050899
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TelurDadar_0: -3352710163505623684
+      Sayur 2_0: -1104624658039050899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

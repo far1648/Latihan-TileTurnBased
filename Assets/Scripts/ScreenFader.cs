@@ -45,7 +45,7 @@ public class ScreenFader : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void ODestroy()
+    void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         if (Instance == this) Instance = null;

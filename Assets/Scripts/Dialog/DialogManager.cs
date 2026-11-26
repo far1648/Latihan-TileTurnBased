@@ -198,6 +198,6 @@ public class DialogManager : MonoBehaviour
 
     private void LoadNextScene(DialogData finished)
     {
-        SceneManager.LoadScene(finished != null ? finished.NextScene : "TutorialGameplay");
+        ScreenFader.LoadScene(finished != null ? finished.NextScene : "TutorialGameplay");
     }
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SayurUrap
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableUnit
   Faction: 1
-  UnitPrefab: {fileID: 7593859670917084115, guid: 1b2b6c85fb683644a97e81372a432f6a, type: 3}
+  UnitPrefab: {fileID: 4107770756139153653, guid: eb9300f168ccb0a479bbb1fbae013674, type: 3}

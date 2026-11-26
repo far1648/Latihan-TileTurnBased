@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 703a5609a1cfa854895f3e5d3377a6b9
+guid: 75b44a43a4ad27d4cbd1def40aa9e1ca
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6313602344207782925
-    second: TempeOrek_0
+      213: 1360169779816799782
+    second: Tumpeng 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TempeOrek_0
+      name: Tumpeng 1_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 31
-        width: 215
-        height: 180
+        x: 19
+        y: 0
+        width: 977
+        height: 992
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3fbeb6c6e149168a0800000000000000
-      internalID: -6313602344207782925
+      spriteID: 62e9330553b40e210800000000000000
+      internalID: 1360169779816799782
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TempeOrek_0: -6313602344207782925
+      Tumpeng 1_0: 1360169779816799782
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

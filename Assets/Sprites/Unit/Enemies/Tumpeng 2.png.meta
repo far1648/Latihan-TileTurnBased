@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a47d309a7a4cdea4ea6782c7b21a8b51
+guid: f0d31e33b63ecd148b2fd8f1bf6f12aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8280554180738404138
-    second: ikanteri_0
+      213: 8630673220444241370
+    second: Tumpeng 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ikanteri_0
+      name: Tumpeng 2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 19
         y: 0
-        width: 173
-        height: 189
+        width: 977
+        height: 962
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d036b948df851d80800000000000000
-      internalID: -8280554180738404138
+      spriteID: add3e05119f46c770800000000000000
+      internalID: 8630673220444241370
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ikanteri_0: -8280554180738404138
+      Tumpeng 2_0: 8630673220444241370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

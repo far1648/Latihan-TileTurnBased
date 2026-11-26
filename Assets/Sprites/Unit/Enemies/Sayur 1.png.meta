@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b2764ce10ed2274d9a198bddb44d992
+guid: fb97a5e3288ddf342964eace10033a7e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1814622954139055419
-    second: Nasi Kuning_0
+      213: -8167068410500918789
+    second: Sayur 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nasi Kuning_0
+      name: Sayur 1_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 13
-        width: 300
-        height: 184
+        x: 80
+        y: 56
+        width: 897
+        height: 793
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b357ab666f5de2910800000000000000
-      internalID: 1814622954139055419
+      spriteID: bf157c73d8eb8ae80800000000000000
+      internalID: -8167068410500918789
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Nasi Kuning_0: 1814622954139055419
+      Sayur 1_0: -8167068410500918789
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

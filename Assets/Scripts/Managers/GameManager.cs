@@ -39,12 +39,12 @@ public class GameManager : MonoBehaviour
     private IEnumerator LoadNextSceneAfterDelay(string sceneName)
     {
         yield return new WaitForSeconds(nextSceneDelay);
-        SceneManager.LoadScene(sceneName);
+        ScreenFader.LoadScene(sceneName);
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ScreenFader.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ChangeState(GameState newState)

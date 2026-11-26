@@ -14,7 +14,7 @@ public class SayurUrap : BaseEnemy
     {
         foreach (var hero in UnitManager.Instance.GetUnits(Faction.Hero))
         {
-            hero.CurrentHealth = Mathf.Max(hero.CurrentHealth + healAmount, hero.MaxHealth);
+            hero.CurrentHealth = Mathf.Min(hero.CurrentHealth + healAmount, hero.MaxHealth);
         }
         base.Die();
     }

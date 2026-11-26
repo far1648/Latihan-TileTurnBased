@@ -19,6 +19,29 @@ public class UnitManager : MonoBehaviour
         Instance = this;
     }
 
+    public BaseUnit SpawnUnit(BaseUnit prefab, Tile tile)
+    {
+        if (prefab == null || tile == null) return null;
+        var unit = Instantiate(prefab);
+        RegisterUnit(unit);
+        tile.SetUnit(unit);
+
+        return unit;
+    }
+
+    public void DestoryUnit(BaseUnit unit)
+    {
+        if (unit == null) return;
+
+        if (unit.OccupiedTile != null && unit.OccupiedTile.OccupiedUnit == unit)
+            unit.OccupiedTile.OccupiedUnit = null;
+
+        allUnits.Remove(unit);
+        everSpawned.Remove(unit);
+
+        Destroy(unit.gameObject);
+    }
+
     public void SpawnHeroes()
     {
         SpawnFromMap(GridManager.Instance.Map.Heroes, GridManager.Instance.HeroSpawnTiles, Faction.Hero);

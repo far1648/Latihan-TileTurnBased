@@ -48,6 +48,9 @@ public class EnemyAI : MonoBehaviour
                 if (boss.TryRewind())
                     yield return new WaitForSeconds(unitDelay * 4f);
 
+                if (boss.TrySummon() > 0)
+                    yield return new WaitForSeconds(unitDelay * 2f);
+
                 if (boss.TryBreakTiles() > 0)
                     yield return new WaitForSeconds(unitDelay * 2f);
             }

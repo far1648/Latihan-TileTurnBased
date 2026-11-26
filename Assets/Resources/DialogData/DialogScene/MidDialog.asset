@@ -51,9 +51,6 @@ MonoBehaviour:
   - Speaker: Junandar
     portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
     Text: "\u201CWhat are you all doing?\u201D"
-  - Speaker: Junandar
-    portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
-    Text: "\u201CWhat are you all doing?\u201D"
   - Speaker: Wiguna
     portrait: {fileID: -4240540556989730838, guid: e20809948dfa6fb4c98430f36efe38e4, type: 3}
     Text: "\u201CHuh?\u201D"

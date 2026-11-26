@@ -14,4 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
   NextScene: 
   PlayOncePerSession: 1
-  Lines: []
+  Lines:
+  - Speaker: Naja
+    portrait: {fileID: 1234378565482261293, guid: 7cc7540603575b84289f8147d6c00f9e, type: 3}
+    Text: "\u201CHe\u2019s\u2026 still standing?!\u201D"
+  - Speaker: Naja
+    portrait: {fileID: 1234378565482261293, guid: 7cc7540603575b84289f8147d6c00f9e, type: 3}
+    Text: "\u201CAs if nothing happened?\u201D"
+  - Speaker: Junandar
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    Text: "\u201CDid you really think that that was all I had?\u201D"
+  - Speaker: Junandar
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    Text: "\u201CI\u2019ve mapped and considered every possibility.\u201D"
+  - Speaker: Junandar
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    Text: "\u201CThis is a long time coming.\u201D"
+  - Speaker: Wiguna
+    portrait: {fileID: -4330617105125101780, guid: a755e02a59c4f4a4e9262d8ff79cabb4, type: 3}
+    Text: "\u201CWe can\u2019t just give up!\u201D"

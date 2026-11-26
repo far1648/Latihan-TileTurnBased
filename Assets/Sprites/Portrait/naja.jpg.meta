@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f6909497f35f42c4b874f1ebc12cbf2b
+guid: 1306e461193fecb4ba9ee2426b28b7c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8423229058902064445
-    second: Screenshot 2026-11-26 190710_0
+      213: 688305182712969960
+    second: naja_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screenshot 2026-11-26 190710_0
+      name: naja_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 375
-        height: 840
+        width: 1200
+        height: 1600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c205629ccdaa1b80800000000000000
-      internalID: -8423229058902064445
+      spriteID: 8eabaa8bae95d8900800000000000000
+      internalID: 688305182712969960
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screenshot 2026-11-26 190710_0: -8423229058902064445
+      naja_0: 688305182712969960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

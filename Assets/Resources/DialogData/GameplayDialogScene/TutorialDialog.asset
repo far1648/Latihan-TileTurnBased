@@ -14,4 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
   NextScene: 
   PlayOncePerSession: 1
-  Lines: []
+  Lines:
+  - Speaker: Mariyati
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    Text: "\u201CWe need to defeat these creatures!\u201D"
+  - Speaker: Mariyati
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    Text: "\u201CTo attack, we need to get close enough to an enemy.\u201D"
+  - Speaker: Mariyati
+    portrait: {fileID: 1014291640680329557, guid: 44646755509287a439dfa8e44cdb7e6e, type: 3}
+    Text: "\u201CSelect each party member, and then select a tile to move to.\u201D"

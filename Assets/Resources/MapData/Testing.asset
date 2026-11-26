@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf990f54473e21c48950745bdc039013, type: 3}
+  m_Name: Testing
+  m_EditorClassIdentifier: Assembly-CSharp::MapData
+  MapName: Tutorial
+  NextScene: DialogTengah
+  layout: 'EEMEEMEE
+
+    MEFEFEFM
+
+    MEEEEEEM
+
+    MEEEEMEM
+
+    EEEEEEEE
+
+    EHEHEHEE'
+  Heroes:
+  - {fileID: 11400000, guid: 6bd5674282524954d946c8dc58f01c30, type: 2}
+  - {fileID: 11400000, guid: 4ed0f2332e329f544a8ef355ba82e95d, type: 2}
+  - {fileID: 11400000, guid: 90049bd5363ebaf4cb0360d716722421, type: 2}
+  Enemies:
+  - {fileID: 11400000, guid: 14edd5d7645549045b4f73dba2f5779c, type: 2}
+  - {fileID: 11400000, guid: 136ed9f219e12924cb6c8ba06df0c59c, type: 2}
+  - {fileID: 11400000, guid: 26ecab9c4dbc828419c3fce7ca71050a, type: 2}

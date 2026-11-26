@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3bee3c9add0d84981e51442a055bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TelurDadar
-  UnitName: Telur Dadar
+  UnitName: Sayur Urap
   OccupiedTile: {fileID: 0}
   Faction: 1
   MaxStep: 3
@@ -114,5 +114,4 @@ MonoBehaviour:
   MaxHealth: 0
   AttackPower: 0
   MoveSpeed: 6
-  buffDuration: 2
-  buffDamageBonus: 10
+  healAmount: 20

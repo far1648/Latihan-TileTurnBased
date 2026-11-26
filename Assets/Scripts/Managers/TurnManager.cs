@@ -9,7 +9,8 @@ public class TurnManager : MonoBehaviour
     private readonly HashSet<BaseUnit> actedUnits = new HashSet<BaseUnit>();
     public bool IsBusy;
     public bool AITurnRunning;
-    public bool InputBlocked => IsBusy || AITurnRunning;
+    public bool DialogOpen {get; set;}
+    public bool InputBlocked => IsBusy || AITurnRunning || DialogOpen;
     public bool SkipNextEnemyTurn {get; set;}
     void Awake()
     {

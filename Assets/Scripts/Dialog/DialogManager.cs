@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,29 +8,90 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
+    public DialogManager Instance;
+
     [SerializeField] private DialogData dialog;
+    [SerializeField] private bool overlayMode;
+    [SerializeField] private GameObject panelRoot;
     [SerializeField] private TextMeshProUGUI speakerText, bodyText;
     [SerializeField] private Image portraitImage;
     [SerializeField] private float charPerSecond = 40f;
 
+    private static readonly HashSet<string> played = new HashSet<string>();
+
+    private readonly Queue<DialogData> pending = new Queue<DialogData>();
+    private DialogData current;
     private int index;
+    private int startFrame;
     private bool isTyping;
     private Coroutine typing;
 
+    public bool IsPlaying => current != null;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatistics()
+    {
+        played.Clear();
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+
+        if (overlayMode && panelRoot != null) panelRoot.SetActive(false);
+    }
+
     private void Start()
     {
+        if (overlayMode)
+        {
+            if (dialog != null) Play(dialog);
+            return;
+        }
+        
         if (dialog == null || dialog.Lines.Count == 0)
         {
-            Finish();
+            LoadNextScene(null);
+            return;
+        } 
+
+        Begin(dialog);
+    }
+
+    public void Play(DialogData data)
+    {
+        if (!overlayMode) return;
+        if (data == null || data.Lines.Count == 0) return;
+        if (data.PlayOncePerSession && played.Contains(data.name)) return;
+
+        if (current != null)
+        {
+            pending.Enqueue(data);
             return;
         }
 
+        Begin(data);
+    }
+
+    private void Begin(DialogData data)
+    {
+        current = data;
         index = 0;
-        ShowLine(dialog.Lines[index]);
+        startFrame = Time.frameCount;
+
+        if (overlayMode)
+        {
+            if (panelRoot != null) panelRoot.SetActive(true);
+            TurnManager.Instance.DialogOpen = true;
+        }
+
+        ShowLine(current.Lines[0]);
     }
 
     private void Update() 
     {
+        if (current == null) return;
+        if (Time.frameCount == startFrame) return;
         if (!WasAdvancePressed()) return;
 
         if (isTyping)
@@ -39,6 +101,7 @@ public class DialogManager : MonoBehaviour
         }
 
         index++;
+        
         if (index >= dialog.Lines.Count)
         {
             Finish();
@@ -99,6 +162,36 @@ public class DialogManager : MonoBehaviour
     
     private void Finish()
     {
-        SceneManager.LoadScene(dialog != null ? dialog.NextScene : "TutorialGameplay");
+        var finished = current;
+        current = null;
+
+        if (!overlayMode)
+        {
+            LoadNextScene(finished);
+            return;
+        }
+
+        played.Add(finished.name);
+
+        if (pending.Count>0)
+        {
+            Begin(pending.Dequeue());
+            return;
+        }
+
+        if (panelRoot != null) panelRoot.SetActive(false);
+        StartCoroutine(ReleaseInput());
+    }
+
+    private IEnumerator ReleaseInput()
+    {
+        yield return null;
+
+        if (current == null) TurnManager.Instance.DialogOpen = false;
+    }
+
+    private void LoadNextScene(DialogData finished)
+    {
+        SceneManager.LoadScene(finished != null ? finished.NextScene : "TutorialGameplay");
     }
 }

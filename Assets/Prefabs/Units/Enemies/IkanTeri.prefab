@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1036532389359250444}
   - component: {fileID: 7915240558370520236}
-  - component: {fileID: -4549620180762333899}
   m_Layer: 0
   m_Name: IkanTeri
   m_TagString: Untagged
@@ -55,21 +54,6 @@ MonoBehaviour:
   MaxHealth: 0
   AttackPower: 0
   MoveSpeed: 6
---- !u!114 &-4549620180762333899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927751123188883486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 024c65e92e79951468b5b7968be25ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  useAI: 1
-  turnStartDelay: 0.2
-  unitDelay: 0.2
 --- !u!1 &8866812566789307884
 GameObject:
   m_ObjectHideFlags: 0

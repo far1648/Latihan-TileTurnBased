@@ -13,6 +13,7 @@ public class DialogData : ScriptableObject
     }
 
     public string NextScene;
+    public bool PlayOncePerSession = true;
 
     public List<Line> Lines = new List<Line>();
 }

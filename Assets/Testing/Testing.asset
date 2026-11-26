@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Testing
   m_EditorClassIdentifier: Assembly-CSharp::MapData
   MapName: Tutorial
-  NextScene: DialogTengah
+  NextScene: Testing
   layout: 'EEFEEMEE
 
     MEFEFEFM
@@ -31,6 +31,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6bd5674282524954d946c8dc58f01c30, type: 2}
   Enemies:
   - {fileID: 11400000, guid: 475ad7fb82cbd06469fce70ef79dab33, type: 2}
-  - {fileID: 11400000, guid: 26ecab9c4dbc828419c3fce7ca71050a, type: 2}
-  - {fileID: 11400000, guid: 26ecab9c4dbc828419c3fce7ca71050a, type: 2}
-  - {fileID: 11400000, guid: 26ecab9c4dbc828419c3fce7ca71050a, type: 2}

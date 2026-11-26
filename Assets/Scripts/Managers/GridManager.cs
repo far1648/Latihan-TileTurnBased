@@ -145,6 +145,60 @@ public class GridManager : MonoBehaviour
         return distance;
     }
 
+    public List<Tile> GetTilesNear(IEnumerable<BaseUnit> centers, int radius)
+    {
+        var result = new List<Tile>();
+
+        var origin = centers
+            .Where(c => c != null && c.OccupiedTile != null)
+            .Select(c => c.OccupiedTile)
+            .ToList();
+
+        foreach(var tile  in tiles.Values)
+        {
+            if (!tile.Walkable) continue;
+
+            if (origin.Any(o => o.DistanceTo(tile) <= radius)) result.Add(tile);
+        }
+
+        return result;
+    }
+
+    public bool CanBreak(Tile target)
+    {
+        if (target == null || !target.Walkable) return false;
+
+        Tile start = null;
+        int total = 0;
+
+        foreach (var tile in tiles.Values)
+        {
+            if (tile == target || !tile.IsTerrainWalkable) continue;
+
+            total++;
+            if (start == null) start = tile;
+        }
+
+        var visited = new HashSet<Tile> { start };
+        var queue = new Queue<Tile>();
+        queue.Enqueue(start);
+
+        while (queue.Count > 0)
+        {
+            var current = queue.Dequeue();
+
+            foreach (var next in GetNeighbours(current))
+            {
+                if (next == target || visited.Contains(next) || !next.IsTerrainWalkable) continue;
+
+                visited.Add(next);
+                queue.Enqueue(next);
+            }
+        }
+
+        return visited.Count == total;
+    }
+
     public List<Vector3> BuildPath(Dictionary<Tile, Tile> cameFrom, Tile target)
     {
         var path = new List<Vector3>();

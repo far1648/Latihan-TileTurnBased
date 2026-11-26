@@ -43,6 +43,11 @@ public class EnemyAI : MonoBehaviour
             if (!TurnManager.Instance.CanAct(enemy)) continue;
 
             yield return new WaitForSeconds(unitDelay);
+            
+            if (enemy is BossEnemy boss && boss.TryBreakTiles() > 0)
+            {
+                yield return new WaitForSeconds(unitDelay * 2f);
+            }
 
             yield return ActWith(enemy);
         }

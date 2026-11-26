@@ -9,15 +9,18 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject moveHighlight;
     [SerializeField] private GameObject attackHighlight;
     [SerializeField] private bool isWalkable;
-    public bool IsTerrainWalkable => isWalkable;
+    public bool IsBroken {get; private set;}
+    public bool IsTerrainWalkable => isWalkable && !IsBroken;
     [SerializeField] private Color threatColor = new Color(1f, 0.55f, 0f, 0.35f);
     [SerializeField] private Color targetColor = new Color(1f, 0f, 0f, 0.5f);
     [SerializeField] private Color rangeColor = new Color(0.005f, 0f, 1f, 0.45f);
     [SerializeField] private Color pathColor = new Color(0.35f, 0.8f, 1f, 0.6f);
     [SerializeField] private Color destinationColor = new Color(0.2f, 1f, 0.4f, 0.75f);
+    [SerializeField] private Color brokenColor = new Color(0.12f, 0.08f, 0.08f, 1f);
+    private Color colorBeforeBreak;
 
     public BaseUnit OccupiedUnit;
-    public bool Walkable => isWalkable && OccupiedUnit == null;
+    public bool Walkable => IsTerrainWalkable && OccupiedUnit == null;
 
     public virtual void Init(int x, int y)
     {
@@ -111,66 +114,26 @@ public abstract class Tile : MonoBehaviour
         }
     }
 
-    private void HandleEnemyTurnClick()
+    public bool Break()
     {
-        var selected = UnitManager.Instance.SelectedEnemy;
+        if (IsBroken || !isWalkable || OccupiedUnit != null) return false;
 
-        if (OccupiedUnit is BaseEnemy enemy)
-        {
-            if (TurnManager.Instance.CanAct(enemy))
-                UnitManager.Instance.SetSelectedEnemy(enemy);
-        }
-        else if (OccupiedUnit is BaseHero hero) 
-        {
-            if (selected == null) return;
+        colorBeforeBreak = spriteRenderer.color;
+        spriteRenderer.color = brokenColor;
+        IsBroken = true;
 
-            if (!IsInAttackRange(selected))
-            {
-                var position = UnitManager.Instance.FindAttackPosition(selected, this);
+        SetMoveHighlight(MoveHighlightMode.None);
+        SetAttackHighlight(AttackHighlightMode.None);
 
-                if (position == null)
-                {
-                    UnitManager.Instance.SetSelectedEnemy(null);
-                    return;
-                }
+        return true;
+    }
 
-                if (UnitManager.Instance.PendingMoveTile != position)
-                {
-                    UnitManager.Instance.PreviewMove(position);
-                    return;
-                }
+    public void Repair()
+    {
+        if (!IsBroken) return;
 
-                var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, position);
-                
-                UnitManager.Instance.SetSelectedEnemy(null);
-                UnitActions.MoveAndAttack(selected, position, path, hero);
-                return;
-            }
-
-            UnitManager.Instance.SetSelectedEnemy(null);
-            UnitActions.Attack(selected, hero);
-        }
-        else if (selected != null)
-        {
-            if (!UnitManager.Instance.Reachable.ContainsKey(this))
-            {
-                UnitManager.Instance.SetSelectedEnemy(null);
-                return;
-            }
-
-            if (!Walkable) return;
-
-            if (UnitManager.Instance.PendingMoveTile != this)
-            {
-                UnitManager.Instance.PreviewMove(this);
-                return;
-            }
-
-            var path = GridManager.Instance.BuildPath(UnitManager.Instance.Reachable, this);
-
-            UnitManager.Instance.SetSelectedEnemy(null);
-            UnitActions.Move(selected, this, path, () => UnitActions.ContinueOrFinish(selected));
-        }
+        spriteRenderer.color = colorBeforeBreak;
+        IsBroken = false;
     }
 
     public void SetUnit(BaseUnit unit)

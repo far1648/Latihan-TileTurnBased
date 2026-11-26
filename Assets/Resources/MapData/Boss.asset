@@ -14,25 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapData
   MapName: Tutorial
   NextScene: DialogAkhir
-  layout: 'EEEEEEFEEEEEEE
+  layout: 'EEEEEFEEEEEE
 
-    EEEEEEEEEEEEEE
+    EEEEEEEEEEEE
 
-    EEEFEEEEEFEEEE
+    EEFEEEEEFEEE
 
-    EEEEMEMEMEEEEE
+    EEEMEMEMEEEE
 
-    EEEEMEEEEMEEEE
+    EEEMEEEEMEEE
 
-    EEEEMEEEEMEEEE
+    EEEMEEEEMEEE
 
-    EEEEMEEEEMEEEE
+    EEEMEEEEMEEE
 
-    EEEEEEEEEEEEEE
+    EEEEEEEEEEEE
 
-    EEEEEEEEEEEEEE
+    EEEEEEEEEEEE
 
-    EEEEEHEHEHEEEE'
+    EEEEHEHEHEEE'
   Heroes:
   - {fileID: 11400000, guid: 6bd5674282524954d946c8dc58f01c30, type: 2}
   - {fileID: 11400000, guid: 4ed0f2332e329f544a8ef355ba82e95d, type: 2}

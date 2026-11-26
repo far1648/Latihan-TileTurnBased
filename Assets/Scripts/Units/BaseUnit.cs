@@ -43,6 +43,11 @@ public class BaseUnit : MonoBehaviour
         if (BuffTurnsLeft > 0) BuffTurnsLeft--;
     }
 
+    public virtual int DamageAgainst(BaseUnit target)
+    {
+        return AttackDamage;
+    }
+
     public virtual void TakeDamage(int amount, BaseUnit attacker = null)
     {
         LastAttacker = attacker;

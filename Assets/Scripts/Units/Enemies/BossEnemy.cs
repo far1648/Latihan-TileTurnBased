@@ -24,16 +24,72 @@ public class BossEnemy : BaseEnemy
     public int MaxShield => maxShield;
     public int Shield {get; set;}
 
+    [SerializeField] private Color warningTint = new Color(1f, 0.6f, 0.6f, 1f);
+    [SerializeField] private Color lethalTint = new Color(1f, 0.2f, 0.2f, 1f);
+
+    private SpriteRenderer[] bodyRenderers;
+    private Color[] bodyColors;
+    private int oneShotStage;
+
+    public int OneShotStage
+    {
+        get => oneShotStage;
+        set
+        {
+            oneShotStage = value;
+            ApplyTint();
+        }
+    }
+
+    public bool OneShotLethal => oneShotStage == 2;
+
     public int BreakCooldownLeft {get; set;}
     public int RewindsLeft {get; private set;}
     public int SummonTurnLeft {get; set;}
 
     protected override void Awake()
     {
+        bodyRenderers = GetComponentsInChildren<SpriteRenderer>();
+        bodyColors = bodyRenderers.Select(r => r.color).ToArray();
+
         base.Awake();
         RewindsLeft = maxRewinds;
         SummonTurnLeft = summonEvery;
         Shield = maxShield;
+    }
+
+    public void AdvanceOneShot()
+    {
+        if (oneShotStage == 0) return;
+
+        OneShotStage = oneShotStage == 1 ? 2 : 0;
+    }
+
+    private void ApplyTint()
+    {
+        if (bodyRenderers == null) return;
+
+        Color tint = oneShotStage == 2 ? lethalTint
+                    : oneShotStage == 1 ? warningTint
+                    : Color.white;
+        
+        for (int i = 0; i < bodyRenderers.Length; i++)
+        {
+            if (bodyRenderers[i] == null) continue;
+
+            bodyRenderers[i].color = bodyColors[i] * tint;
+        }
+    }
+
+    public override int DamageAgainst(BaseUnit target)
+    {
+        int damage = base.DamageAgainst(target);
+
+        if (OneShotLethal && target != null) {
+            damage = Mathf.Max(damage, target.CurrentHealth);
+        }
+
+        return damage;
     }
 
     public override void TakeDamage(int amount, BaseUnit attacker = null)
@@ -41,6 +97,7 @@ public class BossEnemy : BaseEnemy
         if (Shield <= 0)
         {
             base.TakeDamage(amount, attacker);
+            return;
         }
 
         bool buffed = attacker != null && attacker.HasAttackBuff;
@@ -50,6 +107,8 @@ public class BossEnemy : BaseEnemy
             : Mathf.Max(1, Mathf.RoundToInt(amount * shieldDamageWithoutBuff));
 
         Shield = Mathf.Max(0, Shield - effective);
+
+        if (Shield == 0 && oneShotStage == 0) OneShotStage = 1;
 
         MenuManager.Instance.RefreshTileInfo();
     }

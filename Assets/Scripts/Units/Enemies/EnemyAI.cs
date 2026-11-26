@@ -56,6 +56,8 @@ public class EnemyAI : MonoBehaviour
             }
 
             yield return ActWith(enemy);
+
+            if (enemy is BossEnemy actedBoss) actedBoss.AdvanceOneShot();
         }
         if (GameManager.Instance.GameState == GameState.HeroesTurn)
                 TurnManager.Instance.AITurnRunning = false;

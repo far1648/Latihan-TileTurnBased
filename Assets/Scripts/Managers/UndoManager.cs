@@ -25,6 +25,7 @@ public class UndoManager : MonoBehaviour
         public int BossSummonTurns;
         public int BossShield;
         public bool SkipEnemyTurn;
+        public int BossOneShotStage;
     }
 
     private readonly List<Snapshot> history = new List<Snapshot>();
@@ -75,6 +76,7 @@ public class UndoManager : MonoBehaviour
         snapshot.BossCooldown = boss != null ? boss.BreakCooldownLeft : 0;
         snapshot.BossSummonTurns = boss != null ? boss.SummonTurnLeft : 0;
         snapshot.BossShield = boss != null ? boss.Shield : 0;
+        snapshot.BossOneShotStage = boss != null ? boss.OneShotStage : 0;
         snapshot.SkipEnemyTurn = TurnManager.Instance.SkipNextEnemyTurn;
 
         history.Add(snapshot);
@@ -180,6 +182,7 @@ public class UndoManager : MonoBehaviour
             boss.BreakCooldownLeft = snapshot.BossCooldown;
             boss.SummonTurnLeft = snapshot.BossSummonTurns;
             boss.Shield = snapshot.BossShield;
+            boss.OneShotStage = snapshot.BossOneShotStage;
         }
 
         TurnManager.Instance.SkipNextEnemyTurn = snapshot.SkipEnemyTurn;    

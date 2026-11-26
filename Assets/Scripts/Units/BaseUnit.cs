@@ -16,14 +16,35 @@ public class BaseUnit : MonoBehaviour
     public int AttackPower;
     public float MoveSpeed = 6f;
 
+    private int buffDuration = 2;
+    private int buffDamageMultiplier = 2;
+
+    public int BuffTurnsLeft {get; set;}
+    public bool HasAttackBuff => BuffTurnsLeft > 0;
+    public int AttackDamage => AttackPower * (HasAttackBuff ? buffDamageMultiplier : 1);
+
+    public BaseUnit LastAttacker {get; private set;}
+
     protected virtual void Awake()
     {
         CurrentHealth = MaxHealth;
         CurrentStep = MaxStep;
     }
 
-    public void TakeDamage(int amount)
+    public void GrantAttackBuff()
     {
+        BuffTurnsLeft = buffDuration;
+    }
+
+    public void TickBuff()
+    {
+        if (BuffTurnsLeft > 0) BuffTurnsLeft--;
+    }
+
+    public virtual void TakeDamage(int amount, BaseUnit attacker = null)
+    {
+        LastAttacker = attacker;
+
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
 
         if (CurrentHealth == 0) Die();

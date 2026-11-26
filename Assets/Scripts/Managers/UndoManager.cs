@@ -34,6 +34,11 @@ public class UndoManager : MonoBehaviour
         && GameManager.Instance.GameState == GameState.HeroesTurn
         && !TurnManager.Instance.InputBlocked;
 
+    public bool CanRewind =>
+        HasPrevious
+        && GameManager.Instance.GameState == GameState.EnemiesTurn
+        && !TurnManager.Instance.IsBusy;
+
     void Awake()
     {
         Instance = this;
@@ -56,6 +61,14 @@ public class UndoManager : MonoBehaviour
             });
         }
 
+        foreach (var tile in GridManager.Instance.GetAllTiles())
+        {
+            if (tile.IsBroken) snapshot.BrokenTiles.Add(tile);
+        }
+        
+        var boss = FindBoss();
+        snapshot.BossCooldown = boss != null ? boss.BreakCooldownLeft : 0;
+
         history.Add(snapshot);
     }
 
@@ -66,10 +79,38 @@ public class UndoManager : MonoBehaviour
         history.RemoveAt(history.Count-1);
         var target = history[history.Count-1];
 
-        Restore(target);
+        Restore(target, true);
         UndosLeft--;
         
         return true;
+    }
+
+    public bool Rewind()
+    {
+        if (!CanRewind) return false;
+
+        history.RemoveAt(history.Count-1);
+        var target = history[history.Count-1];
+
+        Restore(target, false);
+
+        return true;
+    }
+
+    public bool TryGetHealthAtLastCapture(BaseUnit unit, out int health)
+    {
+        health = 0;
+        if (history.Count == 0) return false;
+
+        foreach (var s in history[history.Count-1].Units)
+        {
+            if (s.Unit != unit) continue;
+
+            health = s.Health;
+            return true;
+        }
+
+        return false;
     }
 
     private BossEnemy FindBoss()
@@ -77,12 +118,20 @@ public class UndoManager : MonoBehaviour
         return UnitManager.Instance.EverSpawned.OfType<BossEnemy>().FirstOrDefault();
     }
 
-    private void Restore(Snapshot snapshot)
+    private void Restore(Snapshot snapshot, bool asUndo)
     {
         foreach (var s in snapshot.Units) {
             var tile = s.Unit.OccupiedTile;
 
             if (tile != null && tile.OccupiedUnit == s.Unit) tile.OccupiedUnit = null;
+        }
+
+        foreach (var tile in GridManager.Instance.GetAllTiles())
+        {
+            bool shouldBeBroken = snapshot.BrokenTiles.Contains(tile);
+
+            if (tile.IsBroken && !shouldBeBroken) tile.Repair();
+            else if (!tile.IsBroken && shouldBeBroken) tile.Break();
         }
 
         foreach (var s in snapshot.Units)
@@ -103,8 +152,26 @@ public class UndoManager : MonoBehaviour
         var boss = FindBoss();
         if (boss != null) boss.BreakCooldownLeft = snapshot.BossCooldown;
 
-        GameManager.Instance.GameState = GameState.HeroesTurn;
-        TurnManager.Instance.StartTurn(Faction.Hero);
+        if (asUndo)
+        {
+            GameManager.Instance.GameState = GameState.HeroesTurn;
+            TurnManager.Instance.StartTurn(Faction.Hero);
+        }
+
+        else
+        {
+            RefillEnemySteps();
+            UnitManager.Instance.SetSelectedEnemy(null);
+        }
+
         MenuManager.Instance.RefreshTileInfo();
+    }
+
+    private void RefillEnemySteps()
+    {
+        foreach (var enemy in UnitManager.Instance.GetUnits(Faction.Enemy))
+        {
+            if (TurnManager.Instance.CanAct(enemy)) enemy.CurrentStep = enemy.MaxStep;
+        }
     }
 }

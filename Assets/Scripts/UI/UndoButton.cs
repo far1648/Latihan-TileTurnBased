@@ -22,7 +22,22 @@ public class UndoButton : MonoBehaviour
         if (undo == null) return;
 
         button.interactable = undo.CanUndo;
-        label.text = $"Undo ({undo.UndosLeft})";
+        if (undo.UndosLeft == 0)
+        {
+            label.text = "Deja Vu! (Run out)";
+        }
+        if (undo.UndosLeft == 1)
+        {
+            label.text = "Deja Vu! (One left)";
+        }
+        if (undo.UndosLeft == 2)
+        {
+            label.text = "Deja Vu! (Two left)";
+        }
+        if (undo.UndosLeft == 3)
+        {
+            label.text = "Deja Vu! (Three left)";
+        }
 
         var keyboard = Keyboard.current;
         if (keyboard != null && keyboard[shortcut].wasPressedThisFrame) TryUndo();        

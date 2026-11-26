@@ -120,11 +120,13 @@ public class DialogManager : MonoBehaviour
     {
         var mouse = Mouse.current;
         var keyboard = Keyboard.current;
+        var touch = Touchscreen.current;
 
         bool click = mouse != null && mouse.leftButton.wasPressedThisFrame;
+        bool tap = mouse != null && touch.primaryTouch.press.wasPressedThisFrame;
         bool space = keyboard != null && keyboard.spaceKey.wasPressedThisFrame;
 
-        return click || space;
+        return click || space || tap;
     }
 
     private void ShowLine(DialogData.Line line)

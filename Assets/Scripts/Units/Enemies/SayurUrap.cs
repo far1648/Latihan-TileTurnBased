@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SayurUrap : BaseEnemy
 {
-    [SerializeField] private int healAmount = 20;
+    [Range(0f,1f)] [SerializeField] private float healRatio = 0.5f;
     protected override void Awake()
     {
         MaxHealth = 60;
@@ -14,7 +14,8 @@ public class SayurUrap : BaseEnemy
     {
         foreach (var hero in UnitManager.Instance.GetUnits(Faction.Hero))
         {
-            hero.CurrentHealth = Mathf.Min(hero.CurrentHealth + healAmount, hero.MaxHealth);
+            int amount = Mathf.CeilToInt(hero.MaxHealth * healRatio);
+            hero.CurrentHealth = Mathf.Min(hero.CurrentHealth + amount, hero.MaxHealth);
         }
         base.Die();
     }

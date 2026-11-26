@@ -18,6 +18,12 @@ public class BossEnemy : BaseEnemy
     [SerializeField] private int summonCount = 2;
     [SerializeField] private int summonRadius = 2;
 
+    [SerializeField] private int maxShield = 200;
+    [Range(0f, 1f)] [SerializeField] private float shieldDamageWithoutBuff = 0.5f;
+
+    public int MaxShield => maxShield;
+    public int Shield {get; set;}
+
     public int BreakCooldownLeft {get; set;}
     public int RewindsLeft {get; private set;}
     public int SummonTurnLeft {get; set;}
@@ -27,6 +33,25 @@ public class BossEnemy : BaseEnemy
         base.Awake();
         RewindsLeft = maxRewinds;
         SummonTurnLeft = summonEvery;
+        Shield = maxShield;
+    }
+
+    public override void TakeDamage(int amount, BaseUnit attacker = null)
+    {
+        if (Shield <= 0)
+        {
+            base.TakeDamage(amount, attacker);
+        }
+
+        bool buffed = attacker != null && attacker.HasAttackBuff;
+
+        int effective = buffed
+            ? amount
+            : Mathf.Max(1, Mathf.RoundToInt(amount * shieldDamageWithoutBuff));
+
+        Shield = Mathf.Max(0, Shield - effective);
+
+        MenuManager.Instance.RefreshTileInfo();
     }
 
     public bool TryRewind()

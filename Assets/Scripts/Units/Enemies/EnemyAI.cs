@@ -33,28 +33,24 @@ public class EnemyAI : MonoBehaviour
 
         yield return new WaitForSeconds(turnStartDelay);
 
-        var enemies = UnitManager.Instance.GetUnits(Faction.Enemy).ToList();
-
-        foreach (var enemy in enemies)
+        while (GameManager.Instance.GameState == GameState.EnemiesTurn)
         {
-            if (GameManager.Instance.GameState != GameState.EnemiesTurn) break;
+            var enemy = UnitManager.Instance
+                .GetUnits(Faction.Enemy)
+                .FirstOrDefault(u => u.CurrentHealth > 0 && TurnManager.Instance.CanAct(u));
 
-            if (enemy == null || enemy.CurrentHealth <= 0) continue;
-            if (!TurnManager.Instance.CanAct(enemy)) continue;
+            if (enemy == null) break;
 
             yield return new WaitForSeconds(unitDelay);
             
             if (enemy is BossEnemy boss && boss.TryBreakTiles() > 0)
-            {
                 yield return new WaitForSeconds(unitDelay * 2f);
-            }
 
             yield return ActWith(enemy);
         }
-
         if (GameManager.Instance.GameState == GameState.HeroesTurn)
-            TurnManager.Instance.AITurnRunning = false;
-        running = null;
+                TurnManager.Instance.AITurnRunning = false;
+            running = null;
     }
 
     private IEnumerator ActWith(BaseUnit enemy)

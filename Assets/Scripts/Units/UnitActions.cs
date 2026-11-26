@@ -5,7 +5,7 @@ public static class UnitActions
 {
     public static void Attack(BaseUnit attacker, BaseUnit target)
     {
-        target.TakeDamage(attacker.AttackPower);
+        target.TakeDamage(attacker.AttackDamage, attacker);
         TurnManager.Instance.MarkActed(attacker);
     }
 

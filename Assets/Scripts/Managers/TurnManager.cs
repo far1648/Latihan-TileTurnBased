@@ -10,6 +10,7 @@ public class TurnManager : MonoBehaviour
     public bool IsBusy;
     public bool AITurnRunning;
     public bool InputBlocked => IsBusy || AITurnRunning;
+    public bool SkipNextEnemyTurn {get; set;}
     void Awake()
     {
         Instance = this;
@@ -65,11 +66,27 @@ public class TurnManager : MonoBehaviour
 
     private void EndTurn()
     {
+        if (ActiveFaction == Faction.Hero) TickHeroBuffs();
+
         var nextState = ActiveFaction == Faction.Hero 
             ? GameState.EnemiesTurn
             : GameState.HeroesTurn;
 
+        if (nextState == GameState.EnemiesTurn && SkipNextEnemyTurn)
+        {
+            SkipNextEnemyTurn = false;
+            nextState = GameState.HeroesTurn;
+        }
+
         GameManager.Instance.ChangeState(nextState);
+    }
+
+    private void TickHeroBuffs()
+    {
+        foreach (var hero in UnitManager.Instance.GetUnits(Faction.Hero))
+        {
+            hero.TickBuff();
+        }
     }
 
     public void EndTurnEarly()

@@ -115,7 +115,9 @@ MonoBehaviour:
   AttackPower: 25
   MoveSpeed: 6
   breakChance: 0.7
-  breakCooldown: 1
+  breakCooldown: 2
   minTiles: 1
   maxTiles: 2
   breakRadius: 4
+  rewindHpThreshold: 0.5
+  maxRewinds: 1

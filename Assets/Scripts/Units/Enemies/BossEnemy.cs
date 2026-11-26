@@ -1,24 +1,32 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class BossEnemy : BaseEnemy
 {
     [Range(0f, 1f)] [SerializeField] private float breakChance = 0.7f;
-    [SerializeField] private int breakCooldown = 1;
+    [SerializeField] private int breakCooldown = 2;
     [SerializeField] private int minTiles = 1;
     [SerializeField] private int maxTiles = 2;
     [SerializeField] private int breakRadius = 2;
 
     [Range(0f, 1f)] [SerializeField] private float rewindHpThreshold = 0.5f;
-    [SerializeField] private int maxRewinds = 3;
+    [SerializeField] private int maxRewinds = 1;
+
+    [SerializeField] private List<BaseUnit> minionPrefabs = new List<BaseUnit>();
+    [SerializeField] private int summonEvery = 3;
+    [SerializeField] private int summonCount = 2;
+    [SerializeField] private int summonRadius = 2;
 
     public int BreakCooldownLeft {get; set;}
     public int RewindsLeft {get; private set;}
+    public int SummonTurnLeft {get; set;}
 
     protected override void Awake()
     {
         base.Awake();
         RewindsLeft = maxRewinds;
+        SummonTurnLeft = summonEvery;
     }
 
     public bool TryRewind()
@@ -38,6 +46,36 @@ public class BossEnemy : BaseEnemy
 
         RewindsLeft--;
         return true;
+    }
+
+    public int TrySummon()
+    {
+        if (minionPrefabs == null || minionPrefabs.Count == 0) return 0;
+
+        SummonTurnLeft = Mathf.Max(0, SummonTurnLeft-1);
+        if (SummonTurnLeft > 0) return 0;
+
+        var tiles = GridManager.Instance
+            .GetTilesNear(new BaseUnit[] { this }, summonRadius)
+            .OrderBy(_ => Random.value)
+            .ToList();
+
+        int spawned = 0;
+
+        foreach (var tile in tiles)
+        {
+            if (spawned >= summonCount) break;
+            var prefab = minionPrefabs[Random.Range(0, minionPrefabs.Count)];
+            var minion = UnitManager.Instance.SpawnUnit(prefab, tile);
+            if (minion == null) continue;
+
+            TurnManager.Instance.RegisterAsActed(minion);
+            spawned++;
+        }
+
+        if (spawned > 0) SummonTurnLeft = summonEvery;
+
+        return spawned;
     }
 
     public int TryBreakTiles()

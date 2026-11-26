@@ -47,6 +47,11 @@ public class TurnManager : MonoBehaviour
         if (!anyoneLeft) EndTurn();
     }
 
+    public void RegisterAsActed(BaseUnit unit)
+    {
+        actedUnits.Add(unit);
+    }
+
     private bool CheckGameOver()
     {
         bool heroesAlive = UnitManager.Instance.GetUnits(Faction.Hero).Any();

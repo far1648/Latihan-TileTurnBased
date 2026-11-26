@@ -21,6 +21,7 @@ public class UndoManager : MonoBehaviour
         public List<UnitState> Units = new List<UnitState>();
         public HashSet<Tile> BrokenTiles = new HashSet<Tile>();
         public int BossCooldown;
+        public int BossSummonTurns;
     }
 
     private readonly List<Snapshot> history = new List<Snapshot>();
@@ -68,6 +69,7 @@ public class UndoManager : MonoBehaviour
         
         var boss = FindBoss();
         snapshot.BossCooldown = boss != null ? boss.BreakCooldownLeft : 0;
+        snapshot.BossSummonTurns = boss != null ? boss.SummonTurnLeft : 0;
 
         history.Add(snapshot);
     }
@@ -118,8 +120,24 @@ public class UndoManager : MonoBehaviour
         return UnitManager.Instance.EverSpawned.OfType<BossEnemy>().FirstOrDefault();
     }
 
+    private void RemoveUnitsNotIn(Snapshot snapshot)
+    {
+        var known = new HashSet<BaseUnit>(snapshot.Units.Select(s => s.Unit));
+
+        var extras = UnitManager.Instance.EverSpawned
+            .Where(u => !known.Contains(u))
+            .ToList();
+        
+        foreach (var extra in extras)
+        {
+            UnitManager.Instance.DestoryUnit(extra);
+        }
+    }
+
     private void Restore(Snapshot snapshot, bool asUndo)
     {
+        RemoveUnitsNotIn(snapshot);
+
         foreach (var s in snapshot.Units) {
             var tile = s.Unit.OccupiedTile;
 
@@ -150,7 +168,11 @@ public class UndoManager : MonoBehaviour
         }
 
         var boss = FindBoss();
-        if (boss != null) boss.BreakCooldownLeft = snapshot.BossCooldown;
+        if (boss != null)
+        {
+            boss.BreakCooldownLeft = snapshot.BossCooldown;
+            boss.SummonTurnLeft = snapshot.BossSummonTurns;
+        }
 
         if (asUndo)
         {

@@ -7,6 +7,7 @@ public class SayurUrap : BaseEnemy
     {
         MaxHealth = 60;
         AttackPower = 20;
+        Weapon = WeaponType.Blue;
         base.Awake();
     }
 

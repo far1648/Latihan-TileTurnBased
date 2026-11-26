@@ -6,6 +6,7 @@ public class IkanTeri : BaseEnemy
     {
         MaxHealth = 60;
         AttackPower = 20;
+        Weapon = WeaponType.Red;
         base.Awake();
     }
 

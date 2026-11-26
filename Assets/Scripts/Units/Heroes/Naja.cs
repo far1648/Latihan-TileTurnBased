@@ -6,6 +6,7 @@ public class Naja : BaseHero
     {
         MaxHealth = 100;
         AttackPower = 10;
+        Weapon = WeaponType.Green;
         base.Awake();
     }
 }

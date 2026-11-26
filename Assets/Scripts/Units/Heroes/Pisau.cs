@@ -6,6 +6,7 @@ public class Pisau : BaseHero
     {
         MaxHealth = 80;
         AttackPower = 30;
+        Weapon = WeaponType.Red;
         base.Awake();
     }
 }

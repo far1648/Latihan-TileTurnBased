@@ -2,8 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum WeaponType
+{
+    None = 0,
+    Red = 1,
+    Green = 2,
+    Blue = 3
+}
+
 public class BaseUnit : MonoBehaviour
 {
+    public const float AdvantageMultiplier = 1.5f;
+    public const float DisadvantageMultiplier = 0.75f;
+
+    public WeaponType Weapon = WeaponType.None;
     public string UnitName;
     public Tile OccupiedTile;
     public Faction Faction;
@@ -43,9 +55,31 @@ public class BaseUnit : MonoBehaviour
         if (BuffTurnsLeft > 0) BuffTurnsLeft--;
     }
 
+    public static int GetMatchup(WeaponType attacker, WeaponType defender)
+    {
+        if (attacker == WeaponType.None || defender == WeaponType.None || attacker == defender) return 0;
+
+        bool advantage =
+            (attacker == WeaponType.Red && defender == WeaponType.Green) ||
+            (attacker == WeaponType.Green && defender == WeaponType.Blue) ||
+            (attacker == WeaponType.Blue && defender == WeaponType.Red);
+
+        return advantage ? 1 : -1;
+    }
+
+    public int MatchupAgainst(BaseUnit target)
+    {
+        return target == null ? 0 : GetMatchup(Weapon, target.Weapon);
+    }
+
     public virtual int DamageAgainst(BaseUnit target)
     {
-        return AttackDamage;
+        int matchup = MatchupAgainst(target);
+        float multiplier = matchup > 0 ? AdvantageMultiplier
+                        : matchup < 0 ? DisadvantageMultiplier
+                        : 1f;
+
+        return Mathf.Max(1, Mathf.RoundToInt(AttackDamage * multiplier));
     }
 
     public virtual void TakeDamage(int amount, BaseUnit attacker = null)

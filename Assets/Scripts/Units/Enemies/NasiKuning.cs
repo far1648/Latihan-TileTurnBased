@@ -6,6 +6,7 @@ public class NasiKuning : BaseEnemy
     {
         MaxHealth = 60;
         AttackPower = 20;
+        Weapon = WeaponType.Green;
         base.Awake();
     }
 
